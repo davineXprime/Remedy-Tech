@@ -1,8 +1,14 @@
-/* ============================================
-   ANIMATIONS & TRANSITIONS
+﻿/* ============================================
+   ADVANCED ANIMATIONS & 3D EFFECTS
+   Premium Website Animations
    ============================================ */
 
-/* Fade In Animation */
+/* ===== 3D PERSPECTIVE ===== */
+body {
+    perspective: 1000px;
+}
+
+/* ===== ADVANCED FADE & ENTRANCE ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -12,7 +18,6 @@
     }
 }
 
-/* Slide In Up Animation */
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -24,7 +29,40 @@
     }
 }
 
-/* Float Animation */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== FLOATING & DEPTH ===== */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -34,7 +72,28 @@
     }
 }
 
-/* Pulse Animation */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(-15px) translateX(5px);
+    }
+}
+
+@keyframes depth3d {
+    0% {
+        transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+    }
+    100% {
+        transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+    }
+}
+
+/* ===== PULSE & GLOW ===== */
 @keyframes pulse {
     0%, 100% {
         box-shadow: 0 0 0 0 rgba(255, 223, 0, 0.7);
@@ -44,7 +103,15 @@
     }
 }
 
-/* Glow Animation */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), inset 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), inset 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+}
+
 @keyframes glow {
     0%, 100% {
         text-shadow: 0 0 10px rgba(255, 223, 0, 0.5);

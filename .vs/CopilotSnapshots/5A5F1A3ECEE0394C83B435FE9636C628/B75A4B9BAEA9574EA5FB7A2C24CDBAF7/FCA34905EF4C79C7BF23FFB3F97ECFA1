@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gold Pouch - Premium Affiliate & Lifestyle Blog</title>
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="CSS/responsive.css">
 </head>
@@ -212,49 +212,62 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Gold Pouch. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">LinkedIn</a>
+            <div class="footer-section">
+                <h4>Gold Pouch</h4>
+                <p>Premium affiliate marketing and blogging platform</p>
             </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#ecommerce">Products</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gold Pouch. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Product Modal -->
+    <!-- Product Overlay Modal -->
     <div id="productModal" class="modal">
-        <div class="modal-content product-modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="modal-body">
-                <div class="modal-image"></div>
-                <div class="modal-details">
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalDescription"></p>
-                    <div id="modalPrice" class="modal-price"></div>
-                    <button class="cta-button primary-btn">Add to Cart</button>
-                </div>
-            </div>
+        <div class="modal-content">
+            <span class="close" onclick="closeProductOverlay()">&times;</span>
+            <div class="modal-body" id="productModalBody"></div>
         </div>
     </div>
 
-    <!-- Blog Modal -->
+    <!-- Blog Overlay Modal -->
     <div id="blogModal" class="modal">
-        <div class="modal-content blog-modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="modal-body">
-                <div class="modal-image"></div>
-                <div class="modal-article">
-                    <h2 id="modalBlogTitle"></h2>
-                    <div id="modalBlogMeta" class="modal-meta"></div>
-                    <div id="modalBlogContent" class="modal-article-content"></div>
-                </div>
-            </div>
+        <div class="modal-content">
+            <span class="close" onclick="closeBlogOverlay()">&times;</span>
+            <div class="modal-body" id="blogModalBody"></div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="JS/main2.js"></script>
-    <script src="JS/animations.js"></script>
-    <script src="JS/background.js"></script>
+    <!-- All Products Overlay Modal -->
+    <div id="allProductsModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeEcommerceOverlay()">&times;</span>
+            <div class="modal-body" id="allProductsBody"></div>
+        </div>
+    </div>
+
+    <!-- All Blog Posts Overlay Modal -->
+    <div id="allBlogModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeBlogListOverlay()">&times;</span>
+            <div class="modal-body" id="allBlogBody"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
