@@ -3,259 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold Pouch - Premium Affiliate & Lifestyle Blog</title>
-    <link rel="stylesheet" href="CSS/main.css">
-   <link rel="stylesheet" href="CSS/animations.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
-
+    <title>Gold Pouch | Premium Affiliate & Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Background animated elements -->
-    <div class="background-container">
-        <canvas id="heartbeatCanvas"></canvas>
-        <div class="neon-grid"></div>
-        <div class="animated-orbs">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-        </div>
+
+    <div class="red-grid-overlay"></div>
+    <div class="neon-heartbeat-bg" id="neonBg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" class="neon-svg">
+            <path class="pulse-line" d="M0,200 L300,200 L320,140 L340,260 L360,180 L380,220 L400,200 L450,200" />
+            <path class="heart-shape" d="M500,190 C500,140 440,140 440,190 C440,240 500,280 500,300 C500,280 560,240 560,190 C560,140 500,140 500,190 Z" />
+            <path class="pulse-line" d="M550,200 L600,200 L620,140 L640,260 L660,180 L680,220 L700,200 L1000,200" />
+        </svg>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-wrapper">
-                <div class="logo-text">
-                    <span class="gold-text">GOLD</span>
-                    <span class="heart-icon">❤️</span>
-                    <span class="red-text">POUCH</span>
-                </div>
-                <p class="tagline">Premium Affiliate & Lifestyle Insights</p>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="gold-logo">🏆</div>
+                <h1 class="site-title">Gold Pouch</h1>
             </div>
-            <nav class="nav-menu">
-                <a href="#ecommerce" class="nav-link">Shop</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <nav class="site-nav">
+                <a href="#ecommerce">Shop</a>
+                <a href="#blog">Insights</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-word" data-word="Elevate">Elevate</span>
-                <span class="title-word" data-word="Your">Your</span>
-                <span class="title-word" data-word="Lifestyle">Lifestyle</span>
-            </h1>
-            <p class="hero-subtitle">Curated premium products & exclusive insights for the modern you</p>
-            <button class="cta-button primary-btn">Explore Now</button>
-        </div>
-    </section>
-
-    <!-- E-commerce Section -->
-    <section id="ecommerce" class="ecommerce-section">
-        <div class="section-header">
-            <h2 class="section-title">Curated Collections</h2>
-            <p class="section-subtitle">Hand-picked premium products for you</p>
-        </div>
-
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card" data-product="1">
-                <div class="product-image">
-                    <div class="image-placeholder product-bg-1">
-                        <span class="product-icon">💎</span>
+    <main class="main-content">
+        
+        <section id="ecommerce" class="ecommerce-section">
+            <div class="section-header">
+                <h2>Curated Collections</h2>
+                <p class="subtitle">Premium Affiliate Picks</p>
+            </div>
+            
+            <div class="collage-container eco-collage">
+                <div class="collage-item product-card" data-id="p1" data-type="product">
+                    <div class="item-image-placeholder">✨ Product Alpha</div>
+                    <div class="item-details">
+                        <h3>The Golden Hour Wristwatch</h3>
+                        <p class="price">$299.00</p>
                     </div>
-                    <span class="product-badge">Premium</span>
                 </div>
-                <div class="product-info">
-                    <h3>Luxury Wellness Kit</h3>
-                    <p class="product-desc">Premium self-care essentials</p>
-                    <div class="product-price">$99.99</div>
-                    <button class="product-btn">View Details</button>
+                <div class="collage-item product-card" data-id="p2" data-type="product">
+                    <div class="item-image-placeholder">✨ Product Beta</div>
+                    <div class="item-details">
+                        <h3>Aura Leather Pouch</h3>
+                        <p class="price">$145.00</p>
+                    </div>
+                </div>
+                <div class="collage-item product-card" data-id="p3" data-type="product">
+                    <div class="item-image-placeholder">✨ Product Gamma</div>
+                    <div class="item-details">
+                        <h3>Midas Silk Scarf</h3>
+                        <p class="price">$85.00</p>
+                    </div>
                 </div>
             </div>
+            
+            <div class="center-btn">
+                <button class="gold-btn" id="seeMoreProducts">See More Products</button>
+            </div>
+        </section>
 
-            <!-- Product 2 -->
-            <div class="product-card" data-product="2">
-                <div class="product-image">
-                    <div class="image-placeholder product-bg-2">
-                        <span class="product-icon">✨</span>
+        <section id="blog" class="blog-section">
+            <div class="section-header">
+                <h2>The Gold Ledger</h2>
+                <p class="subtitle">Lifestyle, Wealth & Design Articles</p>
+            </div>
+            
+            <div class="collage-container blog-collage">
+                <div class="collage-item blog-card" data-id="b1" data-type="blog">
+                    <div class="item-image-placeholder">📖 Article I</div>
+                    <div class="item-details">
+                        <h3>Architecting Minimalist Wealth</h3>
+                        <p class="excerpt">Discover the philosophy behind high-tier aesthetic curation...</p>
                     </div>
-                    <span class="product-badge">Exclusive</span>
                 </div>
-                <div class="product-info">
-                    <h3>Elite Skincare Range</h3>
-                    <p class="product-desc">Advanced beauty technology</p>
-                    <div class="product-price">$149.99</div>
-                    <button class="product-btn">View Details</button>
+                <div class="collage-item blog-card" data-id="b2" data-type="blog">
+                    <div class="item-image-placeholder">📖 Article II</div>
+                    <div class="item-details">
+                        <h3>The Neon Renaissance</h3>
+                        <p class="excerpt">How high-contrast palettes are redefining modern luxury branding...</p>
+                    </div>
+                </div>
+                <div class="collage-item blog-card" data-id="b3" data-type="blog">
+                    <div class="item-image-placeholder">📖 Article III</div>
+                    <div class="item-details">
+                        <h3>Affiliate Masterclass</h3>
+                        <p class="excerpt">The sleek mechanics of launching digital storefronts seamlessly...</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Product 3 -->
-            <div class="product-card" data-product="3">
-                <div class="product-image">
-                    <div class="image-placeholder product-bg-3">
-                        <span class="product-icon">🌟</span>
-                    </div>
-                    <span class="product-badge">Best Seller</span>
-                </div>
-                <div class="product-info">
-                    <h3>Premium Fitness Bundle</h3>
-                    <p class="product-desc">Complete wellness solution</p>
-                    <div class="product-price">$199.99</div>
-                    <button class="product-btn">View Details</button>
-                </div>
+            
+            <div class="center-btn">
+                <button class="gold-btn" id="seeMoreBlogs">See More Blogs</button>
             </div>
-        </div>
+        </section>
 
-        <div class="section-footer">
-            <button class="see-more-btn" id="seeMoreEcommerce">
-                <span>Explore All Products</span>
-                <span class="arrow">→</span>
-            </button>
-        </div>
-    </section>
+    </main>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-        <div class="section-header">
-            <h2 class="section-title">Latest Insights</h2>
-            <p class="section-subtitle">Expert tips, trends & lifestyle wisdom</p>
-        </div>
-
-        <div class="blog-grid">
-            <!-- Blog Post 1 -->
-            <article class="blog-card" data-blog="1">
-                <div class="blog-image">
-                    <div class="image-placeholder blog-bg-1">
-                        <span class="blog-icon">📈</span>
-                    </div>
-                    <span class="blog-category">Finance</span>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="close-popup-btn" id="closePopup">&times;</button>
+            <div id="dynamicPopupBody">
                 </div>
-                <div class="blog-content">
-                    <h3>The Art of Wealth Accumulation</h3>
-                    <p class="blog-excerpt">Discover proven strategies for building sustainable wealth and financial independence...</p>
-                    <div class="blog-meta">
-                        <span class="blog-date">Dec 15, 2024</span>
-                        <span class="read-time">5 min read</span>
-                    </div>
-                    <button class="read-btn">Read Article</button>
-                </div>
-            </article>
-
-            <!-- Blog Post 2 -->
-            <article class="blog-card" data-blog="2">
-                <div class="blog-image">
-                    <div class="image-placeholder blog-bg-2">
-                        <span class="blog-icon">💪</span>
-                    </div>
-                    <span class="blog-category">Wellness</span>
-                </div>
-                <div class="blog-content">
-                    <h3>Premium Lifestyle Habits</h3>
-                    <p class="blog-excerpt">Transform your daily routine with elite habits practiced by industry leaders and innovators...</p>
-                    <div class="blog-meta">
-                        <span class="blog-date">Dec 12, 2024</span>
-                        <span class="read-time">7 min read</span>
-                    </div>
-                    <button class="read-btn">Read Article</button>
-                </div>
-            </article>
-
-            <!-- Blog Post 3 -->
-            <article class="blog-card" data-blog="3">
-                <div class="blog-image">
-                    <div class="image-placeholder blog-bg-3">
-                        <span class="blog-icon">🎯</span>
-                    </div>
-                    <span class="blog-category">Growth</span>
-                </div>
-                <div class="blog-content">
-                    <h3>Mastering Your Personal Brand</h3>
-                    <p class="blog-excerpt">Build an authentic brand that resonates with your audience and opens doors to opportunities...</p>
-                    <div class="blog-meta">
-                        <span class="blog-date">Dec 10, 2024</span>
-                        <span class="read-time">6 min read</span>
-                    </div>
-                    <button class="read-btn">Read Article</button>
-                </div>
-            </article>
         </div>
+    </div>
 
-        <div class="section-footer">
-            <button class="see-more-btn" id="seeMoreBlog">
-                <span>View All Articles</span>
-                <span class="arrow">→</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-content">
-            <h2>About Gold Pouch</h2>
-            <p>Welcome to Gold Pouch, your destination for premium lifestyle products and exclusive insights. We believe in quality over quantity, and every recommendation is carefully curated to meet the highest standards.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-content">
-            <h2>Get In Touch</h2>
-            <p>Have questions? We'd love to hear from you.</p>
-            <button class="cta-button primary-btn">Contact Us</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Gold Pouch. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">LinkedIn</a>
-            </div>
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Gold Pouch Collective. All Rights Reserved. Powered by GitHub Pages.</p>
     </footer>
 
-    <!-- Product Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content product-modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="modal-body">
-                <div class="modal-image"></div>
-                <div class="modal-details">
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalDescription"></p>
-                    <div id="modalPrice" class="modal-price"></div>
-                    <button class="cta-button primary-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Blog Modal -->
-    <div id="blogModal" class="modal">
-        <div class="modal-content blog-modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="modal-body">
-                <div class="modal-image"></div>
-                <div class="modal-article">
-                    <h2 id="modalBlogTitle"></h2>
-                    <div id="modalBlogMeta" class="modal-meta"></div>
-                    <div id="modalBlogContent" class="modal-article-content"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="JS/main2.js"></script>
-    <script src="JS/animations.js"></script>
-    <script src="JS/background.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
