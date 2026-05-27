@@ -1,32 +1,17 @@
-Gold Pouch Website
+remedytech.zone - Affiliate Platform
 
-Version: 1.0.0
-Purpose: Premium affiliate marketing and blogging landing page.
+Welcome to the repository for remedytech.zone. This platform is a single-page affiliate marketing engine designed to showcase premium health and wellness technologies.
 
-Project Description
+Architecture
 
-Gold Pouch is a lightweight, frontend-only Single Page Application (SPA) designed specifically for GitHub Pages deployment. It features a highly customized, premium "White and Gold" theme geared toward high-ticket affiliate marketing and wealth mindset blogging.
+The site is built natively using HTML5, CSS3, and modern JavaScript, leveraging the Tailwind CSS framework via CDN for utility-class styling. The entire application is intentionally compiled into a single index.html file to maximize load speed and simplify deployment.
 
-Technical Architecture
+Key Features
 
-To ensure high performance and straightforward deployment to static environments like GitHub Pages, the application uses:
+Interactive Canvas Background: A custom-rendered, animated neon heartbeat line (<canvas>).
 
-HTML5: Semantic structure.
+Touch-Friendly Sliders: Horizontal scrolling product and blog displays equipped with intuitive left/right navigation arrows.
 
-Tailwind CSS (via CDN): For rapid, premium UI styling without the need for a build step/Node.js environment.
+Non-Blocking Modals: Deep-dive product views that allow the underlying page to remain scrollable when active.
 
-Vanilla JavaScript: Powers the background canvas animations, dynamic data injection, modal overlays, and pseudo-routing (404 handling).
-
-HTML5 Canvas: Generates the unique neon gold heart rate animation dynamically to save bandwidth (no large video or GIF files required).
-
-Features
-
-Animated EKG Background
-
-Infinite Scrolling Collages (Left-to-Right Marquee)
-
-Non-blocking Modal Overlays
-
-Integrated 404 Route Handling
-
-Fully responsive (Mobile, Tablet, Desktop)
+Dynamic Affiliate Routing: Integrated "Buy on Amazon" call-to-actions tied directly to your custom referral tags.
