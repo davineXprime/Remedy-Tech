@@ -1,33 +1,20 @@
-Quick Reference Guide
+Quick Reference - remedytech.zone
 
-Typography
+To preview and manage the remedytech.zone project locally:
 
-Headings/Logos: Cinzel (Serif, Premium, High-end look)
+Download the Code:
+Download the singular index.html file provided in this workspace. Ensure your image assets (e.g., Copilot_20260526_230730.png) are in the same folder.
 
-Body/Paragraphs: Inter (Sans-serif, clean readability)
+Open in Browser:
+Double-click index.html to open it in Chrome, Safari, or Edge. No backend server is required due to the CDN-powered Tailwind architecture.
 
-Color Palette Reference
+Editing Data & Affiliate Links:
+Open index.html in your text editor. Scroll down to the <script> section. Locate eCommerceAssets. Modify affiliateUrl, price, or img parameters to hot-swap products instantly.
 
-Primary Gold: #D4AF37
+Testing UI Components:
 
-Light Gold: #F1D570
+Click the Left/Right arrows on the product sliders to test smooth-scroll snapping.
 
-Dark Gold: #B08D28
+Click "See More Products" to verify the comprehensive grid modal.
 
-Premium White/Background: #FAFAFA
-
-Text/Dark Accents: #111111
-
-Grid Color: rgba(255, 0, 0, 0.05) (Transparent Red)
-
-Component Map inside index.html
-
-<style>: Line 25 - Contains all custom animation keyframes, modal states, and background styles.
-
-<canvas id="neon-background">: Line 133 - Handles the EKG line drawing.
-
-<section id="ecommerce">: Line 155 - Handles products track.
-
-<section id="blog">: Line 177 - Handles blogs track.
-
-function initCanvasAnimation(): Line 291 - JS script that drives the glowing dot across the EKG pattern.
+Click any individual product card to launch the deep-dive modal and verify the "Buy on Amazon" redirect paths.
