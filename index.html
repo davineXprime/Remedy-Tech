@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>remedytech.zone | Premium Affiliate & E-commerce</title>
+    <title>remedytech.zone | Direct E-health Products</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -77,14 +77,18 @@
         .modal-overlay.active { opacity: 1; pointer-events: all; }
         .modal-content { background: white; border: 2px solid #D4AF37; border-radius: 1.5rem; width: 90%; max-width: 1000px; max-height: 85vh; overflow-y: auto; }
         
-        /* New Header and Footer Background Implementation */
+        /* Header and Footer Background Implementation with Premium Solid Gold Fallback */
         header, footer { 
+            background-color: #D4AF37; 
             background-image: url('Copilot_20260526_230730.png');
             background-size: cover; background-position: center; position: relative;
         }
         header { border-bottom: 4px solid #FFF; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
         footer { border-top: 4px solid #FFF; }
         .bg-frosted { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); }
+        
+        /* Golden CSS Filter for the Logo */
+        .logo-gold-tint { filter: sepia(1) saturate(5) hue-rotate(5deg) brightness(1.1); }
     </style>
 </head>
 <body class="relative">
@@ -96,7 +100,7 @@
         <header class="fixed top-0 w-full z-40">
             <div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
                 <div class="bg-frosted px-6 py-2 rounded-full flex items-center gap-3 cursor-pointer shadow-md border border-gold-400" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-white font-bold text-xl shadow-inner border-2 border-white">R</div>
+                    <img src="Copilot_20260526_233138.png" alt="remedytech.zone logo" class="w-10 h-10 object-contain logo-gold-tint" onerror="this.onerror=null; this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-white font-bold text-xl shadow-inner border-2 border-white\'>R</div>'">
                     <span class="font-serif font-bold text-2xl tracking-wider text-gray-900">remedytech.zone</span>
                 </div>
                 <nav class="hidden md:flex space-x-8 bg-frosted px-6 py-2 rounded-full border border-gold-400">
@@ -144,7 +148,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-frosted p-8 rounded-2xl inline-block max-w-2xl mx-auto shadow-xl border border-gold-500/30">
                     <div class="flex items-center justify-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-white">R</div>
+                        <img src="Copilot_20260526_233138.png" alt="remedytech.zone logo" class="w-12 h-12 object-contain logo-gold-tint" onerror="this.onerror=null; this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-white font-bold text-xl shadow-inner border-2 border-white\'>R</div>'">
                         <span class="font-serif font-bold text-2xl text-gray-900">remedytech.zone</span>
                     </div>
                     <p class="text-gray-800 font-medium text-lg mb-8">Elevating your digital presence and wealth generation strategies through premium affiliate marketing.</p>
@@ -172,7 +176,6 @@
     </div>
 
     <script>
-        /* 1. DATA ASSETS (Updated E-Commerce Catalog) */
         const eCommerceAssets = [
             { 
                 id: 1, 
@@ -224,11 +227,10 @@
             { id: 5, title: "Passive Income Myths Debunked", date: "Sep 20, 2026", img: "💡", excerpt: "The reality of building true wealth through digital assets." }
         ];
 
-        /* 2. RENDERING MODULES */
         function getMediaHTML(item, placeholder) {
             const imgVal = item.img;
             if (imgVal && (imgVal.startsWith('http') || imgVal.includes('.'))) {
-                return `<img src="${imgVal}" alt="${item.title}" class="h-full w-full object-contain transition-transform duration-300 hover:scale-105" onerror="this.onerror=null; this.outerHTML='<span class=\\'text-6xl\\'>${placeholder}</span>'">`;
+                return `<img src="${imgVal}" alt="${item.title}" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" onerror="this.onerror=null; this.outerHTML='<span class=\\'text-6xl\\'>${placeholder}</span>'">`;
             }
             return `<span class="text-6xl">${imgVal || placeholder}</span>`;
         }
@@ -260,12 +262,11 @@
             if (!track) return;
             const firstItem = track.querySelector('.slider-item');
             if (firstItem) {
-                const scrollStep = firstItem.offsetWidth + 24; // Card width + flex gap
+                const scrollStep = firstItem.offsetWidth + 24; 
                 track.scrollBy({ left: direction * scrollStep, behavior: 'smooth' });
             }
         }
 
-        /* 3. MODAL POP-UP ARCHITECTURE */
         const modal = document.getElementById('main-modal');
         const modalBody = document.getElementById('modal-body');
 
@@ -299,10 +300,11 @@
             }
 
             const placeholder = type === 'product' ? "📦" : "📄";
+            const detailedContent = item.desc || item.excerpt;
 
             modalBody.innerHTML = `
                 <div class="text-center pt-4">
-                    <div class="w-32 h-32 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 shadow-inner border border-gold-500/30 overflow-hidden">
+                    <div class="w-full h-48 mx-auto bg-gray-50 rounded-xl flex items-center justify-center mb-6 shadow-inner border border-gold-500/30 overflow-hidden">
                         ${getMediaHTML(item, placeholder)}
                     </div>
                     <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2">${item.title}</h2>
@@ -310,9 +312,9 @@
                         ? `<p class="text-2xl text-gold-500 font-bold mb-6">${item.price}</p>`
                         : `<p class="text-md text-gray-500 mb-6">${item.date}</p>`
                     }
-                    <p class="text-gray-600 text-lg max-w-lg mx-auto mb-8 leading-relaxed text-justify">
-                        ${item.desc || item.excerpt} 
-                    </p>
+                    <div class="text-gray-600 text-lg max-w-2xl mx-auto mb-8 leading-relaxed text-justify px-4">
+                        ${detailedContent} 
+                    </div>
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                         ${actionButton}
                         <button class="bg-gray-100 text-gray-800 hover:bg-gold-500 hover:text-white font-semibold px-8 py-3.5 rounded-full transition-colors text-sm uppercase tracking-wider" onclick="openModal('${type === 'product' ? 'products' : 'blogs'}')">
@@ -331,7 +333,6 @@
             }
         }
 
-        /* 4. ROUTING */
         function handleRouting() {
             const hash = window.location.hash;
             const appView = document.getElementById('app-view');
@@ -348,7 +349,6 @@
         }
         window.addEventListener('hashchange', handleRouting);
 
-        /* 5. CANVAS ANIMATION MODULE */
         function initCanvasAnimation() {
             const canvas = document.getElementById('neon-background');
             const ctx = canvas.getContext('2d');
@@ -410,7 +410,6 @@
             drawHeartRate();
         }
 
-        /* 6. INITIALIZATION EXECUTION */
         window.onload = () => {
             populateSlider('ecommerce-track', eCommerceAssets, 'product');
             populateSlider('blog-track', blogAssets, 'blog');
