@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remedy Tech Zone | Premium Electronic Healthcare & Biohacking</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for luxury typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind Configuration for custom gold themes -->
     <script>tailwind.config = {
             theme: {
                 extend: {
@@ -109,16 +106,12 @@
 </head>
 <body class="bg-stone-950 text-stone-200 font-sans min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-gold-950">
 
-    <!-- Molten Gold Shimmering Fluid Background Canvas -->
     <canvas id="liquid-gold-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
 
-    <!-- Warm organic golden overlay for ambient atmosphere -->
     <div class="fixed top-0 left-0 w-full h-full -z-20 bg-gradient-to-b from-gold-950 via-stone-950 to-gold-950 opacity-90 pointer-events-none"></div>
 
-    <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 glass-panel border-b border-gold-500/10 transition-all duration-300 py-3 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Brand / Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="relative w-10 h-10 rounded-lg bg-gradient-to-tr from-gold-700 to-gold-400 p-[1.5px] shadow-lg shadow-gold-500/20">
                     <div class="w-full h-full bg-stone-950 rounded-md flex items-center justify-center">
@@ -131,7 +124,6 @@
                 </div>
             </a>
 
-            <!-- Navigation Links -->
             <div class="hidden md:flex items-center gap-6">
                 <a href="#about" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">About</a>
                 <a href="#categories" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Categories</a>
@@ -139,7 +131,6 @@
                 <a href="#lead-magnet" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Newsletter</a>
             </div>
 
-            <!-- Audio Synthesizer Toggle & Quick Action -->
             <div class="flex items-center gap-4">
                 <button id="soundscape-btn" onclick="toggleAmbientSound()" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold-500/30 bg-gold-950/30 hover:bg-gold-900/50 hover:border-gold-400 text-[11px] text-gold-400 font-semibold tracking-wider transition-all" title="Toggle Golden Healing Frequencies soundscape">
                     <span class="relative flex h-2 w-2">
@@ -155,7 +146,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header class="relative pt-16 pb-24 px-4 overflow-hidden" id="about">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 flex flex-col space-y-6 text-left relative z-10">
@@ -211,13 +201,11 @@
         </div>
     </header>
 
-    <!-- MAIN CATEGORIES INTERACTIVE SHOWCASE -->
     <main class="max-w-7xl mx-auto px-4 py-16" id="categories">
         <div class="text-center space-y-4 mb-12">
             <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-100">Electronic Curation Suite</h2>
             <p class="text-stone-400 max-w-2xl mx-auto">Explore fifteen dedicated categories targeting key body systems, mental optimization, hygiene, and daily biohacking routines.</p>
 
-            <!-- Category Filtering Hub -->
             <div class="flex flex-wrap justify-center gap-2 mt-8 max-w-4xl mx-auto" id="filter-container">
                 <button onclick="filterCategories('all')" id="btn-all" class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all bg-gold-500 text-gold-950 shadow-md shadow-gold-500/20 border border-gold-400/30">
                     All Tech (15)
@@ -237,9 +225,7 @@
             </div>
         </div>
 
-        <!-- THE 15 CATEGORY GRID -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
-            <!-- Category 1 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="digital" id="cat-1">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -259,7 +245,6 @@
                 </button>
             </div>
 
-            <!-- Category 2 (Electronic Aroma Tools) -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="sensory" id="cat-2">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -279,7 +264,6 @@
                 </button>
             </div>
 
-            <!-- Category 3 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene" id="cat-3">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -299,7 +283,6 @@
                 </button>
             </div>
 
-            <!-- Category 4 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="sensory" id="cat-4">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -319,7 +302,6 @@
                 </button>
             </div>
 
-            <!-- Category 5 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="physical" id="cat-5">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -339,7 +321,6 @@
                 </button>
             </div>
 
-            <!-- Category 6 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene" id="cat-6">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -359,7 +340,6 @@
                 </button>
             </div>
 
-            <!-- Category 7 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="digital" id="cat-7">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -379,7 +359,6 @@
                 </button>
             </div>
 
-            <!-- Category 8 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene" id="cat-8">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -399,7 +378,6 @@
                 </button>
             </div>
 
-            <!-- Category 9 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="physical" id="cat-9">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -419,7 +397,6 @@
                 </button>
             </div>
 
-            <!-- Category 10 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="physical" id="cat-10">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -439,7 +416,6 @@
                 </button>
             </div>
 
-            <!-- Category 11 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene" id="cat-11">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -459,7 +435,6 @@
                 </button>
             </div>
 
-            <!-- Category 12 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="sensory" id="cat-12">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -479,7 +454,6 @@
                 </button>
             </div>
 
-            <!-- Category 13 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="physical" id="cat-13">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -499,7 +473,6 @@
                 </button>
             </div>
 
-            <!-- Category 14 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="digital" id="cat-14">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -519,7 +492,6 @@
                 </button>
             </div>
 
-            <!-- Category 15 -->
             <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="sensory" id="cat-15">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -541,7 +513,6 @@
         </div>
     </main>
 
-    <!-- LONGEVITY JOURNAL / BLOG SECTION -->
     <section class="border-t border-gold-500/10 py-20 px-4 bg-stone-950/40" id="blog">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -555,9 +526,7 @@
                 </button>
             </div>
 
-            <!-- Blog Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Article 1 (Updated with the new protocol matching your category description) -->
                 <article class="glass-panel rounded-xl overflow-hidden group hover:border-gold-500/40 transition-all">
                     <div class="h-48 w-full bg-gradient-to-br from-gold-900 to-amber-950/50 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-stone-950/20 mix-blend-overlay"></div>
@@ -576,7 +545,6 @@
                     </div>
                 </article>
 
-                <!-- Article 2 -->
                 <article class="glass-panel rounded-xl overflow-hidden group hover:border-gold-500/40 transition-all">
                     <div class="h-48 w-full bg-gradient-to-br from-yellow-950/80 to-gold-950 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-stone-950/20 mix-blend-overlay"></div>
@@ -595,487 +563,6 @@
                     </div>
                 </article>
 
-                <!-- Article 3 -->
                 <article class="glass-panel rounded-xl overflow-hidden group hover:border-gold-500/40 transition-all">
                     <div class="h-48 w-full bg-gradient-to-br from-amber-950 to-stone-950 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-stone-950/20 mix-blend-overlay"></div>
-                        <span class="text-4xl text-gold-400 group-hover:scale-110 transition-transform">⚡</span>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="text-[10px] font-bold text-gold-500 uppercase tracking-widest">Neuromuscular</span>
-                        <h3 class="font-serif text-lg font-bold text-stone-100 group-hover:text-gold-300 transition-colors">Vagus Nerve Stimulation: Electrotherapy for Autonomic Alignment</h3>
-                        <p class="text-xs text-stone-400 leading-relaxed">
-                            A breakdown of the neural responses associated with low-voltage sub-sensory vibration on chronic lower-body recovery.
-                        </p>
-                        <div class="pt-4 flex items-center justify-between text-[11px] text-stone-500">
-                            <span>March 2026</span>
-                            <span class="text-gold-400">Read Research →</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE LEAD MAGNET FUNNEL -->
-    <section class="border-t border-gold-500/10 py-20 px-4 relative" id="lead-magnet">
-        <div class="max-w-4xl mx-auto glass-panel rounded-2xl p-8 md:p-12 text-center space-y-6 relative overflow-hidden">
-            <div class="absolute inset-0 -z-10 bg-gradient-to-tr from-gold-950/50 via-transparent to-transparent opacity-60"></div>
-            <span class="text-xs font-bold tracking-widest text-gold-400 uppercase">Interactive Lead Funnel</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-100">Claim the 2026 Biohacking Blueprint</h2>
-            <p class="text-sm text-stone-300 max-w-xl mx-auto leading-relaxed font-light">
-                Join our private intelligence pool. Receive the ultimate high-ticket affiliate strategy, electronic medical research summaries, and device setup hacks.
-            </p>
-            <form id="blueprint-form" onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 pt-4">
-                <input type="email" required placeholder="Enter your high-tier wellness email..." class="flex-grow px-4 py-3 rounded-lg bg-stone-950/80 border border-gold-500/20 text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 text-sm">
-                <button type="submit" class="px-6 py-3 rounded-lg bg-gradient-to-r from-gold-600 to-gold-400 text-gold-950 font-bold tracking-wide hover:from-gold-500 hover:to-gold-300 transition-all text-sm">
-                    Receive E-Book
-                </button>
-            </form>
-            <div id="form-success-msg" class="hidden text-gold-300 text-xs font-semibold animate-pulse mt-3">
-                ✓ Perfect. Your clinical biohacking manual is being routed to your inbox.
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-gold-500/10 bg-gold-950/20 py-12 px-4 text-stone-400 text-sm">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <span class="font-serif font-black text-xl text-gold-400">R</span>
-                    <span class="font-serif tracking-widest text-md font-bold text-gold-400">REMEDY TECH ZONE</span>
-                </div>
-                <p class="text-xs text-stone-500 leading-relaxed">
-                    Elevating standard healthcare through sophisticated cybernetic, biological and acoustic wellness frameworks.
-                </p>
-            </div>
-            <div>
-                <h4 class="font-serif text-stone-200 font-bold text-xs uppercase tracking-widest mb-4">Core Ecosystem</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#about" class="hover:text-gold-400 transition-colors">Biohacking Core</a></li>
-                    <li><a href="#categories" class="hover:text-gold-400 transition-colors">15 Tech Verticals</a></li>
-                    <li><a href="#blog" class="hover:text-gold-400 transition-colors">Clinical Research Journal</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-serif text-stone-200 font-bold text-xs uppercase tracking-widest mb-4">Integrations</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="https://github.com" target="_blank" class="hover:text-gold-400 transition-colors">GitHub Repository</a></li>
-                    <li><a href="#" class="hover:text-gold-400 transition-colors">404 Recovery Node</a></li>
-                    <li><a href="#" class="hover:text-gold-400 transition-colors">API Endpoint Hub</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-serif text-stone-200 font-bold text-xs uppercase tracking-widest mb-4">E-Commerce Notice</h4>
-                <p class="text-xs text-stone-500 leading-relaxed">
-                    Product recommendations on this platform route to premium high-ticket affiliate partners. Remedy Tech Zone receives compensation upon qualified transactions.
-                </p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto border-t border-stone-800/60 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
-            <span>© 2026 Remedy Tech Zone. All engineering blueprints reserved.</span>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-gold-400">Privacy Protocols</a>
-                <a href="#" class="hover:text-gold-400">Security Clearance</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE CATEGORY MODAL -->
-    <div id="category-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/80 backdrop-blur-md hidden" role="dialog" aria-modal="true">
-        <div class="relative w-full max-w-2xl glass-panel rounded-2xl p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto animate-zoom-in">
-            <button onclick="closeCategoryModal()" class="absolute top-4 right-4 text-stone-400 hover:text-gold-400 transition-colors text-xl font-bold p-1">✕</button>
-
-            <!-- Modal Header -->
-            <div class="flex items-start gap-4 pb-4 border-b border-gold-500/10">
-                <div id="modal-icon-container" class="w-14 h-14 rounded-lg bg-gold-950/50 border border-gold-500/30 flex items-center justify-center text-gold-400 shadow-[0_0_15px_rgba(212,175,55,0.1)]"></div>
-                <div>
-                    <span id="modal-tag" class="text-[10px] font-bold text-gold-400 tracking-widest uppercase">VERTICAL SPEC</span>
-                    <h3 id="modal-title" class="font-serif text-2xl font-bold text-stone-100">Category Title</h3>
-                </div>
-            </div>
-
-            <!-- Modal Content -->
-            <div class="space-y-4">
-                <div>
-                    <h4 class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-1">Scientific Curation & Strategy</h4>
-                    <p id="modal-description" class="text-sm text-stone-300 leading-relaxed"></p>
-                </div>
-                <div>
-                    <h4 class="text-xs font-bold text-gold-400 uppercase tracking-widest mb-3">Featured High-Ticket Device Integrations</h4>
-                    <div id="modal-product-list" class="space-y-3"></div>
-                </div>
-            </div>
-
-            <!-- Lead Form / Referral Action -->
-            <div class="bg-gold-950/40 p-4 rounded-xl border border-gold-500/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="text-left">
-                    <span class="block text-xs font-bold text-gold-400 uppercase tracking-wider">Affiliate Commission Link Enabled</span>
-                    <span class="text-[11px] text-stone-400">Clicking below routes your telemetry directly to certified manufacturers.</span>
-                </div>
-                <button id="modal-affiliate-btn" onclick="simulateAffiliateRedirect(this)" data-url="#" class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gradient-to-r from-gold-600 to-gold-400 text-gold-950 text-xs font-bold tracking-wider uppercase hover:from-gold-500 hover:to-gold-300 transition-all shadow-md shadow-gold-500/10">
-                    Acquire Device Telemetry
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATION NODE -->
-    <div id="toast-notification" class="fixed bottom-6 right-6 z-[100] glass-panel rounded-xl p-4 max-w-sm flex items-start gap-3 shadow-[0_10px_35px_rgba(212,175,55,0.35)] transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="w-8 h-8 rounded-full bg-gold-950 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
-            <span id="toast-icon" class="text-sm">✨</span>
-        </div>
-        <div>
-            <h4 id="toast-title" class="font-serif text-sm font-bold text-gold-300">System Notification</h4>
-            <p id="toast-message" class="text-xs text-stone-300 mt-1 leading-relaxed"></p>
-        </div>
-    </div>
-
-    <script>
-        let toastTimeout = null;
-        function showNotification(title, message, icon = '✨') {
-            const toast = document.getElementById('toast-notification');
-            const tTitle = document.getElementById('toast-title');
-            const tMsg = document.getElementById('toast-message');
-            const tIcon = document.getElementById('toast-icon');
-
-            tTitle.innerText = title;
-            tMsg.innerText = message;
-            tIcon.innerText = icon;
-
-            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            if (toastTimeout) clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-            }, 6000);
-        }
-
-        /* DATA REPOSITORY MATRIX - CATEGORY 2 HAS BEEN OFFICIALLY UPDATED VIA blue-print specs */
-        const categoriesData = {
-            1: {
-                title: "E-books for Health",
-                tag: "E-Commerce & Digital",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253M9 12h3m0 0h3m-3 0v3m0-3V9"></path></svg>`,
-                desc: "Curated digital guides, workbooks, and manuals focused on biohacking, longevity, holistic wellness, and high-ticket affiliate strategies.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "The Biohacking & Longevity Blueprint (e-book)", price: "$49.99", score: "4.9/5", perk: "Ultimate biological calibration guide" },
-                    { name: "High-Ticket Wellness Master Strategy Guide", price: "$79.99", score: "4.8/5", perk: "Step-by-step affiliate optimization map" }
-                ]
-            },
-            2: {
-                title: "Electronic Aroma Tools",
-                tag: "Atmosphere / Electronic Aroma Tools",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
-                desc: "Traditional passive diffusion is obsolete. The future of environmental well-being relies on cold-air nebulization and smart micro-aerosolization. By dispersing therapeutic-grade essential oils without heat or water, these advanced devices preserve the molecular integrity of volatile organic compounds, allowing for direct interaction with the olfactory pathways and instantaneous autonomic nervous system modulation.",
-                affiliateUrl: "https://www.amazon.com/gp/aw/d/B0CRTPVD1D?linkCode=ll2&tag=tay1225060-20&language=en_US&ref_=as_li_ss_tl",
-                products: [
-                    { 
-                        name: "Airversa Waterless Essential Oil Diffuser", 
-                        price: "Premium High-Ticket Curation", 
-                        score: "5.0/5 Nano-Mist Engine", 
-                        perk: "Fluidless cold-air nebulizing core, accepts 5mL-20mL bottles directly, 600 sq. ft coverage, 48h rechargeable USB-C battery, 3 mist levels, 4 timers, 45° dynamic safety tilt cutoff." 
-                    }
-                ]
-            },
-            3: {
-                title: "Electronic Dental Care",
-                tag: "Oral Health Tech",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 11.5V14m0-2.5v-6a3.5 3.5 0 117 0v6m-7 2.5a3.5 3.5 0 007 0M11 5V3m2 2V3m-4 15h4"></path></svg>`,
-                desc: "Next-generation oral health technology, including Bluetooth-connected smart toothbrushes, high-pressure water flossers, and professional-grade LED whitening systems.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "AuraGlow Bluetooth Smart Toothbrush", price: "$210.00", score: "4.9/5", perk: "Holographic gyroscopic brushing metric engine" },
-                    { name: "HydroPulse Pro High-Pressure Water Flosser", price: "$145.00", score: "4.8/5", perk: "Clinically validated micro-jet hydrotherapy pulses" }
-                ]
-            },
-            4: {
-                title: "Electronic Eye Care",
-                tag: "Vision Comfort",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>`,
-                desc: "Tech-focused solutions for vision and comfort, such as ultrasonic lens cleaners, heated compression massagers for strain relief, and specialized light therapy eyewear.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "OcuRelief Heated Compression Eye Massager", price: "$130.00", score: "4.9/5", perk: "42°C heating element + dynamic airbag acupressure" },
-                    { name: "OptiSonic Ultrasonic Lens & Eyewear Cleaner", price: "$85.00", score: "4.6/5", perk: "45kHz ultrasonic cavitation bath" }
-                ]
-            },
-            5: {
-                title: "Electronic Foot Care",
-                tag: "Mobility Wellness",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`,
-                desc: "Advanced devices designed for foot health and recovery, ranging from heated soaking tubs and deep-tissue massagers to compression therapy systems.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "SoleTherapy Heated Compression Spa System", price: "$240.00", score: "5.0/5", perk: "Infrared heat elements with rotational massage rollers" },
-                    { name: "DeepTissue Shiatsu Foot Massager", price: "$199.00", score: "4.8/5", perk: "Targeted plantar fascia therapy profiles" }
-                ]
-            },
-            6: {
-                title: "Electronic Hair & Scalp Care",
-                tag: "Aesthetics Tech",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-3 0h3"></path></svg>`,
-                desc: "Scientific hair-growth solutions, including LLLT (Low-Level Laser Therapy) helmets, smart motorized scalp massagers, and high-tech ionic drying tools.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "Helios LLLT Laser Hair Restoration Helmet", price: "$699.00", score: "4.9/5", perk: "272 medical-grade laser diodes for cellular simulation" },
-                    { name: "PulseGlow Motorized Scalp Massager", price: "$95.00", score: "4.6/5", perk: "IPX7 waterproof, high-frequency kinetic oscillations" }
-                ]
-            },
-            7: {
-                title: "Electronic Health Monitoring Devices",
-                tag: "Diagnostics & Telemetry",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>`,
-                desc: "Wearable or stationary diagnostic tools, such as smart scales and health trackers, that provide data-driven insights into body composition and physical metrics.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "VitalsPro Smart Scale & Body Comp Analyzer", price: "$150.00", score: "4.8/5", perk: "17 different physical biometrics over 8-sensor grid" },
-                    { name: "AuraRing Premium Bio-Tracker Ring", price: "$299.00", score: "4.9/5", perk: "Extremely low-profile HRV and REM tracking sensor" }
-                ]
-            },
-            8: {
-                title: "Electronic Hygiene Care",
-                tag: "Sanitation Curation",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`,
-                desc: "Specialized wellness technology focused on cleanliness and sanitation, such as advanced ear wax removal systems and UV sterilization devices.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "PureEar HD Video Ear Wax Removal System", price: "$75.00", score: "4.7/5", perk: "1080p high-intensity endoscopic ear fiber optics" },
-                    { name: "SaniBox UV-C Heavy-Duty Sterilization Chamber", price: "$110.00", score: "4.8/5", perk: "Double-source 253.7nm sanitization matrix" }
-                ]
-            },
-            9: {
-                title: "Electronic Lower Body Care",
-                tag: "Lower Body Recovery",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>`,
-                desc: "Targeted recovery tech for the legs, hips, and knees, including air-compression recovery boots, vibration knee braces, and whole-body vibration platforms.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "AeroCompression Full-Leg Recovery Boots", price: "$550.00", score: "4.9/5", perk: "5-zone sequential air compression recovery chamber" },
-                    { name: "KneeTherapy Vibration & Infrared Heat Brace", price: "$180.00", score: "4.7/5", perk: "Magnetic laser-assisted knee joint alignment technology" }
-                ]
-            },
-            10: {
-                title: "Electronic Muscle Recovery",
-                tag: "Muscle & Athletic Performance",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
-                desc: "High-performance tools for athletic recovery, featuring percussion massage guns and wireless electrotherapy patches for localized pain management.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "HyperPulse Smart Percussion Massage Gun", price: "$350.00", score: "4.9/5", perk: "Brushless 16mm high-amplitude motor with AI auto-torque" },
-                    { name: "BioStim Wireless Dual TENS/EMS Patch Kit", price: "$125.00", score: "4.8/5", perk: "Bluetooth localized electrical pulse neuromodulation" }
-                ]
-            },
-            11: {
-                title: "Electronic Personal Care",
-                tag: "Daily Self-Care Essentials",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 01-8 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`,
-                desc: "A broad collection of essential tech-enabled wellness devices designed to support daily hygiene and self-care routines.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "SonicGlide High-Performance Body Groomer", price: "$115.00", score: "4.7/5", perk: "Sub-dermal ceramic micro-blade alignment framework" },
-                    { name: "UV-Sanitizing Travel Case for Smart Oral Care", price: "$65.00", score: "4.5/5", perk: "Dynamic battery-backed cleaning pod" }
-                ]
-            },
-            12: {
-                title: "Electronic Skin Care",
-                tag: "Dermatological Photics",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>`,
-                desc: "Tech-forward facial treatments, including LED light therapy masks, microcurrent toning devices, and ultrasonic skin-exfoliation tools.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "Lumina Clinical LED Light Therapy Mask", price: "$399.00", score: "5.0/5", perk: "3 wave ranges: 630nm red, 415nm blue, 830nm near-infrared" },
-                    { name: "MicroWave Microcurrent Toning Device", price: "$185.00", score: "4.8/5", perk: "Micro-amperage electronic muscle cell toning loops" }
-                ]
-            },
-            13: {
-                title: "Electronic Upper Body Care",
-                tag: "Upper Body Orthopedics",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 11l7-7 7 7M5 19l7-7 7 7"></path></svg>`,
-                desc: "Targeted tech for the neck, shoulders, and back, such as posture-correcting vibration sensors and wearable heat-therapy wraps.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "PostureSense Smart Vibration Biometric Sensor", price: "$90.00", score: "4.6/5", perk: "Haptic feedback for angles beyond 15° displacement" },
-                    { name: "ThermoWrap Heated Orthopedic Neck Support", price: "$115.00", score: "4.8/5", perk: "Carbon fiber heat grids paired with cervical compression" }
-                ]
-            },
-            14: {
-                title: "Phone & Computer Apps for Health",
-                tag: "Biofeedback Software",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>`,
-                desc: "Software solutions providing recurring value, including meditation and mental wellness apps, productivity suites, and specialized biofeedback tracking.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "ZenFlow Cognitive Training (Lifetime License)", price: "$149.00", score: "4.9/5", perk: "Dynamic auditory-entrainment delta waves mapping" },
-                    { name: "MindMetrics Body Biofeedback Suite", price: "$89.00", score: "4.7/5", perk: "Cross-platform tracker aggregator and predictive engine" }
-                ]
-            },
-            15: {
-                title: "Sexual Awareness",
-                tag: "Intimate Biosensors",
-                icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>`,
-                desc: "High-tech sexual wellness products, including app-controlled smart devices and premium electronic stimulators designed for intimacy and health.",
-                affiliateUrl: "#",
-                products: [
-                    { name: "SyncIntimacy App-Controlled Pro Stimulator", price: "$180.00", score: "4.9/5", perk: "Biometric feedback sync, customized neural mapping" },
-                    { name: "AuraPulse Pelvic Floor Health & Bio-Trainer", price: "$220.00", score: "4.8/5", perk: "Smart contraction measurement for optimal core strength" }
-                ]
-            }
-        };
-
-        /* AUDIO FREQUENCY CONTROLLER */
-        let audioCtx = null, oscillatorNode = null, gainNode = null, isSoundPlaying = false;
-        function toggleAmbientSound() {
-            if (!isSoundPlaying) {
-                try {
-                    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                    oscillatorNode = audioCtx.createOscillator();
-                    gainNode = audioCtx.createGain();
-                    oscillatorNode.type = 'sine';
-                    oscillatorNode.frequency.setValueAtTime(111, audioCtx.currentTime);
-                    gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime);
-                    oscillatorNode.connect(gainNode);
-                    gainNode.connect(audioCtx.destination);
-                    oscillatorNode.start();
-                    isSoundPlaying = true;
-                    document.getElementById('sound-status').innerText = "111Hz AMBIENT ON";
-                    document.getElementById('audio-pulse').classList.add('bg-gold-400');
-                    document.getElementById('soundscape-btn').classList.add('border-gold-400', 'bg-gold-950/60');
-                    showNotification('Sensory Frequency Activated', 'The bio-resonant 111Hz golden frequency soundscape is now broadcasting.', '✨');
-                } catch(e) { console.error(e); }
-            } else {
-                if (oscillatorNode) { oscillatorNode.stop(); oscillatorNode.disconnect(); }
-                isSoundPlaying = false;
-                document.getElementById('sound-status').innerText = "AMBIENT OFF";
-                document.getElementById('soundscape-btn').classList.remove('border-gold-400', 'bg-gold-950/60');
-                showNotification('Sensory Frequency Paused', 'Acoustic golden soundscape alignment is now inactive.', '🔕');
-            }
-        }
-
-        /* CATEGORY FILTER ENGINE */
-        function filterCategories(group) {
-            const cards = document.querySelectorAll('.category-card');
-            const buttons = document.querySelectorAll('#filter-container button');
-            buttons.forEach(btn => {
-                btn.className = "px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all glass-panel text-stone-300 hover:border-gold-400/40";
-            });
-            const activeBtn = document.getElementById(`btn-${group}`);
-            if(activeBtn) activeBtn.className = "px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all bg-gold-500 text-gold-950 shadow-md shadow-gold-500/20 border border-gold-400/30";
-            cards.forEach(card => card.style.display = (group === 'all' || card.dataset.group === group) ? 'flex' : 'none');
-        }
-
-        /* MODAL INTERFACES & PRODUCT RENDERING */
-        function openCategoryModal(categoryId) {
-            const data = categoriesData[categoryId];
-            if(!data) return;
-
-            document.getElementById('modal-icon-container').innerHTML = data.icon;
-            document.getElementById('modal-tag').innerText = data.tag;
-            document.getElementById('modal-title').innerText = data.title;
-            document.getElementById('modal-description').innerText = data.desc;
-
-            // Map target affiliate URL safely to action button container
-            document.getElementById('modal-affiliate-btn').setAttribute('data-url', data.affiliateUrl);
-
-            const listContainer = document.getElementById('modal-product-list');
-            listContainer.innerHTML = "";
-
-            data.products.forEach(p => {
-                // If it's Category 2, inject special premium profile styling
-                const isPremiumAroma = categoryId === 2;
-                listContainer.innerHTML += `
-                    <div class="p-4 rounded-xl bg-stone-900/80 border ${isPremiumAroma ? 'border-gold-500/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]' : 'border-stone-800'} flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-gold-500/40 transition-all">
-                        <div class="text-left space-y-1 max-w-md">
-                            <h5 class="text-sm font-bold ${isPremiumAroma ? 'text-gold-400 font-serif text-base' : 'text-stone-100'}">${p.name}</h5>
-                            <p class="text-[11px] text-stone-300 font-light leading-relaxed">${p.perk}</p>
-                        </div>
-                        <div class="text-left md:text-right flex md:flex-col items-center md:items-end justify-between shrink-0 border-t md:border-t-0 border-stone-800 pt-2 md:pt-0">
-                            <span class="text-xs md:text-sm font-bold text-gold-300 uppercase tracking-wider">${p.price}</span>
-                            <span class="text-[10px] text-stone-400 font-medium">${p.score}</span>
-                        </div>
-                    </div>
-                `;
-            });
-
-            document.getElementById('category-modal').classList.remove('hidden');
-        }
-
-        function closeCategoryModal() {
-            document.getElementById('category-modal').classList.add('hidden');
-        }
-
-        function simulateAffiliateRedirect(button) {
-            const targetUrl = button.getAttribute('data-url');
-            closeCategoryModal();
-            showNotification('Affiliate Handshake', 'Generating affiliate secure payload tracker... Routing you securely to our bio-certified partner node.', '🔗');
-            if (targetUrl && targetUrl !== '#') {
-                setTimeout(() => { window.open(targetUrl, '_blank'); }, 1200);
-            }
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            document.getElementById('form-success-msg').classList.remove('hidden');
-            showNotification('Blueprint Dispatched', 'Clinical longevity setup guide is queued for delivery.', '🧬');
-            setTimeout(() => {
-                document.getElementById('form-success-msg').classList.add('hidden');
-                event.target.reset();
-            }, 6000);
-        }
-
-        /* LIGHT CONDUIT BACKGROUND ENGINE */
-        window.onload = function() {
-            const canvas = document.getElementById('liquid-gold-canvas');
-            const ctx = canvas.getContext('2d');
-            let width = canvas.width = window.innerWidth, height = canvas.height = window.innerHeight;
-            window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
-            let time = 0;
-
-            function animate() {
-                time += 0.005; ctx.clearRect(0, 0, width, height);
-                for (let i = 0; i < 4; i++) {
-                    ctx.beginPath();
-                    const gradient = ctx.createLinearGradient(0, 0, width, height);
-                    gradient.addColorStop(0, `rgba(17, 13, 3, 0.2)`);
-                    gradient.addColorStop(0.3, `rgba(170, 119, 28, 0.08)`);
-                    gradient.addColorStop(0.6, `rgba(212, 175, 55, 0.05)`);
-                    gradient.addColorStop(1, `rgba(17, 13, 3, 0.2)`);
-                    ctx.fillStyle = gradient;
-                    const scaleY = 120 + i * 40, frequency = 0.001 + i * 0.001;
-                    ctx.moveTo(0, height);
-                    for (let x = 0; x <= width; x += 20) {
-                        const y = height / 1.8 + Math.sin(x * frequency + time + i * 5) * scaleY * Math.cos(x * 0.0002 + time * 0.5);
-                        ctx.lineTo(x, y);
-                    }
-                    ctx.lineTo(width, height); ctx.closePath(); ctx.fill();
-                }
-                for (let j = 0; j < 6; j++) {
-                    const gradX = (width / 5) * j + Math.sin(time + j) * 80, gradW = 80 + Math.cos(time + j) * 40;
-                    const verticalGrad = ctx.createLinearGradient(gradX, 0, gradX + gradW, 0);
-                    verticalGrad.addColorStop(0, 'rgba(212,175,55,0)');
-                    verticalGrad.addColorStop(0.5, 'rgba(212,175,55,0.03)');
-                    verticalGrad.addColorStop(1, 'rgba(212,175,55,0)');
-                    ctx.fillStyle = verticalGrad; ctx.fillRect(gradX, 0, gradW, height);
-                }
-                requestAnimationFrame(animate);
-            }
-            animate();
-
-            const interactiveSelectors = 'button, a, input[type="submit"], [role="button"], .category-card';
-            document.body.addEventListener('click', (e) => {
-                const target = e.target.closest(interactiveSelectors);
-                if (target) {
-                    target.classList.remove('animate-click-pop-slide');
-                    void target.offsetWidth;
-                    target.classList.add('animate-click-pop-slide');
-                    setTimeout(() => { target.classList.remove('animate-click-pop-slide'); }, 400);
-                }
-            });
-        };
-    </script>
-</body>
-</html>
+                        <div class="absolute inset-0 bg
