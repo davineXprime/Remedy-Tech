@@ -7,7 +7,256 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedy Tech Zone | Premium Electronic Healthcare & Biohacking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#FFFDF0',
+                            100: '#FFFBE0',
+                            200: '#FFF3A1',
+                            300: '#F0D16E',
+                            400: '#E1B03C',
+                            500: '#D4AF37', // Molten Gold
+                            600: '#AA771C',
+                            700: '#805510',
+                            800: '#543505',
+                            900: '#2B1B04',
+                            950: '#110D03',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shimmer': 'shimmer 2.5s infinite linear',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                }
+            }
+        }</script>
+    <style>
+        /* Glassmorphism custom classes */
+        .glass-panel {
+            background: rgba(17, 13, 3, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+        /* Custom scrollbar matching liquid gold */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #110D03;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #AA771C;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Pop Out & Slide Right Click Animation */
+        @keyframes popOutSlideRight {
+            0% { transform: scale(1) translateX(0); box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+            30% { transform: scale(1.04) translateX(2px); box-shadow: -4px 4px 15px rgba(212, 175, 55, 0.15); }
+            100% { transform: scale(1) translateX(0); box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        .animate-click-pop-slide {
+            animation: popOutSlideRight 0.3s cubic-bezier(0.25, 1, 0.5, 1) 1 !important;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-gold-950">
+
+    <canvas id="liquid-gold-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
+    <div class="fixed top-0 left-0 w-full h-full -z-20 bg-gradient-to-b from-gold-950 via-stone-950 to-gold-950 opacity-90 pointer-events-none"></div>
+
+    <nav class="sticky top-0 z-50 glass-panel border-b border-gold-500/10 py-3 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-lg bg-gradient-to-tr from-gold-700 to-gold-400 p-[1.5px] shadow-lg shadow-gold-500/20">
+                    <div class="w-full h-full bg-stone-950 rounded-md flex items-center justify-center">
+                        <span class="font-serif font-black text-xl text-gold-400 group-hover:text-gold-200 transition-colors">R</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif tracking-widest text-lg font-bold text-gold-400 group-hover:text-gold-200 transition-colors leading-none">REMEDY</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-500 font-medium">TECH ZONE</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#about" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">About</a>
+                <a href="#categories" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Categories</a>
+                <a href="#blog" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Longevity Journal</a>
+                <a href="#lead-magnet" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Newsletter</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="soundscape-btn" onclick="toggleAmbientSound()" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold-500/30 bg-gold-950/30 hover:bg-gold-900/50 hover:border-gold-400 text-[11px] text-gold-400 font-semibold tracking-wider transition-all">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75" id="audio-pulse"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-gold-500"></span>
+                    </span>
+                    <span id="sound-status">AMBIENT OFF</span>
+                </button>
+                <a href="#categories" class="hidden sm:inline-block px-5 py-2 rounded-lg bg-gradient-to-r from-gold-600 to-gold-400 text-gold-950 text-sm font-bold tracking-wider hover:from-gold-500 hover:to-gold-300 transition-all">
+                    Explore Tech
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-16 pb-24 px-4 overflow-hidden" id="about">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 flex flex-col space-y-6 text-left relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-950/60 border border-gold-500/20 w-fit">
+                    <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                    <span class="text-xs font-semibold tracking-wider text-gold-300 uppercase">Premium Wellness & Biohacking Tech</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-stone-100 leading-tight">
+                    The Future of <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-gold-600 font-extrabold">Well-Being</span>, Refined in Gold
+                </h1>
+                <p class="text-stone-300 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+                    Welcome to <span class="text-gold-400 font-medium">Remedy Tech Zone</span>. We curate next-generation health diagnostics, precision aromatherapy tools, and advanced physical optimization devices. Maximize cellular energy, refine daily routines, and master longevity with elite high-ticket solutions.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#categories" class="px-8 py-3.5 rounded-lg bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 text-gold-950 font-bold tracking-wide hover:from-gold-500 hover:to-gold-300 transition-all shadow-lg shadow-gold-500/20 text-center w-full sm:w-auto">
+                        Browse 15 Technology Categories
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative flex justify-center items-center">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-tr from-gold-900 via-gold-500 to-gold-200 p-[1px] shadow-[0_0_50px_rgba(212,175,55,0.25)] animate-pulse-slow">
+                    <div class="w-full h-full rounded-full bg-stone-950 overflow-hidden flex flex-col justify-center items-center p-8 relative">
+                        <div class="text-center z-10 space-y-3">
+                            <div class="mx-auto w-16 h-16 rounded-full bg-gold-950/80 border border-gold-400/40 flex items-center justify-center text-gold-400 animate-bounce">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <span class="text-[11px] font-bold text-gold-400 tracking-[0.3em] uppercase">VIBRATIONAL FIELD</span>
+                            <div class="text-xl font-serif font-bold text-stone-100">Quantum Cellular Healing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16" id="categories">
+        <div class="text-center space-y-4 mb-12">
+            <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-100">Electronic Curation Suite</h2>
+            <p class="text-stone-400 max-w-2xl mx-auto">Explore fifteen dedicated categories targeting key body systems, mental optimization, hygiene, and daily biohacking routines.</p>
+
+            <div class="flex flex-wrap justify-center gap-2 mt-8 max-w-4xl mx-auto" id="filter-container">
+                <button onclick="filterCategories('all')" id="btn-all" class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all bg-gold-500 text-gold-950 shadow-md border border-gold-400/30">All Tech (15)</button>
+                <button onclick="filterCategories('sensory')" id="btn-sensory" class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all glass-panel text-stone-300 hover:border-gold-400/40">Sensory & Aroma</button>
+                <button onclick="filterCategories('physical')" id="btn-physical" class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all glass-panel text-stone-300 hover:border-gold-400/40">Physical & Muscle</button>
+                <button onclick="filterCategories('hygiene')" id="btn-hygiene" class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all glass-panel text-stone-300 hover:border-gold-400/40">Hygiene & Care</button>
+                <button onclick="filterCategories('digital')" id="btn-digital" class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all glass-panel text-stone-300 hover:border-gold-400/40">Digital & Software</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="digital">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-emerald-400 uppercase">E-Commerce</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">E-books for Health</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Curated digital guides, workbooks, and manuals focused on biohacking, longevity, and holistic wellness.</p>
+                </div>
+                <button onclick="openCategoryModal(1)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="sensory">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-indigo-400 uppercase">Atmosphere</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Aroma Tools</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Advanced cold-air nebulizing diffusion tools engineered to modulate autonomic nervous system profiles.</p>
+                </div>
+                <button onclick="openCategoryModal(2)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-cyan-400 uppercase">Oral Health</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Dental Care</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Next-generation oral hygiene tools including specialized LED whitening matrices and smart engines.</p>
+                </div>
+                <button onclick="openCategoryModal(3)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="sensory">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-sky-400 uppercase">Vision</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Eye Care</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Ultrasonic lens maintenance systems and precision thermal compression vision massagers.</p>
+                </div>
+                <button onclick="openCategoryModal(4)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="physical">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-amber-400 uppercase">Mobility</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Foot Care</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Heated thermal soaking tubs and deep-tissue shiatsu foot engineering models.</p>
+                </div>
+                <button onclick="openCategoryModal(5)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-pink-400 uppercase">Aesthetics</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Hair & Scalp Care</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Scientific laser-diode hair restoration platforms and high-frequency kinetic scalp massagers.</p>
+                </div>
+                <button onclick="openCategoryModal(6)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="digital">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-violet-400 uppercase">Diagnostics</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Health Monitoring</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Wearable hardware diagnostics, multi-frequency scales, and raw biomarkers telemetry infrastructure.</p>
+                </div>
+                <button onclick="openCategoryModal(7)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">Explore Technology →</button>
+            </div>
+
+            <div class="category-card glass-panel glass-panel-hover rounded-xl p-6 flex flex-col justify-between transition-all duration-300" data-group="hygiene">
+                <div>
+                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-bold tracking-widest text-teal-400 uppercase">Sanitation</span></div>
+                    <h3 class="font-serif text-xl font-bold text-stone-100 mb-2">Electronic Hygiene Care</h3>
+                    <p class="text-sm text-stone-400 mb-6 leading-relaxed">Endoscopic dynamic video auricle clearers and heavy-duty UV sterilization chambers.</p>
+                </div>
+                <button onclick="openCategoryModal(8)" class="w-full py-2.5 rounded-lg border border-gold-500/20 bg-gold-950/20 text-gold-400 text-xs font-bold tracking-wider uppercase hover:bg-gold-500 hover:text-gold-950 transition-all flex items-center justify-center gap-2">=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>tailwind.config = {
             theme: {
                 extend: {
