@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Dental Care | Remedy Tech Zone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#FFFDF0',
+                            100: '#FFFBE0',
+                            200: '#FFF3A1',
+                            300: '#F0D16E',
+                            400: '#E1B03C',
+                            500: '#D4AF37',
+                            600: '#AA771C',
+                            700: '#805510',
+                            800: '#543505',
+                            900: '#2B1B04',
+                            950: '#110D03',
+                        }
+                    }
+                }
+            }
+        }</script>
+    <style>
+        .glass-panel {
+            background: rgba(17, 13, 3, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #110D03;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #AA771C;
+            border-radius: 4px;
+        }
+
+        .badge-new {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-gold-950">
+
+    <canvas id="liquid-gold-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
+    <div class="fixed top-0 left-0 w-full h-full -z-20 bg-gradient-to-b from-gold-950 via-stone-950 to-gold-950 opacity-90 pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-gold-500/10 py-3 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-lg bg-gradient-to-tr from-gold-700 to-gold-400 p-[1.5px] shadow-lg shadow-gold-500/20">
+                    <div class="w-full h-full bg-stone-950 rounded-md flex items-center justify-center">
+                        <span class="font-serif font-black text-xl text-gold-400 group-hover:text-gold-200 transition-colors">R</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif tracking-widest text-lg font-bold text-gold-400 group-hover:text-gold-200 transition-colors leading-none">REMEDY</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-500 font-medium">TECH ZONE</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a href="about.html" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">About</a>
+                <a href="products.html" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Shop</a>
+                <a href="contact.html" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative px-3 py-1.5 rounded-full border border-gold-500/30 bg-gold-950/30 hover:bg-gold-900/50 text-gold-400 text-sm font-semibold transition-all">
+                    🛒 Cart <span id="cart-count" class="ml-1 bg-red-600 text-white px-2 py-0.5 rounded-full text-xs">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+        <div class="glass-panel p-12 rounded-2xl mb-16 border-2 border-gold-500/20">
+            <h1 class="font-serif text-6xl font-bold text-gold-400 mb-4">Electronic Dental Care</h1>
+            <p class="text-xl text-stone-300 mb-6 max-w-2xl">Advanced dental hygiene technology for optimal oral health. Our curated collection features FDA-cleared devices and professional-grade equipment for home use.</p>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 rounded-full bg-green-900/30 border border-green-500/50 text-green-400 text-sm font-semibold">✓ FDA Cleared</span>
+                <span class="px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/50 text-blue-400 text-sm font-semibold">✓ Clinically Proven</span>
+                <span class="px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/50 text-purple-400 text-sm font-semibold">✓ Professional Grade</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Overview -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 mb-16">
+        <h2 class="font-serif text-3xl font-bold text-gold-400 mb-8">Why Electronic Dental Care?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-xl">
+                <div class="text-4xl mb-4">🦷</div>
+                <h3 class="font-serif text-xl font-bold text-gold-300 mb-3">Superior Cleaning</h3>
+                <p class="text-stone-400">Sonic vibrations and advanced technology remove up to 38% more plaque than manual brushing.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl">
+                <div class="text-4xl mb-4">📊</div>
+                <h3 class="font-serif text-xl font-bold text-gold-300 mb-3">Smart Monitoring</h3>
+                <p class="text-stone-400">Real-time feedback, pressure sensors, and app integration help you perfect your technique.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl">
+                <div class="text-4xl mb-4">⏱️</div>
+                <h3 class="font-serif text-xl font-bold text-gold-300 mb-3">Time Efficient</h3>
+                <p class="text-stone-400">2-minute smart timers and optimized vibration patterns deliver clinical results in less time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gold-400 mb-12">Our Collection</h2>
+        
+        <!-- Products Grid -->
+        <div id="dental-products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-screen w-96 glass-panel border-l border-gold-500/10 z-40 transform translate-x-full transition-transform duration-300 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-serif font-bold text-gold-300">Shopping Cart</h2>
+                <button onclick="toggleCart()" class="text-stone-400 hover:text-gold-400 text-2xl">✕</button>
+            </div>
+            <div id="cart-items" class="space-y-4 mb-8">
+                <p class="text-stone-400">Your cart is empty</p>
+            </div>
+            <div class="border-t border-gold-500/10 pt-4">
+                <div class="flex justify-between text-lg mb-4">
+                    <span class="text-gold-400">Total:</span>
+                    <span id="cart-total" class="text-gold-300 font-semibold">$0.00</span>
+                </div>
+                <button onclick="checkout()" class="w-full px-6 py-3 bg-gradient-to-r from-gold-600 to-gold-400 text-stone-950 font-semibold rounded-lg hover:from-gold-500 hover:to-gold-300 transition-all">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gold-500/10 glass-panel mt-20 py-8 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Company</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="about.html" class="hover:text-gold-400 transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-gold-400 transition">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Shop</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="products.html" class="hover:text-gold-400 transition">All Products</a></li>
+                        <li><a href="dental-care.html" class="hover:text-gold-400 transition">Dental Care</a></li>
+                        <li><a href="policies/refund-policy.html" class="hover:text-gold-400 transition">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Support</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">FAQ</a></li>
+                        <li><a href="policies/warranty.html" class="hover:text-gold-400 transition">Warranty</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">Help</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/terms-of-service.html" class="hover:text-gold-400 transition">Terms</a></li>
+                        <li><a href="policies/privacy-policy.html" class="hover:text-gold-400 transition">Privacy</a></li>
+                        <li><a href="policies/disclaimer.html" class="hover:text-gold-400 transition">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gold-500/10 pt-6 text-center text-stone-500 text-sm">
+                <p>&copy; 2024 Remedy Tech Zone LLC. All rights reserved. | <span class="text-gold-400">Secure. Certified. Trustworthy.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dental Care Products Data
+        const dentalProducts = [
+            {
+                id: "dental-sonic-001",
+                name: "Quantum Sonic Toothbrush Elite",
+                price: 179.99,
+                image: "https://images.unsplash.com/photo-1607613814075-e51df1bdc82f?w=400&h=400&fit=crop",
+                description: "62,000 vibrations/minute with AI-powered brushing guidance",
+                specs: [
+                    "62,000 vibrations/minute",
+                    "5 brushing modes",
+                    "Pressure sensor with feedback",
+                    "2-minute smart timer",
+                    "14-day battery"
+                ],
+                certifications: ["FDA Cleared", "CE Certified"],
+                rating: 4.9,
+                reviews: 521,
+                inStock: true,
+                badge: "Best Seller"
+            },
+            {
+                id: "dental-flosser-001",
+                name: "Cordless Water Flosser Pro",
+                price: 89.99,
+                image: "https://images.unsplash.com/photo-1612278231857-94beaf6efc76?w=400&h=400&fit=crop",
+                description: "Deep cleaning between teeth and below gumline",
+                specs: [
+                    "3 pressure settings",
+                    "180ml reservoir",
+                    "40-minute runtime",
+                    "3 interchangeable tips",
+                    "USB rechargeable"
+                ],
+                certifications: ["FDA Cleared"],
+                rating: 4.7,
+                reviews: 287,
+                inStock: true,
+                badge: null
+            },
+            {
+                id: "dental-scaler-001",
+                name: "Ultrasonic Dental Scaler Home",
+                price: 129.99,
+                image: "https://images.unsplash.com/photo-1599508945651-0e2ccba7fe22?w=400&h=400&fit=crop",
+                description: "Professional tartar removal at home with 5 tips",
+                specs: [
+                    "40kHz ultrasonic frequency",
+                    "5 cleaning tips included",
+                    "3 intensity levels",
+                    "Waterproof IPX7 rating",
+                    "Cordless design"
+                ],
+                certifications: ["FDA Cleared", "CE Certified"],
+                rating: 4.6,
+                reviews: 198,
+                inStock: true,
+                badge: "New"
+            },
+            {
+                id: "dental-whitening-001",
+                name: "LED Teeth Whitening Kit Pro",
+                price: 149.99,
+                image: "https://images.unsplash.com/photo-1606724842018-2a9a87fbd3d8?w=400&h=400&fit=crop",
+                description: "Professional whitening with 16-shade spectrum LED",
+                specs: [
+                    "16 LED wavelengths",
+                    "3 whitening intensities",
+                    "35-minute session timer",
+                    "Includes 2 gel cartridges",
+                    "App tracking available"
+                ],
+                certifications: ["FDA Approved", "Dentist Recommended"],
+                rating: 4.8,
+                reviews: 412,
+                inStock: true,
+                badge: "Popular"
+            },
+            {
+                id: "dental-irrigator-001",
+                name: "Advanced Oral Irrigator System",
+                price: 119.99,
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=400&fit=crop",
+                description: "600ml capacity with 5 nozzles and massage mode",
+                specs: [
+                    "600ml water tank",
+                    "5 specialized nozzles",
+                    "10 pressure settings",
+                    "Massage + pulse modes",
+                    "30-minute battery life"
+                ],
+                certifications: ["FDA Cleared", "Waterproof"],
+                rating: 4.5,
+                reviews: 234,
+                inStock: true,
+                badge: null
+            }
+        ];
+
+        let cart = [];
+
+        // Load and display dental products
+        function displayDentalProducts() {
+            const container = document.getElementById('dental-products');
+            container.innerHTML = dentalProducts.map(product => `
+                <div class="glass-panel-hover glass-panel p-5 rounded-xl flex flex-col h-full">
+                    <!-- Image Container -->
+                    <div class="relative mb-4 rounded-lg overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-cover">
+                        ${product.badge ? `<span class="absolute top-3 right-3 px-3 py-1 bg-gradient-to-r from-gold-600 to-gold-400 text-stone-950 text-xs font-bold rounded-full ${product.badge === 'New' ? 'badge-new' : ''}">${product.badge}</span>` : ''}
+                        ${!product.inStock ? '<div class="absolute inset-0 bg-black/50 flex items-center justify-center"><span class="text-white font-bold">Out of Stock</span></div>' : ''}
+                    </div>
+
+                    <!-- Category Label -->
+                    <div class="mb-2">
+                        <span class="text-xs text-gold-400 font-semibold uppercase">Electronic Dental Care</span>
+                    </div>
+
+                    <!-- Product Name -->
+                    <h3 class="text-base font-serif font-bold text-gold-300 mb-2 line-clamp-2">${product.name}</h3>
+
+                    <!-- Description -->
+                    <p class="text-stone-400 text-xs mb-3 line-clamp-2 flex-grow">${product.description}</p>
+
+                    <!-- Specs (collapsible on mobile) -->
+                    <div class="mb-3 hidden md:block">
+                        <details class="text-xs">
+                            <summary class="text-gold-400 cursor-pointer font-semibold">Specs</summary>
+                            <ul class="text-stone-500 mt-2 space-y-1 ml-2">
+                                ${product.specs.map(spec => `<li>• ${spec}</li>`).join('')}
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-gold-400 text-sm">★${product.rating}</span>
+                        <span class="text-stone-500 text-xs">(${product.reviews})</span>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="mb-3 flex flex-wrap gap-1">
+                        ${product.certifications.map(cert => `<span class="inline-block text-xs bg-green-900/30 border border-green-500/50 text-green-400 px-2 py-1 rounded">${cert}</span>`).join('')}
+                    </div>
+
+                    <!-- Price and Button -->
+                    <div class="border-t border-gold-500/10 pt-3 mt-auto">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-gold-400">$${product.price}</span>
+                        </div>
+                        <button onclick="addToCart('${product.id}', '${product.name}', ${product.price})" ${!product.inStock ? 'disabled' : ''} class="w-full px-3 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-stone-950 font-semibold rounded-lg hover:from-gold-500 hover:to-gold-300 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Add to cart
+        function addToCart(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        // Update cart UI
+        function updateCartUI() {
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            const cartItems = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-stone-400">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex justify-between items-center border-b border-gold-500/10 pb-3">
+                        <div>
+                            <p class="text-gold-300 font-semibold text-sm">${item.name}</p>
+                            <p class="text-stone-500 text-xs">$${item.price} x ${item.quantity}</p>
+                        </div>
+                        <button onclick="removeFromCart('${item.id}')" class="text-red-500 hover:text-red-400 text-sm font-semibold">Remove</button>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('cart-total').textContent = '$' + total.toFixed(2);
+        }
+
+        // Remove from cart
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        // Toggle cart sidebar
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            sidebar.classList.toggle('translate-x-full');
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty');
+                return;
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'checkout.html';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', displayDentalProducts);
+    </script>
+</body>
+</html>

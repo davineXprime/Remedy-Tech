@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Remedy Tech Zone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#FFFDF0',
+                            100: '#FFFBE0',
+                            200: '#FFF3A1',
+                            300: '#F0D16E',
+                            400: '#E1B03C',
+                            500: '#D4AF37',
+                            600: '#AA771C',
+                            700: '#805510',
+                            800: '#543505',
+                            900: '#2B1B04',
+                            950: '#110D03',
+                        }
+                    }
+                }
+            }
+        }</script>
+    <style>
+        .glass-panel {
+            background: rgba(17, 13, 3, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #110D03;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #AA771C;
+            border-radius: 4px;
+        }
+
+        .StripeElement {
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px 12px;
+            border: 1px solid #3b2817;
+            border-radius: 4px;
+            background-color: #110D03;
+            color: #d4af37;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .StripeElement--focus {
+            box-shadow: 0 1px 3px 0 rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-gold-950">
+
+    <canvas id="liquid-gold-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
+    <div class="fixed top-0 left-0 w-full h-full -z-20 bg-gradient-to-b from-gold-950 via-stone-950 to-gold-950 opacity-90 pointer-events-none"></div>
+
+    <nav class="sticky top-0 z-50 glass-panel border-b border-gold-500/10 py-3 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-lg bg-gradient-to-tr from-gold-700 to-gold-400 p-[1.5px] shadow-lg shadow-gold-500/20">
+                    <div class="w-full h-full bg-stone-950 rounded-md flex items-center justify-center">
+                        <span class="font-serif font-black text-xl text-gold-400 group-hover:text-gold-200 transition-colors">R</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif tracking-widest text-lg font-bold text-gold-400 group-hover:text-gold-200 transition-colors leading-none">REMEDY</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-500 font-medium">TECH ZONE</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 lg:px-8 py-16">
+        <h1 class="font-serif text-4xl font-bold text-gold-400 mb-12">Secure Checkout</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Checkout Form -->
+            <div class="md:col-span-2">
+                <form id="checkout-form" class="space-y-6">
+                    <!-- Contact Information -->
+                    <section class="glass-panel p-6 rounded-xl">
+                        <h2 class="text-xl font-serif font-bold text-gold-300 mb-4">Contact Information</h2>
+                        <div class="space-y-4">
+                            <input type="email" id="email" placeholder="Email" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                            <input type="text" id="name" placeholder="Full Name" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                            <input type="tel" id="phone" placeholder="Phone Number" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                        </div>
+                    </section>
+
+                    <!-- Shipping Address -->
+                    <section class="glass-panel p-6 rounded-xl">
+                        <h2 class="text-xl font-serif font-bold text-gold-300 mb-4">Shipping Address</h2>
+                        <div class="space-y-4">
+                            <input type="text" id="street" placeholder="Street Address" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" id="city" placeholder="City" required class="px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                                <input type="text" id="state" placeholder="State/Province" required class="px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" id="zip" placeholder="ZIP/Postal Code" required class="px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                                <input type="text" id="country" placeholder="Country" required class="px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Payment Information -->
+                    <section class="glass-panel p-6 rounded-xl">
+                        <h2 class="text-xl font-serif font-bold text-gold-300 mb-4">Payment Information</h2>
+                        <div id="card-element" class="mb-4"></div>
+                        <div id="card-errors" class="text-red-500 text-sm"></div>
+                    </section>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="w-full px-6 py-3 bg-gradient-to-r from-gold-600 to-gold-400 text-stone-950 font-semibold rounded-lg hover:from-gold-500 hover:to-gold-300 transition-all disabled:opacity-50">
+                        Complete Purchase
+                    </button>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="md:col-span-1">
+                <div class="glass-panel p-6 rounded-xl sticky top-24">
+                    <h2 class="text-xl font-serif font-bold text-gold-300 mb-6">Order Summary</h2>
+                    <div id="order-items" class="space-y-3 mb-6 max-h-64 overflow-y-auto">
+                        <!-- Items will be populated here -->
+                    </div>
+                    <div class="border-t border-gold-500/10 pt-4 space-y-2">
+                        <div class="flex justify-between text-stone-400">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-stone-400">
+                            <span>Shipping:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-lg font-semibold border-t border-gold-500/10 pt-4 mt-4">
+                            <span class="text-gold-400">Total:</span>
+                            <span id="total" class="text-gold-300">$0.00</span>
+                        </div>
+                    </div>
+                    <p class="text-stone-500 text-xs mt-6">🔒 Payments secured by Stripe. All data encrypted.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const stripe = Stripe('pk_test_placeholder_replace_with_real_key');
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Display order summary
+        function displayOrderSummary() {
+            const itemsContainer = document.getElementById('order-items');
+            itemsContainer.innerHTML = cartItems.map(item => `
+                <div class="flex justify-between text-sm">
+                    <span class="text-stone-300">${item.name} x${item.quantity}</span>
+                    <span class="text-gold-400">$${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `).join('');
+
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = subtotal > 100 ? 0 : 10; // Free shipping over $100
+            const total = subtotal + shipping;
+
+            document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+            document.getElementById('shipping').textContent = '$' + shipping.toFixed(2);
+            document.getElementById('total').textContent = '$' + total.toFixed(2);
+        }
+
+        // Handle form submission
+        document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+
+            const shippingAddress = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                street: document.getElementById('street').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zip: document.getElementById('zip').value,
+                country: document.getElementById('country').value,
+            };
+
+            try {
+                // Create payment intent on backend
+                const response = await fetch('http://localhost:3000/api/create-payment-intent', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        items: cartItems,
+                        email: document.getElementById('email').value,
+                        shippingAddress,
+                    }),
+                });
+
+                const { clientSecret, orderId, amount } = await response.json();
+
+                // Confirm payment with Stripe
+                const result = await stripe.confirmCardPayment(clientSecret, {
+                    payment_method: {
+                        card: cardElement,
+                        billing_details: {
+                            name: shippingAddress.name,
+                            email: document.getElementById('email').value,
+                        },
+                    },
+                });
+
+                if (result.error) {
+                    document.getElementById('card-errors').textContent = result.error.message;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Complete Purchase';
+                } else {
+                    // Payment successful
+                    localStorage.removeItem('cart');
+                    alert('Order placed successfully! Order ID: ' + orderId);
+                    window.location.href = 'index.html';
+                }
+            } catch (error) {
+                document.getElementById('card-errors').textContent = error.message;
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Complete Purchase';
+            }
+        });
+
+        cardElement.addEventListener('change', (event) => {
+            const displayError = document.getElementById('card-errors');
+            displayError.textContent = event.error ? event.error.message : '';
+        });
+
+        document.addEventListener('DOMContentLoaded', displayOrderSummary);
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+version: '3.9'
+
+services:
+  # Frontend - Nginx
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    container_name: remedy-tech-zone-web
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/index.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    environment:
+      - TZ=UTC
+    networks:
+      - remedy-network
+    depends_on:
+      - api
+
+  # Backend API - Node.js/Express
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "3000:3000"
+    container_name: remedy-tech-zone-api
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/remedy-tech-zone
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:-sk_test_placeholder}
+      - STRIPE_PUBLIC_KEY=${STRIPE_PUBLIC_KEY:-pk_test_placeholder}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET:-whsec_test_placeholder}
+    volumes:
+      - ./server.js:/app/server.js:ro
+      - ./package.json:/app/package.json:ro
+    networks:
+      - remedy-network
+    depends_on:
+      - mongo
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # MongoDB Database
+  mongo:
+    image: mongo:latest
+    container_name: remedy-tech-zone-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=remedy-tech-zone
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - remedy-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  mongo-data:
+
+networks:
+  remedy-network:
+    driver: bridge

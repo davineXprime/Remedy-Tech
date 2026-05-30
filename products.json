@@ -1,0 +1,346 @@
+{
+  "products": [
+    {
+      "id": "aroma-001",
+      "category": "Aroma",
+      "name": "Ultrasonic Aromatherapy Diffuser Pro",
+      "price": 129.99,
+      "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=500&fit=crop",
+      "description": "Advanced ultrasonic diffuser with 7-color LED therapy and whisper-quiet operation. Perfect for sleep, focus, and relaxation.",
+      "specs": [
+        "Capacity: 500ml",
+        "Runtime: 15+ hours",
+        "7 LED color modes",
+        "Whisper-quiet operation (<25dB)",
+        "Auto-shutoff timer",
+        "Hypoallergenic and BPA-free"
+      ],
+      "certifications": ["FDA Compliant", "CE Certified"],
+      "rating": 4.8,
+      "reviews": 156
+    },
+    {
+      "id": "aroma-002",
+      "category": "Aroma",
+      "name": "Portable Essential Oil Nebulizer",
+      "price": 89.99,
+      "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=500&fit=crop",
+      "description": "Portable nebulizing diffuser for travel and on-the-go aromatherapy. No water needed, pure essential oil dispersal.",
+      "specs": [
+        "Cold-diffusion technology",
+        "Battery-powered (USB rechargeable)",
+        "Compact size: 2.5 x 2.5 inches",
+        "Runtime: 4 hours per charge",
+        "Whisper-silent operation",
+        "Uses pure essential oils"
+      ],
+      "certifications": ["FDA Compliant"],
+      "rating": 4.6,
+      "reviews": 98
+    },
+    {
+      "id": "ear-care-001",
+      "category": "Ear-care",
+      "name": "Digital Ear Cleaning Scope with Light",
+      "price": 149.99,
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop",
+      "description": "High-definition digital otoscope for safe, visual ear cleaning. Features 3.9mm HD camera with LED light and 6 cleaning tips.",
+      "specs": [
+        "1080p HD camera",
+        "6.5mm ergonomic viewing angle",
+        "Bright LED illumination",
+        "6 stainless steel cleaning tips",
+        "USB rechargeable battery (20-hour runtime)",
+        "Compatible with iOS and Android"
+      ],
+      "certifications": ["FDA Cleared", "CE Certified"],
+      "rating": 4.7,
+      "reviews": 203
+    },
+    {
+      "id": "ear-care-002",
+      "category": "Ear-care",
+      "name": "Sonic Ear Wax Removal System",
+      "price": 199.99,
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop",
+      "description": "Ultrasonic ear cleaning device for safe, effective ear wax removal at home. Gentler than manual methods.",
+      "specs": [
+        "40kHz ultrasonic frequency",
+        "3 vibration intensity levels",
+        "Waterproof design (IPX7)",
+        "3 ergonomic tips",
+        "Runtime: 180 minutes per charge",
+        "Cordless with dock charging"
+      ],
+      "certifications": ["CE Certified", "RoHS Compliant"],
+      "rating": 4.5,
+      "reviews": 142
+    },
+    {
+      "id": "dental-001",
+      "category": "Dental_care",
+      "name": "Quantum Sonic Toothbrush Elite",
+      "price": 179.99,
+      "image": "https://images.unsplash.com/photo-1607613814075-e51df1bdc82f?w=500&h=500&fit=crop",
+      "description": "High-frequency sonic toothbrush with AI-powered brushing guidance. 62,000 vibrations per minute for superior cleaning.",
+      "specs": [
+        "62,000 vibrations/minute",
+        "5 brushing modes",
+        "Pressure sensor with feedback",
+        "2-minute smart timer",
+        "14-day battery (wireless charging)",
+        "Includes 4 replacement heads"
+      ],
+      "certifications": ["FDA Cleared", "CE Certified"],
+      "rating": 4.9,
+      "reviews": 521
+    },
+    {
+      "id": "dental-002",
+      "category": "Dental_care",
+      "name": "Portable Water Flosser Pro",
+      "price": 89.99,
+      "image": "https://images.unsplash.com/photo-1607613814075-e51df1bdc82f?w=500&h=500&fit=crop",
+      "description": "Cordless water flosser for deep cleaning between teeth and below the gumline. Ideal for implants and braces.",
+      "specs": [
+        "Wireless with USB charging",
+        "3 pressure settings",
+        "180ml reservoir",
+        "Runtime: 40 minutes per charge",
+        "3 interchangeable tips",
+        "Travel-friendly design"
+      ],
+      "certifications": ["FDA Cleared"],
+      "rating": 4.7,
+      "reviews": 287
+    },
+    {
+      "id": "eye-care-001",
+      "category": "Eye care",
+      "name": "Smart Blue Light Blocking Glasses",
+      "price": 129.99,
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop",
+      "description": "Premium blue light filtering glasses with anti-glare coating. Reduces eye strain during extended screen time.",
+      "specs": [
+        "99% blue light filtration",
+        "Anti-glare and anti-reflective coating",
+        "Lightweight polycarbonate frames",
+        "UV400 protection",
+        "Multiple frame styles available",
+        "Microfiber cleaning cloth included"
+      ],
+      "certifications": ["CE Certified", "UV Protection Verified"],
+      "rating": 4.6,
+      "reviews": 412
+    },
+    {
+      "id": "eye-care-002",
+      "category": "Eye care",
+      "name": "Thermal Eye Massager with Music",
+      "price": 99.99,
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop",
+      "description": "Vibrating eye massage device with heated compress and Bluetooth speaker. Relieves eye fatigue and improves circulation.",
+      "specs": [
+        "Gentle vibration massage",
+        "3 heat levels (up to 42°C)",
+        "Bluetooth speaker integration",
+        "15-minute auto-shutoff",
+        "USB rechargeable (7-hour battery)",
+        "Hypoallergenic silicone"
+      ],
+      "certifications": ["CE Certified"],
+      "rating": 4.4,
+      "reviews": 178
+    },
+    {
+      "id": "foot-care-001",
+      "category": "Foot_care",
+      "name": "Professional Foot Massager Pro Max",
+      "price": 249.99,
+      "image": "https://images.unsplash.com/photo-1596178065887-ba9ecf1f675d?w=500&h=500&fit=crop",
+      "description": "Shiatsu foot massager with heat therapy, air compression, and reflexology nodes. Relief for tired feet and improved circulation.",
+      "specs": [
+        "4D shiatsu massage",
+        "Air compression therapy",
+        "Adjustable heat (up to 45°C)",
+        "3 massage intensities",
+        "3 height adjustment levels",
+        "Fits shoe sizes up to US 13"
+      ],
+      "certifications": ["FDA Cleared", "CE Certified"],
+      "rating": 4.8,
+      "reviews": 634
+    },
+    {
+      "id": "foot-care-002",
+      "category": "Foot_care",
+      "name": "Portable Foot Spa with Heat",
+      "price": 149.99,
+      "image": "https://images.unsplash.com/photo-1596178065887-ba9ecf1f675d?w=500&h=500&fit=crop",
+      "description": "Compact foot spa with bubble massage, heat, and color-changing LED. Perfect for relaxation and detoxification.",
+      "specs": [
+        "Heated water up to 40°C",
+        "Bubble massage jets",
+        "Color-changing LED lights",
+        "Foldable for easy storage",
+        "Capacity: 6 liters",
+        "Remote control included"
+      ],
+      "certifications": ["CE Certified"],
+      "rating": 4.5,
+      "reviews": 256
+    },
+    {
+      "id": "hair-001",
+      "category": "Hair_and_Scalpe",
+      "name": "Laser Hair Growth Scalp Comb",
+      "price": 179.99,
+      "image": "https://images.unsplash.com/photo-1599599810694-d5e1cfc1d6b1?w=500&h=500&fit=crop",
+      "description": "Red light therapy comb for hair regrowth and scalp health. 660nm laser wavelength scientifically designed for hair follicle activation.",
+      "specs": [
+        "660nm red light therapy",
+        "12 laser diodes",
+        "3 intensity levels",
+        "Cordless with USB charging",
+        "Adjustable tooth spacing",
+        "Runtime: 25 minutes per charge"
+      ],
+      "certifications": ["FDA Cleared", "CE Certified"],
+      "rating": 4.7,
+      "reviews": 389
+    },
+    {
+      "id": "hair-002",
+      "category": "Hair_and_Scalpe",
+      "name": "Ionic Hair Dryer Pro Series",
+      "price": 129.99,
+      "image": "https://images.unsplash.com/photo-1599599810694-d5e1cfc1d6b1?w=500&h=500&fit=crop",
+      "description": "Professional-grade ionic hair dryer with ceramic coating and temperature control. Reduces frizz and drying time by 30%.",
+      "specs": [
+        "1800W motor",
+        "Negative ion technology",
+        "Ceramic coated barrel",
+        "3 heat settings + cool shot",
+        "2 speed settings",
+        "Lightweight ergonomic design"
+      ],
+      "certifications": ["CE Certified"],
+      "rating": 4.6,
+      "reviews": 521
+    },
+    {
+      "id": "health-001",
+      "category": "Health_monitoring",
+      "name": "Smart Holistic Health Monitor",
+      "price": 199.99,
+      "image": "https://images.unsplash.com/photo-1575925582863-57569c4b33f6?w=500&h=500&fit=crop",
+      "description": "All-in-one health monitoring device tracking heart rate, sleep, stress, and activity. AI-powered health insights.",
+      "specs": [
+        "Heart rate & HRV tracking",
+        "Sleep stage monitoring",
+        "Stress detection",
+        "14-day battery life",
+        "Waterproof (5ATM)",
+        "Smartphone app with AI coaching"
+      ],
+      "certifications": ["FDA Cleared", "CE Certified"],
+      "rating": 4.8,
+      "reviews": 467
+    },
+    {
+      "id": "health-002",
+      "category": "Health_monitoring",
+      "name": "Quantum Biofeedback Device",
+      "price": 299.99,
+      "image": "https://images.unsplash.com/photo-1575925582863-57569c4b33f6?w=500&h=500&fit=crop",
+      "description": "Non-invasive biofeedback scanner measuring 16 energy meridians. Real-time analysis and personalized wellness protocols.",
+      "specs": [
+        "16-point bio-impedance scanning",
+        "Real-time frequency analysis",
+        "Personalized wellness reports",
+        "Bluetooth connectivity",
+        "Software updates via cloud",
+        "Professional-grade diagnostic tool"
+      ],
+      "certifications": ["CE Certified", "Medical Device Class IIA"],
+      "rating": 4.9,
+      "reviews": 234
+    },
+    {
+      "id": "hygiene-001",
+      "category": "Hygiene_care",
+      "name": "UV Sanitizing Wand Pro",
+      "price": 79.99,
+      "image": "https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=500&h=500&fit=crop",
+      "description": "Portable UV-C sanitizer wand eliminating 99.99% of bacteria, viruses, and germs in seconds. Safe for all surfaces.",
+      "specs": [
+        "254nm UV-C wavelength",
+        "99.99% pathogen elimination",
+        "10-second kill time",
+        "Cordless with USB charging",
+        "3 sanitizing modes",
+        "Runtime: 120 minutes per charge"
+      ],
+      "certifications": ["CE Certified", "RoHS Compliant"],
+      "rating": 4.7,
+      "reviews": 612
+    },
+    {
+      "id": "hygiene-002",
+      "category": "Hygiene_care",
+      "name": "Smart Bidet Attachment Elite",
+      "price": 189.99,
+      "image": "https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=500&h=500&fit=crop",
+      "description": "Advanced bidet attachment with heated water, air drying, and deodorization. Easy retrofit to any existing toilet.",
+      "specs": [
+        "Adjustable water temperature (35-42°C)",
+        "5 spray patterns",
+        "Adjustable water pressure",
+        "Warm air drying",
+        "Deodorization function",
+        "Requires no electricity"
+      ],
+      "certifications": ["CE Certified", "NSF Certified"],
+      "rating": 4.6,
+      "reviews": 289
+    },
+    {
+      "id": "ebook-001",
+      "category": "E_books",
+      "name": "Complete Biohacking Optimization Guide",
+      "price": 29.99,
+      "image": "https://images.unsplash.com/photo-1507842072343-583f20270319?w=500&h=500&fit=crop",
+      "description": "Comprehensive 200-page guide covering nutrition, sleep optimization, exercise science, and longevity protocols.",
+      "specs": [
+        "200+ pages",
+        "PDF + ePub formats",
+        "50+ research references",
+        "10 actionable protocols",
+        "Lifetime digital access",
+        "Free updates included"
+      ],
+      "certifications": [],
+      "rating": 4.9,
+      "reviews": 456
+    },
+    {
+      "id": "ebook-002",
+      "category": "E_books",
+      "name": "Advanced Sleep Science Mastery",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1507842072343-583f20270319?w=500&h=500&fit=crop",
+      "description": "Science-based sleep optimization strategies. 150-page guide with 30+ research studies on circadian rhythm and sleep architecture.",
+      "specs": [
+        "150+ pages",
+        "PDF + ePub formats",
+        "30 sleep studies cited",
+        "8 tier sleep protocols",
+        "Circadian rhythm charts",
+        "Workbook included"
+      ],
+      "certifications": [],
+      "rating": 4.7,
+      "reviews": 289
+    }
+  ]
+}

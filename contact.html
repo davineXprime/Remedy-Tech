@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Remedy Tech Zone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#FFFDF0',
+                            100: '#FFFBE0',
+                            200: '#FFF3A1',
+                            300: '#F0D16E',
+                            400: '#E1B03C',
+                            500: '#D4AF37',
+                            600: '#AA771C',
+                            700: '#805510',
+                            800: '#543505',
+                            900: '#2B1B04',
+                            950: '#110D03',
+                        }
+                    }
+                }
+            }
+        }</script>
+    <style>
+        .glass-panel {
+            background: rgba(17, 13, 3, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #110D03;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #AA771C;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-gold-950">
+
+    <canvas id="liquid-gold-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
+    <div class="fixed top-0 left-0 w-full h-full -z-20 bg-gradient-to-b from-gold-950 via-stone-950 to-gold-950 opacity-90 pointer-events-none"></div>
+
+    <nav class="sticky top-0 z-50 glass-panel border-b border-gold-500/10 py-3 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-lg bg-gradient-to-tr from-gold-700 to-gold-400 p-[1.5px] shadow-lg shadow-gold-500/20">
+                    <div class="w-full h-full bg-stone-950 rounded-md flex items-center justify-center">
+                        <span class="font-serif font-black text-xl text-gold-400 group-hover:text-gold-200 transition-colors">R</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif tracking-widest text-lg font-bold text-gold-400 group-hover:text-gold-200 transition-colors leading-none">REMEDY</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-500 font-medium">TECH ZONE</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a href="about.html" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">About</a>
+                <a href="index.html#categories" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Categories</a>
+                <a href="index.html#blog" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Journal</a>
+                <a href="contact.html" class="text-sm font-medium text-gold-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 lg:px-8 py-16">
+        <h1 class="font-serif text-5xl font-bold text-gold-400 mb-4">Get in Touch</h1>
+        <p class="text-stone-400 mb-12">Have questions about our products? Need support? We're here to help.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Contact Info -->
+            <div>
+                <h2 class="text-2xl font-serif font-bold text-gold-300 mb-6">Contact Information</h2>
+                
+                <div class="glass-panel p-6 rounded-xl mb-4">
+                    <h3 class="text-gold-400 font-semibold mb-2">Email Support</h3>
+                    <p class="text-stone-300 mb-2">support@remedytechzone.com</p>
+                    <p class="text-stone-500 text-sm">Response within 24 hours</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-xl mb-4">
+                    <h3 class="text-gold-400 font-semibold mb-2">Phone Support</h3>
+                    <p class="text-stone-300 mb-2">1-800-REMEDY-1</p>
+                    <p class="text-stone-500 text-sm">Mon-Fri, 9 AM - 6 PM EST</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="text-gold-400 font-semibold mb-2">Business Hours</h3>
+                    <p class="text-stone-300 mb-1">Monday - Friday: 9 AM - 6 PM EST</p>
+                    <p class="text-stone-300 mb-1">Saturday: 10 AM - 4 PM EST</p>
+                    <p class="text-stone-300">Sunday: Closed</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div>
+                <h2 class="text-2xl font-serif font-bold text-gold-300 mb-6">Send us a Message</h2>
+                <form class="space-y-4" onsubmit="handleSubmit(event)">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gold-400 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gold-400 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition">
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gold-400 mb-2">Subject</label>
+                        <select id="subject" name="subject" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 focus:outline-none focus:border-gold-400 transition">
+                            <option value="">Select a subject...</option>
+                            <option value="product">Product Inquiry</option>
+                            <option value="order">Order Support</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="warranty">Warranty Claim</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gold-400 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 bg-stone-900 border border-gold-500/30 rounded-lg text-stone-200 placeholder-stone-500 focus:outline-none focus:border-gold-400 transition resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-gold-600 to-gold-400 text-stone-950 font-semibold rounded-lg hover:from-gold-500 hover:to-gold-300 transition-all">
+                        Send Message
+                    </button>
+                </form>
+                <p id="form-message" class="text-sm text-gold-400 mt-4 hidden"></p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section>
+            <h2 class="text-3xl font-serif font-bold text-gold-400 mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="glass-panel p-6 rounded-xl group cursor-pointer">
+                    <summary class="text-gold-300 font-semibold flex justify-between items-center">
+                        What is your return policy?
+                        <span class="group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-stone-400 mt-4">We offer a 60-day money-back guarantee on all products. If you're not satisfied, simply contact our support team with your order number for a full refund.</p>
+                </details>
+
+                <details class="glass-panel p-6 rounded-xl group cursor-pointer">
+                    <summary class="text-gold-300 font-semibold flex justify-between items-center">
+                        How long does shipping take?
+                        <span class="group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-stone-400 mt-4">Standard shipping takes 5-7 business days. Expedited shipping (2-3 business days) and overnight shipping are available at checkout. See our shipping policy for full details.</p>
+                </details>
+
+                <details class="glass-panel p-6 rounded-xl group cursor-pointer">
+                    <summary class="text-gold-300 font-semibold flex justify-between items-center">
+                        Are your products certified?
+                        <span class="group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-stone-400 mt-4">Yes. All our products meet FDA compliance requirements where applicable, and carry relevant certifications (CE, ISO 13485, etc.). Check individual product pages for specific certifications.</p>
+                </details>
+
+                <details class="glass-panel p-6 rounded-xl group cursor-pointer">
+                    <summary class="text-gold-300 font-semibold flex justify-between items-center">
+                        Do you ship internationally?
+                        <span class="group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-stone-400 mt-4">We currently ship to most countries worldwide. International shipping rates and times vary by destination. Contact support for your specific location.</p>
+                </details>
+
+                <details class="glass-panel p-6 rounded-xl group cursor-pointer">
+                    <summary class="text-gold-300 font-semibold flex justify-between items-center">
+                        What warranty is included?
+                        <span class="group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-stone-400 mt-4">Most products include a 1-year manufacturer's warranty covering defects in materials and workmanship. Extended warranties available. See our warranty policy for details.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gold-500/10 glass-panel mt-20 py-8 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Company</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="about.html" class="hover:text-gold-400 transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-gold-400 transition">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Policies</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/terms-of-service.html" class="hover:text-gold-400 transition">Terms of Service</a></li>
+                        <li><a href="policies/privacy-policy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+                        <li><a href="policies/refund-policy.html" class="hover:text-gold-400 transition">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Support</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/shipping-policy.html" class="hover:text-gold-400 transition">Shipping</a></li>
+                        <li><a href="policies/warranty.html" class="hover:text-gold-400 transition">Warranty</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/accessibility.html" class="hover:text-gold-400 transition">Accessibility</a></li>
+                        <li><a href="policies/disclaimer.html" class="hover:text-gold-400 transition">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gold-500/10 pt-6 text-center text-stone-500 text-sm">
+                <p>&copy; 2024 Remedy Tech Zone LLC. All rights reserved. | <span class="text-gold-400">Secure. Certified. Trustworthy.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('form-message');
+            msg.textContent = 'Thank you for your message! We\'ll be in touch within 24 hours.';
+            msg.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => msg.classList.add('hidden'), 5000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('liquid-gold-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    </script>
+</body>
+</html>

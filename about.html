@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Remedy Tech Zone | Our Mission & Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#FFFDF0',
+                            100: '#FFFBE0',
+                            200: '#FFF3A1',
+                            300: '#F0D16E',
+                            400: '#E1B03C',
+                            500: '#D4AF37',
+                            600: '#AA771C',
+                            700: '#805510',
+                            800: '#543505',
+                            900: '#2B1B04',
+                            950: '#110D03',
+                        }
+                    }
+                }
+            }
+        }</script>
+    <style>
+        .glass-panel {
+            background: rgba(17, 13, 3, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #110D03;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #AA771C;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans min-h-screen relative overflow-x-hidden selection:bg-gold-500 selection:text-gold-950">
+
+    <canvas id="liquid-gold-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
+    <div class="fixed top-0 left-0 w-full h-full -z-20 bg-gradient-to-b from-gold-950 via-stone-950 to-gold-950 opacity-90 pointer-events-none"></div>
+
+    <nav class="sticky top-0 z-50 glass-panel border-b border-gold-500/10 py-3 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-lg bg-gradient-to-tr from-gold-700 to-gold-400 p-[1.5px] shadow-lg shadow-gold-500/20">
+                    <div class="w-full h-full bg-stone-950 rounded-md flex items-center justify-center">
+                        <span class="font-serif font-black text-xl text-gold-400 group-hover:text-gold-200 transition-colors">R</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif tracking-widest text-lg font-bold text-gold-400 group-hover:text-gold-200 transition-colors leading-none">REMEDY</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-500 font-medium">TECH ZONE</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a href="about.html" class="text-sm font-medium text-gold-400">About</a>
+                <a href="index.html#categories" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Categories</a>
+                <a href="index.html#blog" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Journal</a>
+                <a href="contact.html" class="text-sm font-medium text-stone-300 hover:text-gold-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 lg:px-8 py-16">
+        <!-- Company Info Section -->
+        <section class="mb-20">
+            <h1 class="font-serif text-5xl font-bold text-gold-400 mb-6">About Remedy Tech Zone</h1>
+            <div class="glass-panel p-8 rounded-xl">
+                <h2 class="text-2xl font-serif font-bold text-gold-300 mb-4">Our Mission</h2>
+                <p class="text-stone-300 leading-relaxed mb-6">
+                    Remedy Tech Zone is dedicated to providing premium electronic healthcare and biohacking solutions that empower individuals to take control of their health and longevity. We curate the most advanced wellness technologies and evidence-based devices to support your journey toward optimal health.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gold-300 mb-2">Company Details</h3>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Business Name:</span> Remedy Tech Zone LLC</p>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Founded:</span> 2024</p>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Location:</span> United States</p>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Business Type:</span> Premium Wellness Tech Retailer</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gold-300 mb-2">Contact Information</h3>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Email:</span> <a href="mailto:support@remedytechzone.com" class="text-gold-400 hover:text-gold-200">support@remedytechzone.com</a></p>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Phone:</span> <a href="tel:+1-800-REMEDY-1" class="text-gold-400 hover:text-gold-200">1-800-REMEDY-1</a></p>
+                        <p class="text-stone-300 mb-1"><span class="text-gold-400">Support Hours:</span> Mon-Fri, 9 AM - 6 PM EST</p>
+                        <p class="text-stone-300"><span class="text-gold-400">Response Time:</span> Within 24 hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="mb-20">
+            <h2 class="font-serif text-4xl font-bold text-gold-400 mb-8">Our Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="text-xl font-serif font-bold text-gold-300 mb-3">Quality First</h3>
+                    <p class="text-stone-300">Every product is rigorously vetted for efficacy, safety, and scientific validation before inclusion in our catalog.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="text-xl font-serif font-bold text-gold-300 mb-3">Transparency</h3>
+                    <p class="text-stone-300">Complete disclosure of product specifications, certifications, sourcing, and usage guidelines so you can make informed decisions.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="text-xl font-serif font-bold text-gold-300 mb-3">Customer Trust</h3>
+                    <p class="text-stone-300">Industry-leading customer protections including our 60-day money-back guarantee and comprehensive warranties.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="mb-20">
+            <h2 class="font-serif text-4xl font-bold text-gold-400 mb-8">Leadership Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-panel p-6 rounded-xl">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 mb-4 flex items-center justify-center">
+                        <span class="text-3xl font-serif font-bold text-stone-950">JM</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gold-300 mb-1">James Morrison</h3>
+                    <p class="text-gold-400 text-sm mb-3">Founder & CEO</p>
+                    <p class="text-stone-300 text-sm mb-3">15+ years in healthcare technology and biohacking research. Previously led product development at leading wellness platforms.</p>
+                    <p class="text-stone-400 text-xs"><a href="#" class="text-gold-400 hover:text-gold-200">LinkedIn Profile</a></p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 mb-4 flex items-center justify-center">
+                        <span class="text-3xl font-serif font-bold text-stone-950">SL</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gold-300 mb-1">Sarah Liu</h3>
+                    <p class="text-gold-400 text-sm mb-3">Chief Medical Officer</p>
+                    <p class="text-stone-300 text-sm mb-3">MD with expertise in integrative medicine. Oversees all product safety, certifications, and medical compliance standards.</p>
+                    <p class="text-stone-400 text-xs"><a href="#" class="text-gold-400 hover:text-gold-200">LinkedIn Profile</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Standards -->
+        <section>
+            <h2 class="font-serif text-4xl font-bold text-gold-400 mb-8">Certifications & Compliance</h2>
+            <div class="glass-panel p-8 rounded-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gold-300 mb-4">Regulatory Compliance</h3>
+                        <ul class="space-y-2 text-stone-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>FDA Compliance for applicable medical devices</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>CE Marking for European market products</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>ISO 13485 Medical Device Quality Management</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>RoHS & WEEE Compliance</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gold-300 mb-4">Security & Data Protection</h3>
+                        <ul class="space-y-2 text-stone-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>GDPR Compliant</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>CCPA Compliant</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>SSL/TLS Encryption (all transactions)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 mt-1">✓</span>
+                                <span>PCI DSS Level 1 Compliance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gold-500/10 glass-panel mt-20 py-8 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Company</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="about.html" class="hover:text-gold-400 transition">About</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-gold-400 transition">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Policies</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/terms-of-service.html" class="hover:text-gold-400 transition">Terms of Service</a></li>
+                        <li><a href="policies/privacy-policy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+                        <li><a href="policies/refund-policy.html" class="hover:text-gold-400 transition">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Support</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/shipping-policy.html" class="hover:text-gold-400 transition">Shipping</a></li>
+                        <li><a href="policies/warranty.html" class="hover:text-gold-400 transition">Warranty</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-gold-400 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="policies/accessibility.html" class="hover:text-gold-400 transition">Accessibility</a></li>
+                        <li><a href="policies/disclaimer.html" class="hover:text-gold-400 transition">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gold-500/10 pt-6 text-center text-stone-500 text-sm">
+                <p>&copy; 2024 Remedy Tech Zone LLC. All rights reserved. | <span class="text-gold-400">Secure. Certified. Trustworthy.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('liquid-gold-canvas');
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    </script>
+</body>
+</html>
