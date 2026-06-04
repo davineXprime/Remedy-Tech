@@ -1,0 +1,270 @@
+{
+  "categories": [
+    {
+      "id": "ebooks",
+      "name": "E-Books & Guides",
+      "icon": "📗",
+      "color": "from-teal-500 to-teal-700"
+    },
+    {
+      "id": "aroma",
+      "name": "Aromatherapy",
+      "icon": "🌬️",
+      "color": "from-purple-500 to-purple-700"
+    },
+    {
+      "id": "dental",
+      "name": "Dental Care",
+      "icon": "🦷",
+      "color": "from-blue-500 to-blue-700"
+    },
+    {
+      "id": "eye",
+      "name": "Eye Care",
+      "icon": "👁️",
+      "color": "from-cyan-500 to-cyan-700"
+    },
+    {
+      "id": "foot",
+      "name": "Foot Care",
+      "icon": "👣",
+      "color": "from-orange-500 to-orange-700"
+    },
+    {
+      "id": "hair",
+      "name": "Hair & Scalp",
+      "icon": "💆",
+      "color": "from-pink-500 to-pink-700"
+    },
+    {
+      "id": "health",
+      "name": "Health Monitors",
+      "icon": "📊",
+      "color": "from-red-500 to-red-700"
+    },
+    {
+      "id": "hygiene",
+      "name": "Hygiene Tech",
+      "icon": "🧼",
+      "color": "from-green-500 to-green-700"
+    },
+    {
+      "id": "muscle",
+      "name": "Muscle Recovery",
+      "icon": "⚡",
+      "color": "from-yellow-500 to-yellow-700"
+    },
+    {
+      "id": "skin",
+      "name": "Skin Care",
+      "icon": "✨",
+      "color": "from-indigo-500 to-indigo-700"
+    },
+    {
+      "id": "upper",
+      "name": "Upper Body",
+      "icon": "🩻",
+      "color": "from-lime-500 to-lime-700"
+    },
+    {
+      "id": "lower",
+      "name": "Lower Body",
+      "icon": "🦵",
+      "color": "from-violet-500 to-violet-700"
+    },
+    {
+      "id": "apps",
+      "name": "Health Apps",
+      "icon": "📱",
+      "color": "from-slate-500 to-slate-700"
+    },
+    {
+      "id": "wellness",
+      "name": "Sexual Wellness",
+      "icon": "🍒",
+      "color": "from-rose-500 to-rose-700"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Biohacking Guide Book",
+      "category": "ebooks",
+      "price": 25,
+      "condition": "New",
+      "description": "Holistic growth through digital education.",
+      "link": "https://www.amazon.com/s?k=biohacking+guide+book"
+    },
+    {
+      "id": 2,
+      "title": "Longevity Manual & Workbook",
+      "category": "ebooks",
+      "price": 30,
+      "condition": "New",
+      "description": "Holistic growth through digital education.",
+      "link": "https://www.amazon.com/s?k=longevity+manual"
+    },
+    {
+      "id": 3,
+      "title": "App-Controlled Smart Diffuser",
+      "category": "aroma",
+      "price": 60,
+      "condition": "New",
+      "description": "Precision aromatherapy.",
+      "link": "https://www.amazon.com/s?k=app+controlled+smart+diffuser"
+    },
+    {
+      "id": 4,
+      "title": "HVAC Scent Diffuser Machine",
+      "category": "aroma",
+      "price": 169,
+      "condition": "New",
+      "description": "Precision aromatherapy.",
+      "link": "https://www.amazon.com/s?k=hvac+scent+diffuser+machine"
+    },
+    {
+      "id": 5,
+      "title": "Bluetooth Smart Toothbrush",
+      "category": "dental",
+      "price": 120,
+      "condition": "New",
+      "description": "Modern oral tech and connectivity.",
+      "link": "https://www.amazon.com/s?k=bluetooth+smart+toothbrush"
+    },
+    {
+      "id": 6,
+      "title": "High-Pressure Water Flosser",
+      "category": "dental",
+      "price": 70,
+      "condition": "New",
+      "description": "Modern oral tech and connectivity.",
+      "link": "https://www.amazon.com/s?k=high+pressure+water+flosser"
+    },
+    {
+      "id": 7,
+      "title": "Heated Compression Eye Massager",
+      "category": "eye",
+      "price": 80,
+      "condition": "New",
+      "description": "Precision vision solutions and relaxation.",
+      "link": "https://www.amazon.com/s?k=heated+compression+eye+massager"
+    },
+    {
+      "id": 8,
+      "title": "Smart Sleep Mask",
+      "category": "eye",
+      "price": 100,
+      "condition": "New",
+      "description": "Precision vision solutions and relaxation.",
+      "link": "https://www.amazon.com/s?k=smart+sleep+mask"
+    },
+    {
+      "id": 9,
+      "title": "Deep-Tissue Foot Massager",
+      "category": "foot",
+      "price": 130,
+      "condition": "New",
+      "description": "Deep tissue relief and advanced recovery.",
+      "link": "https://www.amazon.com/s?k=deep+tissue+foot+massager"
+    },
+    {
+      "id": 10,
+      "title": "Heated Foot Soaking Tub",
+      "category": "foot",
+      "price": 80,
+      "condition": "New",
+      "description": "Deep tissue relief and advanced recovery.",
+      "link": "https://www.amazon.com/s?k=heated+foot+soaking+tub"
+    },
+    {
+      "id": 11,
+      "title": "LLLT Hair-Growth Helmet",
+      "category": "hair",
+      "price": 599,
+      "condition": "New",
+      "description": "Scientific growth technology.",
+      "link": "https://www.amazon.com/s?k=lllt+hair+growth+helmet"
+    },
+    {
+      "id": 12,
+      "title": "High-Tech Ionic Hair Dryer",
+      "category": "hair",
+      "price": 250,
+      "condition": "New",
+      "description": "Scientific growth technology.",
+      "link": "https://www.amazon.com/s?k=high+tech+ionic+hair+dryer"
+    },
+    {
+      "id": 13,
+      "title": "Smart Ring Health Tracker",
+      "category": "health",
+      "price": 299,
+      "condition": "New",
+      "description": "Data-driven bodily insights.",
+      "link": "https://www.amazon.com/s?k=smart+ring+health+tracker"
+    },
+    {
+      "id": 14,
+      "title": "Continuous Glucose Monitor Patch",
+      "category": "health",
+      "price": 120,
+      "condition": "New",
+      "description": "Data-driven bodily insights.",
+      "link": "https://www.amazon.com/s?k=continuous+glucose+monitor+patch"
+    },
+    {
+      "id": 15,
+      "title": "At-Home Laser Hair Removal Device",
+      "category": "skin",
+      "price": 300,
+      "condition": "New",
+      "description": "Advanced skin treatment.",
+      "link": "https://www.amazon.com/s?k=at+home+laser+hair+removal"
+    },
+    {
+      "id": 16,
+      "title": "LED Light Therapy Mask",
+      "category": "skin",
+      "price": 250,
+      "condition": "New",
+      "description": "Advanced skin treatment.",
+      "link": "https://www.amazon.com/s?k=led+light+therapy+mask"
+    },
+    {
+      "id": 17,
+      "title": "Percussion Massage Gun",
+      "category": "muscle",
+      "price": 150,
+      "condition": "New",
+      "description": "Athletic recharging and energy.",
+      "link": "https://www.amazon.com/s?k=percussion+massage+gun"
+    },
+    {
+      "id": 18,
+      "title": "Vibrating Foam Roller",
+      "category": "muscle",
+      "price": 90,
+      "condition": "New",
+      "description": "Athletic recharging and energy.",
+      "link": "https://www.amazon.com/s?k=vibrating+foam+roller"
+    },
+    {
+      "id": 19,
+      "title": "Pelvic Floor Toning Device",
+      "category": "wellness",
+      "price": 150,
+      "condition": "New",
+      "description": "Premium tech for intimate wellness.",
+      "link": "https://www.amazon.com/s?k=pelvic+floor+toning+device"
+    },
+    {
+      "id": 20,
+      "title": "Smart Kegel Exerciser with App",
+      "category": "wellness",
+      "price": 100,
+      "condition": "New",
+      "description": "Premium tech for intimate wellness.",
+      "link": "https://www.amazon.com/s?k=smart+kegel+exerciser"
+    }
+  ]
+}

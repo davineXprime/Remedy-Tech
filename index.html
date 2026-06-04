@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedy Tech Zone - Premium Wellness Technology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" data-page="home">
+                <div class="logo-icon">
+                    <span>R</span>
+                </div>
+                <div class="logo-text">
+                    <h4>REMEDY</h4>
+                    <p>TECH ZONE</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="shop">Shop</a></li>
+                <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page">
+        <div class="hero">
+            <h1>Elevate Your Bio-Potential</h1>
+            <p>Explore our curated collection of advanced health technology, biohacking tools, and therapeutic devices designed to optimize your daily life.</p>
+            <br>
+            <button class="btn-primary" data-page="shop" onclick="router.navigate('shop')">
+                Browse Our Collection →
+            </button>
+        </div>
+
+        <section>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Why Choose Remedy Tech?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="glass-panel">
+                    <h3>🔬 Scientifically-Backed</h3>
+                    <p>Every product is selected for its research-backed efficacy in wellness optimization.</p>
+                </div>
+                <div class="glass-panel">
+                    <h3>🎯 Curated Selection</h3>
+                    <p>We handpick innovative health technologies from trusted manufacturers worldwide.</p>
+                </div>
+                <div class="glass-panel">
+                    <h3>💼 Affiliate Partners</h3>
+                    <p>Direct links to Amazon and trusted retailers for safe, verified purchasing.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SHOP PAGE -->
+    <div id="shop-page" class="page" style="display: none;">
+        <div class="page-title">
+            <h1>Our Technologies</h1>
+            <p>Select a category to explore wellness innovations</p>
+        </div>
+
+        <div id="category-filters"></div>
+        <div id="products-grid"></div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about-page" class="page" style="display: none;">
+        <div class="page-title">
+            <h1>About Remedy Tech Zone</h1>
+        </div>
+
+        <div class="glass-panel" style="max-width: 800px; margin: 0 auto;">
+            <h3>Our Mission</h3>
+            <p>Remedy Tech Zone is dedicated to bringing cutting-edge biohacking and wellness technology directly to your hands. We believe in the power of modern science combined with holistic health principles.</p>
+            
+            <h3>What We Offer</h3>
+            <p>We curate and recommend the most innovative electronic health devices, therapeutic tools, wellness literature, and health monitoring systems available today. Every product is carefully selected for quality, efficacy, and user value.</p>
+
+            <h3>Affiliate Model</h3>
+            <p>Remedy Tech Zone is an affiliate partner. We earn commissions from purchases made through our links, which helps us maintain this platform. Your support directly enables us to continue finding and recommending the best wellness tech.</p>
+
+            <h3>Our Values</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>✓ Transparency in recommendations</li>
+                <li>✓ Science-backed product selection</li>
+                <li>✓ Customer-first approach</li>
+                <li>✓ Continuous curation and updates</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-page" class="page" style="display: none;">
+        <div class="page-title">
+            <h1>Get in Touch</h1>
+            <p>Have questions? We'd love to hear from you</p>
+        </div>
+
+        <div class="glass-panel" style="max-width: 600px; margin: 0 auto;">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> contact@remedytech.zone</p>
+            <p><strong>Website:</strong> https://remedytech.zone</p>
+
+            <h3>Connect With Us</h3>
+            <p>Follow our latest product recommendations and wellness insights:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://twitter.com" target="_blank" style="color: var(--gold-400); text-decoration: none;">Twitter</a></li>
+                <li><a href="https://instagram.com" target="_blank" style="color: var(--gold-400); text-decoration: none;">Instagram</a></li>
+                <li><a href="https://linkedin.com" target="_blank" style="color: var(--gold-400); text-decoration: none;">LinkedIn</a></li>
+            </ul>
+
+            <h3>General Inquiries</h3>
+            <p>For partnership opportunities, product suggestions, or general feedback, please reach out to us via email.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Remedy Tech Zone. All rights reserved. | <a href="https://remedytech.zone" target="_blank" style="color: var(--gold-400); text-decoration: none;">remedytech.zone</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

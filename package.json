@@ -1,0 +1,16 @@
+{
+  "name": "remedy-tech-zone",
+  "version": "1.0.0",
+  "description": "Premium wellness technology affiliate platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["health", "wellness", "technology", "biohacking"],
+  "author": "davineXprime",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
