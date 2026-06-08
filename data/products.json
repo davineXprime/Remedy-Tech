@@ -42,12 +42,7 @@
       "icon": "📊",
       "color": "from-red-500 to-red-700"
     },
-    {
-      "id": "hygiene",
-      "name": "Hygiene Tech",
-      "icon": "🧼",
-      "color": "from-green-500 to-green-700"
-    },
+  
     {
       "id": "muscle",
       "name": "Muscle Recovery",
@@ -60,18 +55,7 @@
       "icon": "✨",
       "color": "from-indigo-500 to-indigo-700"
     },
-    {
-      "id": "upper",
-      "name": "Upper Body",
-      "icon": "🩻",
-      "color": "from-lime-500 to-lime-700"
-    },
-    {
-      "id": "lower",
-      "name": "Lower Body",
-      "icon": "🦵",
-      "color": "from-violet-500 to-violet-700"
-    },
+  
     {
       "id": "apps",
       "name": "Health Apps",
