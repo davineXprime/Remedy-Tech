@@ -88,13 +88,5 @@
       "description": "Software solutions providing recurring value, including meditation and mental wellness apps, productivity suites, and specialized biofeedback tracking.",
       "externalLink": ""
     },
-    {
-      "id": "sexual-awareness",
-      "name": "Sexual Awareness",
-      "icon": "🍒",
-      "color": "from-rose-500 to-rose-700",
-      "description": "High-tech sexual wellness products, including app-controlled smart devices and premium electronic stimulators designed for intimacy and health.",
-      "externalLink": ""
-    }
   ]
 }
