@@ -2,77 +2,99 @@
   "categories": [
     {
       "id": "monitoring",
-      "name": "Monitoring Devices",
-      "icon": "🩺",
-      "color": "from-teal-600 to-teal-800",
-      "productLink": "" 
+      "name": "Electronic Health Monitoring Devices",
+      "icon": "📊",
+      "color": "from-red-500 to-red-700",
+      "description": "Wearable or stationary diagnostic tools, such as smart scales and health trackers, that provide data-driven insights into body composition and physical metrics.",
+      "externalLink": ""
     },
     {
       "id": "ebooks",
-      "name": "E-Books & Guides",
+      "name": "E-books for Health",
       "icon": "📗",
-      "color": "from-teal-500 to-teal-700"
+      "color": "from-teal-500 to-teal-700",
+      "description": "Curated digital guides, workbooks, and manuals focused on biohacking, longevity, holistic wellness, and high-ticket affiliate strategies.",
+      "externalLink": ""
     },
     {
       "id": "aroma",
-      "name": "Aromatherapy",
+      "name": "Electronic Aroma Tools",
       "icon": "🌬️",
-      "color": "from-purple-500 to-purple-700"
+      "color": "from-purple-500 to-purple-700",
+      "description": "Advanced, app-controlled, or nebulizing diffusion devices that enhance home environments and therapeutic atmospheres through precision aromatherapy.",
+      "externalLink": ""
     },
     {
       "id": "dental",
-      "name": "Dental Care",
+      "name": "Electronic Dental Care",
       "icon": "🦷",
-      "color": "from-blue-500 to-blue-700"
+      "color": "from-blue-500 to-blue-700",
+      "description": "Next-generation oral health technology, including Bluetooth-connected smart toothbrushes, high-pressure water flossers, and professional-grade LED whitening systems.",
+      "externalLink": ""
     },
     {
       "id": "eye",
-      "name": "Eye Care",
+      "name": "Electronic Eye Care",
       "icon": "👁️",
-      "color": "from-cyan-500 to-cyan-700"
+      "color": "from-cyan-500 to-cyan-700",
+      "description": "Tech-focused solutions for vision and comfort, such as ultrasonic lens cleaners, heated compression massagers for strain relief, and specialized light therapy eyewear.",
+      "externalLink": ""
     },
     {
       "id": "foot",
-      "name": "Foot Care",
+      "name": "Electronic Foot Care",
       "icon": "👣",
-      "color": "from-orange-500 to-orange-700"
+      "color": "from-orange-500 to-orange-700",
+      "description": "Advanced devices designed for foot health and recovery, ranging from heated soaking tubs and deep-tissue massagers to compression therapy systems.",
+      "externalLink": ""
     },
     {
       "id": "hair",
-      "name": "Hair & Scalp",
+      "name": "Electronic Hair & Scalp Care",
       "icon": "💆",
-      "color": "from-pink-500 to-pink-700"
-    },
-    {
-      "id": "health",
-      "name": "Health Monitors",
-      "icon": "📊",
-      "color": "from-red-500 to-red-700"
+      "color": "from-pink-500 to-pink-700",
+      "description": "Scientific hair-growth solutions, including LLLT (Low-Level Laser Therapy) helmets, smart motorized scalp massagers, and high-tech ionic drying tools.",
+      "externalLink": ""
     },
     {
       "id": "muscle",
-      "name": "Muscle Recovery",
+      "name": "Electronic Muscle Recovery",
       "icon": "⚡",
-      "color": "from-yellow-500 to-yellow-700"
+      "color": "from-yellow-500 to-yellow-700",
+      "description": "High-performance tools for athletic recovery, featuring percussion massage guns and wireless electrotherapy patches for localized pain management.",
+      "externalLink": ""
     },
     {
       "id": "skin",
-      "name": "Skin Care",
+      "name": "Electronic Skin Care",
       "icon": "✨",
-      "color": "from-indigo-500 to-indigo-700"
+      "color": "from-indigo-500 to-indigo-700",
+      "description": "Tech-forward facial treatments, including LED light therapy masks, microcurrent toning devices, and ultrasonic skin-exfoliation tools.",
+      "externalLink": ""
+    },
+    {
+      "id": "upper-body",
+      "name": "Electronic Upper Body Care",
+      "icon": "🧍",
+      "color": "from-emerald-500 to-emerald-700",
+      "description": "Targeted tech for the neck, shoulders, and back, such as posture-correcting vibration sensors and wearable heat-therapy wraps.",
+      "externalLink": ""
     },
     {
       "id": "apps",
-      "name": "Health Apps",
+      "name": "Phone & Computer Apps for Health",
       "icon": "📱",
-      "color": "from-slate-500 to-slate-700"
+      "color": "from-slate-500 to-slate-700",
+      "description": "Software solutions providing recurring value, including meditation and mental wellness apps, productivity suites, and specialized biofeedback tracking.",
+      "externalLink": ""
     },
     {
-      "id": "wellness",
-      "name": "Sexual Wellness",
+      "id": "sexual-awareness",
+      "name": "Sexual Awareness",
       "icon": "🍒",
-      "color": "from-rose-500 to-rose-700"
+      "color": "from-rose-500 to-rose-700",
+      "description": "High-tech sexual wellness products, including app-controlled smart devices and premium electronic stimulators designed for intimacy and health.",
+      "externalLink": ""
     }
-  ],
-  "products": []
+  ]
 }
