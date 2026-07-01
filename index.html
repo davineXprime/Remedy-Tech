@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedy Tech Zone - Health Tech Affiliate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold-50: #FFFDF0;
+            --gold-100: #FFFBE0;
+            --gold-200: #FFF3A1;
+            --gold-300: #F0D16E;
+            --gold-400: #E1B03C;
+            --gold-500: #D4AF37;
+            --gold-600: #AA771C;
+            --gold-700: #805510;
+            --gold-800: #543505;
+            --gold-900: #2B1B04;
+            --gold-950: #110D03;
+            --stone-50: #FAFAF9;
+            --stone-100: #F5F5F4;
+            --stone-200: #E7E5E4;
+            --stone-300: #D6D3D1;
+            --stone-400: #A8A29E;
+            --stone-500: #78716B;
+            --stone-600: #57534E;
+            --stone-700: #44403C;
+            --stone-800: #292524;
+            --stone-900: #1C1917;
+            --stone-950: #0C0A09;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, var(--gold-950), var(--stone-950), var(--gold-950));
+            color: var(--stone-200);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: rgba(17, 13, 3, 0.75);
+            backdrop-filter: blur(12px);
+            padding: 2rem 5%;
+            text-align: center;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold-400);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--stone-300);
+            letter-spacing: 0.1em;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: rgba(17, 13, 3, 0.5);
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        nav a {
+            color: var(--stone-300);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        nav a:hover {
+            background: linear-gradient(135deg, var(--gold-600), var(--gold-400));
+            color: var(--stone-950);
+            border-color: var(--gold-400);
+            transform: translateY(-3px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 6rem 5% 4rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            color: var(--gold-400);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            color: var(--stone-300);
+        }
+        
+        .categories {
+            padding: 3rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .category-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s, box-shadow 0.4s;
+            cursor: pointer;
+            position: relative;
+            background: rgba(17, 13, 3, 0.75);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+        
+        .category-img {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(17, 13, 3, 0.5));
+        }
+        
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-link {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(17, 13, 3, 0.9);
+            color: var(--stone-200);
+            padding: 12px 32px;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--gold-400);
+            transition: all 0.3s;
+            z-index: 10;
+            font-size: 0.9rem;
+        }
+        
+        .product-link:hover {
+            background: linear-gradient(135deg, var(--gold-600), var(--gold-400));
+            color: var(--stone-950);
+            transform: translateX(-50%) translateY(-3px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            color: var(--stone-400);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin: 4rem 0 2rem;
+            color: var(--gold-400);
+            letter-spacing: 0.05em;
+        }
+
+        .blog-section {
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(12px);
+        }
+
+        .blog-card:hover {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .blog-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold-300);
+        }
+
+        .blog-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            color: var(--stone-300);
+        }
+
+        .about-section {
+            padding: 3rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 1rem 0;
+            opacity: 0.9;
+            color: var(--stone-300);
+        }
+
+        .about-section strong {
+            color: var(--gold-400);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">REMEDY TECH ZONE</div>
+        <p class="tagline">Smart Tech for Better Health</p>
+    </header>
+    
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">About</a>
+    </nav>
+    
+    <div class="hero">
+        <h1>Health Technology<br>That Actually Works</h1>
+        <p>Affiliate recommendations for the best electronic health, wellness & recovery devices</p>
+    </div>
+    
+    <h2 class="section-title" id="products">Featured Products</h2>
+    
+    <div class="categories">
+        <!-- Apps -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc2ZTAwMCIvPjx0ZXh0IHg9IjQwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjcwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+UGhvbmUgJmFtcDsgQ29tcHV0ZXI8L3RleHQ+PHRleHQgeD0iNDAwIiB5PSIzMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIHN0eWxlPSJmb250LXNpemU6NzBweDtmb250LXdlaWdodDo3MDA7Zm9udC1mYW1pbHk6J1BvcHBpbnMnLHNhbnMtc2VyaWY7Ij5BcHBzIGZvciBIZWFsdGg8L3RleHQ+PC9zdmc+" alt="Phone & Computer Apps for Health">
+            </div>
+            <a href="https://amzn.to/3TaCRPw" target="_blank" class="product-link">Shop Apps →</a>
+        </div>
+        
+        <!-- Dental -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzAwYjhmZiIvPjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjgwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjM4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo4MHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPkRlbnRhbCBDYXJlPC90ZXh0Pjwvc3ZnPg==" alt="Electronic Dental Care">
+            </div>
+            <a href="https://amzn.to/3SGp3w4" target="_blank" class="product-link">Shop Dental →</a>
+        </div>
+        
+        <!-- Health Monitoring Devices -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2ZmMzMzMyIvPjx0ZXh0IHg9IjQwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjY1cHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjI1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo2NXB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPkhlYWx0aDwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo2NXB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPk1vbml0b3JpbmcgRGV2aWNlczwvdGV4dD48L3N2Zz4=" alt="Electronic Health Monitoring Devices">
+            </div>
+            <a href="https://amzn.to/4oTCk0g" target="_blank" class="product-link">Shop Monitors →</a>
+        </div>
+        
+        <!-- Aroma -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2ExMGZmZiIvPjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjgwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjM4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo4MHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPkFyb21hIFRvb2xzPC90ZXh0Pjwvc3ZnPg==" alt="Electronic Aroma Tools">
+            </div>
+            <a href="https://amzn.to/44JzsK1" target="_blank" class="product-link">Shop Aroma →</a>
+        </div>
+        
+        <!-- Muscle Recovery -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2ZmZWUwMCIvPjx0ZXh0IHg9IjQwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjcwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo3MHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPk11c2NsZSBSZWNvdmVyeTwvdGV4dD48L3N2Zz4=" alt="Electronic Muscle Recovery">
+            </div>
+            <a href="https://amzn.to/4gUjSCC" target="_blank" class="product-link">Shop Muscle →</a>
+        </div>
+        
+        <!-- Hair & Scalp -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2ZmMjU3YiIvPjx0ZXh0IHg9IjQwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjY1cHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjMxMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo2NXB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPkhhaXIgJmFtcDsgU2NhbHA8L3RleHQ+PHRleHQgeD0iNDAwIiB5PSIzOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIHN0eWxlPSJmb250LXNpemU6NjVweDtmb250LXdlaWdodDo3MDA7Zm9udC1mYW1pbHk6J1BvcHBpbnMnLHNhbnMtc2VyaWY7Ij5DYXJlPC90ZXh0Pjwvc3ZnPg==" alt="Electronic Hair & Scalp Care">
+            </div>
+            <a href="https://amzn.to/4xOk2Sa" target="_blank" class="product-link">Shop Hair →</a>
+        </div>
+        
+        <!-- Eye Care -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzA2YzVmZiIvPjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjgwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjM4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo4MHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPkV5ZSBDYXJLPC90ZXh0Pjwvc3ZnPg==" alt="Electronic Eye Care">
+            </div>
+            <a href="https://amzn.to/4vaiiA1" target="_blank" class="product-link">Shop Eye Care →</a>
+        </div>
+        
+        <!-- Skin Care -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2ZmZWUwMCIvPjx0ZXh0IHg9IjQwMCIgeT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMDAwMDAwIiBzdHlsZT0iZm9udC1zaXplOjcwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjM4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzAwMDAwMCIgc3R5bGU9ImZvbnQtc2l6ZTo3MHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPlNraW4gQ2FyZTwvdGV4dD48L3N2Zz4=" alt="Electronic Skin Care">
+            </div>
+            <a href="https://amzn.to/4y2z7jm" target="_blank" class="product-link">Shop Skin →</a>
+        </div>
+        
+        <!-- FOOT CARE - GENERATED -->
+        <div class="category-card">
+            <div class="category-img">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzAwZjdhMSIvPjx0ZXh0IHg9IjQwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBzdHlsZT0iZm9udC1zaXplOjcwcHg7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtZmFtaWx5OidQb3BwaW5zJyxzYW5zLXNlcmlmOyI+RWxlY3Ryb25pYzwvdGV4dD48dGV4dCB4PSI0MDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZmZmZiIgc3R5bGU9ImZvbnQtc2l6ZTo3MHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LWZhbWlseTonUG9wcGlucycsc2Fucy1zZXJpZjsiPkZvb3QgQ2FyZTwvdGV4dD48L3N2Zz4=" alt="Electronic Foot Care">
+            </div>
+            <a href="https://amzn.to/4blMLnJ" target="_blank" class="product-link">Shop Foot Care →</a>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="blog">Blog</h2>
+    <div class="blog-section">
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h3>Why Wearable Health Tech?</h3>
+                <p>Discover how wearable devices track your health metrics in real-time and help optimize your wellness routine for better results.</p>
+            </div>
+            <div class="blog-card">
+                <h3>The Future of Biohacking</h3>
+                <p>Explore cutting-edge biohacking technologies and how they're revolutionizing personal health optimization and recovery.</p>
+            </div>
+            <div class="blog-card">
+                <h3>Affiliate Transparency</h3>
+                <p>We believe in honest recommendations. Our affiliate links help support this site while providing you with carefully vetted products.</p>
+            </div>
+            <div class="blog-card">
+                <h3>Recovery Tech Essentials</h3>
+                <p>Learn which electronic recovery tools are backed by science and which ones deliver real results for athletes and fitness enthusiasts.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="about">About</h2>
+    <div class="about-section">
+        <p><strong>Remedy Tech Zone</strong> is your trusted guide to health technology and wellness devices. We specialize in recommending affiliate products that are scientifically-backed and proven to deliver real results.</p>
+        <p>Our mission is to make cutting-edge health technology accessible and understandable. Every product recommendation is carefully researched for quality, efficacy, and user value.</p>
+        <p><strong>Affiliate Disclosure:</strong> Remedy Tech Zone is an affiliate partner. We earn a small commission from purchases made through our links, at no extra cost to you. Your support helps us continue curating the best health tech recommendations.</p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Remedy Tech Zone • Affiliate links • We earn a small commission when you shop through our links (at no extra cost to you)</p>
+    </footer>
+</body>
+</html>
