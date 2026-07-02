@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /BingSiteAuth.xml
+
+Sitemap: https://www.remedytech.zone/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
