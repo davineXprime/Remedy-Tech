@@ -1,0 +1,16 @@
+/* main.css - extracted from original rtz.html */
+
+.amazon-btn {
+    background: linear-gradient(180deg, #FFC200 0%, #FF9900 100%);
+    color: #0F172A;
+    transition: all 0.2s ease-in-out;
+}
+.amazon-btn:hover {
+    background: linear-gradient(180deg, #FFB000 0%, #E68A00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -6px rgba(255, 153, 0, 0.45);
+}
+
+/* small helper styles (kept minimal because Tailwind is used) */
+img[alt="Generac 12,500W"] { border-radius: 12px; }
+
