@@ -103,6 +103,7 @@ body {
 
 /* CTA Button */
 .cta-button {
+  width: 100%;
   background: var(--green);
   color: var(--bg-white);
   padding: 14px 24px;
@@ -111,6 +112,7 @@ body {
   font-size: 18px;
   cursor: pointer;
   margin-top: 10px;
+  box-sizing: border-box;
 }
 
 .cta-button:hover {
@@ -151,6 +153,7 @@ body {
   height: 48px;
   border-radius: 50%;
   border: 2px solid var(--green);
+  flex-shrink: 0;
 }
 
 .avatar-female {
