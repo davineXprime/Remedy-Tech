@@ -1,9 +1,10 @@
 :root {
-  --blue: #004c99;
-  --green: #00a86b;
-  --light-blue: #e6f0ff;
-  --text-dark: #003366;
-  --text-muted: #666;
+  --green: #22c55e;
+  --black: #1f2937;
+  --orange: #f97316;
+  --light-green: #dcfce7;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
   --bg-white: #fff;
 }
 
@@ -23,7 +24,7 @@ body {
 
 /* Header */
 .header {
-  background: var(--blue);
+  background: var(--black);
   color: var(--bg-white);
   padding: 14px 18px;
   display: flex;
@@ -34,6 +35,7 @@ body {
 .logo {
   font-size: 20px;
   font-weight: bold;
+  color: var(--orange);
 }
 
 .header-icons {
@@ -56,6 +58,7 @@ body {
 .product-text h1 {
   margin: 0 0 8px;
   font-size: 22px;
+  color: var(--black);
 }
 
 .feature-list {
@@ -66,19 +69,22 @@ body {
 .feature-list li::before {
   content: "✔ ";
   color: var(--green);
+  font-weight: bold;
 }
 
 .product-visual {
-  border: 1px solid var(--green);
+  border: 2px solid var(--green);
   border-radius: 12px;
   padding: 16px;
   text-align: center;
+  background: var(--light-green);
 }
 
 .product-image {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 12px;
+  max-height: 250px;
 }
 
 .price {
@@ -97,26 +103,28 @@ body {
 }
 
 .discount {
-  color: red;
+  color: var(--orange);
   font-weight: bold;
 }
 
 /* CTA Button */
 .cta-button {
   width: 100%;
-  background: var(--green);
+  background: var(--orange);
   color: var(--bg-white);
   padding: 14px 24px;
   border: none;
   border-radius: 999px;
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
   box-sizing: border-box;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #00925f;
+  background: #ea580c;
 }
 
 /* Details Section */
@@ -129,23 +137,43 @@ body {
   padding: 0;
 }
 
+.details-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: var(--text-dark);
+}
+
+.details-list li:last-child {
+  border-bottom: none;
+}
+
 .detail-text {
   margin-top: 12px;
   line-height: 1.5;
+  color: var(--text-muted);
 }
 
 /* Reviews */
 .reviews-section {
-  background: var(--light-blue);
+  background: var(--light-green);
   padding: 16px;
   border-radius: 12px;
   margin-top: 24px;
+  border: 2px solid var(--green);
+}
+
+.reviews-section h2 {
+  color: var(--black);
+  margin-top: 0;
 }
 
 .review-card {
   display: flex;
   gap: 12px;
   margin-top: 12px;
+  background: var(--bg-white);
+  padding: 12px;
+  border-radius: 8px;
 }
 
 .review-avatar {
@@ -157,15 +185,21 @@ body {
 }
 
 .avatar-female {
-  background: pink;
+  background: linear-gradient(135deg, var(--orange), var(--green));
 }
 
 .avatar-male {
-  background: lightblue;
+  background: linear-gradient(135deg, var(--green), var(--black));
 }
 
 .review-name {
-  color: var(--text-muted);
+  color: var(--black);
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.review-content p {
+  margin: 4px 0;
   font-size: 14px;
 }
 
@@ -173,14 +207,24 @@ body {
 .footer {
   padding: 16px;
   text-align: center;
+  background: var(--black);
+  color: var(--bg-white);
+  margin-top: 24px;
 }
 
 .footer-links a {
   margin: 0 8px;
-  color: var(--blue);
+  color: var(--orange);
   text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
 .footer-badges {
   margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
 }
