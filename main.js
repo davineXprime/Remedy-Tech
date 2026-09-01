@@ -1,16 +1,12 @@
-// rtz.js - small site JS extracted from rtz.html
-// Initializes Lucide icons and any small client behaviors
+// Amazon affiliate link
+const affiliateLink = "https://amzn.to/4xzHX7w";
 
-document.addEventListener('DOMContentLoaded', function () {
-    try {
-        if (typeof lucide !== 'undefined' && lucide) {
-            // Replace all data-lucide icons with SVGs
-            lucide.createIcons();
-        }
-    } catch (e) {
-        // fail silently - icons will remain as data attributes if script fails
-        console.warn('Lucide init failed', e);
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const buyButton = document.getElementById("buyButton");
 
-    // Any future JS (analytics, CTA tracking) can go here
+  if (buyButton) {
+    buyButton.addEventListener("click", () => {
+      window.open(affiliateLink, "_blank", "noopener,noreferrer");
+    });
+  }
 });
