@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clear-eyed field notes on wearable AI and health hardware."
+    />
+    <title>Remedy Tech Zone | Wearable Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23c4e87d'/%3E%3Cpath d='M20 50h15l8-20 14 40 8-20h15' fill='none' stroke='%23081214' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="ambient-glow" aria-hidden="true"></div>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#" data-reset-filter aria-label="Return to all field notes">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation">
+              <path d="M3 12h4l2.1-6.5L13 18l2.3-6H21" />
+            </svg>
+          </span>
+          <span>
+            <span class="brand-name">Remedy</span>
+            <span class="brand-meta">Tech zone / 2026</span>
+          </span>
+        </a>
+
+        <div class="header-signal">
+          <span class="signal-dot" aria-hidden="true"></span>
+          <span>Signal is live</span>
+          <span class="header-divider" aria-hidden="true"></span>
+          <span>Power · Prep · Tech</span>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="sr-only">Toggle navigation menu</span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </header>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <span><span class="signal-dot" aria-hidden="true"></span> Signal is live</span>
+        <span>Power · Prep · Tech</span>
+      </div>
+
+      <main>
+        <section class="intro">
+          <div class="intro-copy">
+            <p class="eyebrow"><span></span> The field guide for wearable intelligence</p>
+            <h1>Better tools<br /><em>for feeling</em> ready.</h1>
+            <p class="intro-description">
+              Clear-eyed reads on the hardware that watches, listens, and learns alongside you.
+              No hype cycles. Just useful signals for the curious and health-conscious.
+            </p>
+          </div>
+          <aside class="issue-note">
+            <p class="issue-kicker">
+              <span class="spark" aria-hidden="true"></span> This week in tech
+            </p>
+            <p>Three field notes on the quiet shift from screens to ambient health intelligence.</p>
+            <div class="issue-meta">
+              <span>Updated 18.06.26</span>
+              <span class="meta-dot" aria-hidden="true"></span>
+              <span>Issue 004</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="filter-section" aria-labelledby="filter-heading">
+          <div class="filter-label">
+            <span class="filter-number">01</span>
+            <span class="filter-rule" aria-hidden="true"></span>
+            <span id="filter-heading">Choose your signal</span>
+          </div>
+          <div class="filters" role="tablist" aria-label="Article categories">
+            <button class="filter-button is-active" type="button" role="tab" aria-selected="true" data-filter="all">
+              All field notes <span>03</span>
+            </button>
+            <button class="filter-button" type="button" role="tab" aria-selected="false" data-filter="glasses">
+              Meta glasses <span>01</span>
+            </button>
+            <button class="filter-button" type="button" role="tab" aria-selected="false" data-filter="rings">
+              Smart rings <span>01</span>
+            </button>
+            <button class="filter-button" type="button" role="tab" aria-selected="false" data-filter="watches">
+              Smart watches <span>01</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="articles-grid" id="articles-container" aria-live="polite" aria-label="Field notes">
+          <!-- Article cards are rendered by script.js. -->
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© 2026 Remedy Tech Zone</span>
+        <span class="footer-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 12c-2.8 4.7-7.3 6.5-11.2 3.8C5.4 13.5 4.9 9.1 7.2 6.2c1.4-1.8 4.3-2.2 5.8.2 1.4-2.4 4.3-2 5.5-.4" />
+          </svg>
+          Thoughtful hardware for a more capable day.
+        </span>
+      </footer>
+    </div>
+
+    <div class="modal-backdrop" id="article-modal" hidden>
+      <section class="article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-heading">
+          <div>
+            <span class="modal-badge" id="modal-badge">Category</span>
+            <h2 id="modal-title">Article title</h2>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close article">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-meta" id="modal-meta"></div>
+        <p class="modal-body" id="modal-body"></p>
+        <div class="modal-takeaway">
+          <span class="takeaway-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation">
+              <path d="M3 12h4l2.1-6.5L13 18l2.3-6H21" />
+            </svg>
+          </span>
+          <span>The useful bit: choose the tool that disappears into your routine.</span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
