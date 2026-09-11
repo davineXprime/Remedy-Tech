@@ -7,7 +7,7 @@ const articles = [
     teaser:
       "Equipped with a 12MP camera, open-ear audio, and real-time voice-activated Meta AI for seamless capture and interaction.",
     fullContent:
-      "Smart glasses have officially crossed the line from novelty concept to daily essential. With integrated 12MP ultra-wide cameras, open-ear spatial audio, and continuous voice access to Meta AI, these wearables allow you to record high-definition POV footage without pulling out a smartphone. Beyond camera capabilities, voice processing lets you instantly solve queries, translate foreign text on sight, and take phone calls completely hands-free while navigating busy environments.",
+      "Smart glasses have officially crossed the line from novelty concept to daily essential. With integrated 12MP ultra-wide cameras, open-ear spatial audio, and continuous voice access to Meta AI, these glasses transform how we capture moments and interact with information.\n\nThe 12MP ultra-wide camera captures stunning POV footage. Open-ear audio lets you stay connected without isolation. Real-time Meta AI integration answers questions on demand. The lightweight design ensures all-day comfort.",
     author: "Remedy editorial",
     date: "Jun 18, 2026",
     readTime: "6 min read",
@@ -22,7 +22,7 @@ const articles = [
     teaser:
       "After weeks of dealing with smartwatch screen distractions and constant charging routines, switching to a lightweight smart ring completely transformed my daily health monitoring.",
     fullContent:
-      "For years, I relied on a high-end smartwatch to track my daily movement and sleep patterns. While the data was helpful, the execution wasn't: the wrist bulk was uncomfortable at night, the screen constantly lit up my dark bedroom, and needing to charge it every single day created endless friction.\n\nMaking the switch to a sleek, screenless smart ring changed everything. Because it reads biometrics directly from the arterial blood flow in your finger, the accuracy for heart rate variability (HRV), resting heart rate, and body temperature fluctuations is remarkably precise.\n\nThe true game-changer is the daily Readiness and Sleep scoring system. Instead of drowning me in raw charts, the companion algorithms analyze my biometric baselines to tell me exactly how well my body recovered overnight. On days when my readiness score is low, I adjust my intensity to prevent burnout. On high-score days, I know I'm primed to perform. Combined with a multi-day battery life and water resistance that lets me wear it in the shower or pool, it delivers true zero-friction health tracking that blends seamlessly into daily life.",
+      "For years, I relied on a high-end smartwatch to track my daily movement and sleep patterns. While the data was helpful, the execution wasn't: the wrist bulk was uncomfortable at night, the screen was a constant distraction, and I was charging it every single day.\n\nThen I switched to a smart ring. The difference was immediately obvious: 7-day battery life means charging once a week. No screen means no notifications pulling me away. And the AI-powered recovery insights are eerily accurate. If you value data without the distraction, a smart ring might be your answer.",
     author: "Remedy editorial",
     date: "Sep 03, 2026",
     readTime: "4 min read",
@@ -37,7 +37,7 @@ const articles = [
     teaser:
       "Track complex workout metrics, overall cardiovascular health, and real-time energy readiness scores backed by onboard AI.",
     fullContent:
-      "The current generation of smartwatches has evolved into dynamic personal health coaches. Utilizing sophisticated machine learning models, modern watches aggregate your baseline recovery rates, heart rate fluctuations, and activity loads to suggest personalized training intensities every morning. Featuring crisp AMOLED displays, high-durability sapphire glass, and independent GPS connectivity, they remain a staple for active performance tracking.",
+      "The current generation of smartwatches has evolved into dynamic personal health coaches. Utilizing sophisticated machine learning models, modern watches aggregate your baseline recovery rate, current stress levels, and real-time biometric data to deliver a daily readiness score.\n\nThis isn't just step counting anymore. These devices track VO2 max, sleep quality phases, training load, and even predict when you're at risk of overtraining. If you're serious about performance optimization, a modern smartwatch is a no-brainer.",
     author: "Jon Bell",
     date: "Jun 04, 2026",
     readTime: "7 min read",
@@ -51,7 +51,10 @@ const filterButtons = [...document.querySelectorAll("[data-filter]")];
 const modal = document.querySelector("#article-modal");
 const modalBadge = document.querySelector("#modal-badge");
 const modalTitle = document.querySelector("#modal-title");
-const modalMeta = document.querySelector("#modal-meta");
+const modalAuthor = document.querySelector("#modal-author");
+const modalDate = document.querySelector("#modal-date");
+const modalReadtime = document.querySelector("#modal-readtime");
+const modalStat = document.querySelector("#modal-stat");
 const modalBody = document.querySelector("#modal-body");
 const closeModalButton = document.querySelector("[data-close-modal]");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -63,21 +66,17 @@ const accentColors = {
   amber: "#f0c56e",
 };
 
-function arrowIcon() {
-  return `
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 12h13M13 6l6 6-6 6" />
-    </svg>
-  `;
+function clockIcon() {
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 7v5l3 2" />
+  </svg>`;
 }
 
-function clockIcon() {
-  return `
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M12 7v5l3 2" />
-    </svg>
-  `;
+function arrowIcon() {
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 12h13M13 6l6 6-6 6" />
+  </svg>`;
 }
 
 function signalArt(article) {
@@ -155,13 +154,11 @@ function openArticle(articleId) {
   modalBadge.dataset.accent = article.accent;
   modalBadge.textContent = article.badge;
   modalTitle.textContent = article.title;
+  modalAuthor.textContent = article.author;
+  modalDate.textContent = article.date;
+  modalReadtime.textContent = article.readTime;
+  modalStat.textContent = article.stat;
   modalBody.textContent = article.fullContent;
-  modalMeta.innerHTML = `
-    <span>${article.author}</span>
-    <span>${article.date}</span>
-    <span>${article.readTime}</span>
-    <span class="modal-stat">${article.stat}</span>
-  `;
   modal.hidden = false;
   document.body.style.overflow = "hidden";
   closeModalButton.focus();
