@@ -1,142 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>RemedyTech Magazine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header class="rt-header">
-    <div class="rt-logo">REMEDYTECH</div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clear-eyed field notes on wearable AI and health hardware. Remedy Tech Zone: in-depth articles about Meta Smart Glasses, Smart Rings, and Smartwatches."
+    />
+    <title>Remedy Tech Zone — Wearable AI & Health Hardware Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="ambient-glow" aria-hidden="true"></div>
 
-  <!-- Main -->
-  <main class="rt-main">
-    <!-- Hero / Featured Article -->
-    <section class="rt-hero glass">
-      <div class="rt-hero-content">
-        <h1>Best Offer on Meta Glasses and Smart Ring Bundle!</h1>
-        <p>Get the ultimate wearable combo deal for a limited time.</p>
-        <button class="rt-btn rt-open-article" data-article="meta-bundle">
-          Read More
+    <div class="site-shell">
+      <!-- Header -->
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Remedy Tech Zone home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation">
+              <path d="M3 12h4l2.1-6.5L13 18l2.3-6H21" />
+            </svg>
+          </span>
+          <span>
+            <span class="brand-name">Remedy</span>
+            <span class="brand-meta">Tech zone / 2026</span>
+          </span>
+        </a>
+        <div class="header-signal">
+          <span class="signal-dot"></span>
+          <span>All systems nominal</span>
+        </div>
+        <button class="menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
         </button>
-      </div>
-      <div class="rt-hero-image">
-        <img src="https://via.placeholder.com/600x350?text=Meta+Glasses+%2B+Smart+Ring" alt="Meta Glasses and Smart Ring" />
-      </div>
-    </section>
+        <nav class="mobile-menu" id="mobile-menu" hidden>
+          <span><a href="#filters">Filters</a></span>
+          <span><a href="#articles">Articles</a></span>
+        </nav>
+      </header>
 
-    <!-- Article Grid -->
-    <section class="rt-articles">
-      <div class="rt-article-card glass rt-open-article" data-article="smartwatch-vs-bands">
-        <img src="https://via.placeholder.com/500x300?text=Smart+Watch" alt="Smart Watch" />
-        <div class="rt-article-overlay">
-          <h2>Why Smart Watches Are Replacing Fitness Bands</h2>
-          <p>The rise of smartwatches in the fitness market.</p>
-        </div>
-      </div>
+      <!-- Main Content -->
+      <main>
+        <!-- Intro Section -->
+        <section class="intro">
+          <div>
+            <p class="eyebrow">
+              <span></span>
+              Field Notes
+            </p>
+            <h1>Clear-eyed insights on <em>wearable tech</em> and health hardware</h1>
+            <p class="intro-description">
+              Remedy Tech Zone delivers in-depth analysis and practical guidance on the wearable devices reshaping personal health monitoring. From smart glasses to recovery rings, we explore the intersection of technology and wellbeing.
+            </p>
+          </div>
+          <aside class="issue-note">
+            <p>
+              <strong class="issue-kicker"><span class="spark" aria-hidden="true"></span>Signal active</strong>
+              Our latest field notes cover Meta Smart Glasses, AI-powered smartwatches, and the rise of biometric rings in 2026.
+            </p>
+          </aside>
+        </section>
 
-      <div class="rt-article-card glass rt-open-article" data-article="meta-2026">
-        <img src="https://via.placeholder.com/500x300?text=Meta+Glasses+2026" alt="Meta Glasses 2026" />
-        <div class="rt-article-overlay">
-          <h2>Meta Glasses: Are They Worth It in 2026?</h2>
-          <p>A look into the future of AR eyewear.</p>
-        </div>
-      </div>
+        <!-- Filter Section -->
+        <section class="filter-section" id="filters">
+          <div class="filter-label">
+            <span>Explore by category</span>
+            <span class="filter-number" id="article-count">3</span>
+            <span class="filter-rule"></span>
+          </div>
+          <div class="filters">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-selected="true">
+              All notes <span>3</span>
+            </button>
+            <button class="filter-button" type="button" data-filter="glasses">
+              Meta Glasses <span>1</span>
+            </button>
+            <button class="filter-button" type="button" data-filter="rings">
+              Smart Rings <span>1</span>
+            </button>
+            <button class="filter-button" type="button" data-filter="watches">
+              Smartwatches <span>1</span>
+            </button>
+          </div>
+        </section>
 
-      <div class="rt-article-card glass rt-open-article" data-article="sleep-tracking">
-        <img src="https://via.placeholder.com/500x300?text=Sleep+Tracking" alt="Sleep Tracking" />
-        <div class="rt-article-overlay">
-          <h2>Sleep Tracking Tips for Better Rest</h2>
-          <p>Improve your night's sleep with simple tips.</p>
-        </div>
-      </div>
+        <!-- Articles Grid -->
+        <section id="articles-container" class="articles-grid" aria-label="Article cards"></section>
+      </main>
 
-      <div class="rt-article-card glass rt-open-article" data-article="rings-vs-watches">
-        <img src="https://via.placeholder.com/500x300?text=Smart+Ring+vs+Watch" alt="Smart Ring vs Smart Watch" />
-        <div class="rt-article-overlay">
-          <h2>Smart Rings vs. Smart Watches: Pros and Cons</h2>
-          <p>Find the best wearable for your lifestyle.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Read More Articles Button -->
-    <div class="rt-more-wrapper">
-      <button id="rt-open-more" class="rt-btn">
-        Read More Articles
-      </button>
+      <!-- Footer -->
+      <footer class="site-footer">
+        <span>© 2026 Remedy Tech Zone</span>
+        <span class="footer-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 12c-2.8 4.7-7.3 6.5-11.2 3.8C5.4 13.5 4.9 9.1 7.2 6.2c1.4-1.8 4.3-2.2 5.8.2 1.4-2.4 4.3-2 5.5-.4" />
+          </svg>
+          Thoughtful hardware for a more capable day.
+        </span>
+      </footer>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="rt-footer">
-    <div class="rt-socials">
-      <a href="#" aria-label="Facebook"></a>
-      <a href="#" aria-label="Twitter"></a>
-      <a href="#" aria-label="Instagram"></a>
-      <a href="#" aria-label="YouTube"></a>
+    <!-- Article Modal -->
+    <div class="modal-backdrop" id="article-modal" hidden>
+      <article class="article-modal">
+        <div class="modal-heading">
+          <div>
+            <h2 id="modal-title">Article Title</h2>
+            <div class="modal-meta" id="modal-meta">
+              <span id="modal-author">Author</span>
+              <span id="modal-date">Date</span>
+              <span id="modal-readtime">Read time</span>
+              <span class="modal-stat" id="modal-stat">Stat</span>
+            </div>
+          </div>
+          <button class="modal-close" type="button" data-close-modal aria-label="Close article">
+            ×
+          </button>
+        </div>
+        <div class="modal-badge" id="modal-badge" data-accent="lime">Badge</div>
+        <p class="modal-body" id="modal-body">Article content will appear here.</p>
+      </article>
     </div>
-    <p>© 2024 RemedyTech.zone</p>
-  </footer>
 
-  <!-- More Articles Overlay -->
-  <div id="rt-more-overlay" class="rt-overlay">
-    <div class="rt-overlay-content glass">
-      <div class="rt-overlay-header">
-        <h2>More Articles</h2>
-        <button class="rt-close-overlay" data-target="rt-more-overlay">×</button>
-      </div>
-      <div class="rt-more-grid">
-        <div class="rt-more-card rt-open-article" data-article="fitness-apps">
-          <h3>Top Fitness Apps to Use with Your Wearables</h3>
-          <p>Boost your workouts with the right apps.</p>
-        </div>
-        <div class="rt-more-card rt-open-article" data-article="future-health-tech">
-          <h3>The Future of Health Tracking Tech</h3>
-          <p>Where wearables are heading next.</p>
-        </div>
-        <div class="rt-more-card rt-open-article" data-article="choose-smart-glasses">
-          <h3>How to Choose the Right Smart Glasses</h3>
-          <p>Key features to look for.</p>
-        </div>
-        <div class="rt-more-card rt-open-article" data-article="battery-life">
-          <h3>Boost Your Smartwatch Battery Life</h3>
-          <p>Simple habits to extend charge.</p>
-        </div>
-        <div class="rt-more-card rt-open-article" data-article="rings-future">
-          <h3>Rings of the Future: What's Next?</h3>
-          <p>Smart rings beyond 2026.</p>
-        </div>
-        <div class="rt-more-card rt-open-article" data-article="vr-ar-trends">
-          <h3>VR & AR Trends to Watch Now</h3>
-          <p>The immersive tech landscape.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Article Overlay -->
-  <div id="rt-article-overlay" class="rt-overlay">
-    <div class="rt-overlay-content glass rt-article-detail">
-      <div class="rt-overlay-header">
-        <h2 id="rt-article-title">Article Title</h2>
-        <button class="rt-close-overlay" data-target="rt-article-overlay">×</button>
-      </div>
-      <h3 id="rt-article-subtitle">Article Subtitle</h3>
-      <img id="rt-article-image" src="" alt="" />
-      <p id="rt-article-body">
-        Article body will appear here.
-      </p>
-      <ul id="rt-article-features"></ul>
-      <button class="rt-btn rt-close-overlay" data-target="rt-article-overlay">
-        Close
-      </button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
