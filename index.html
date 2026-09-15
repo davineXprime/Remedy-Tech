@@ -1,701 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remedy Tech Zone - The Field Guide for Better Tools</title>
-    
-    <!-- Tailwind CSS for utility layout -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            green: '#00FF9D',
-                            dark: '#030a0d',
-                            surface: '#07151a',
-                            border: '#112b33',
-                            gray: '#8a9b9f'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- ========================================== -->
-    <!-- GitHub Export: Move this block to style.css -->
-    <!-- ========================================== -->
-    <style>
-        :root {
-            --brand-green: #00FF9D;
-            --brand-dark: #030a0d;
-            --brand-surface: #07151a;
-            --brand-border: #112b33;
-        }
-
-        body {
-            background-color: var(--brand-dark);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        .text-gradient {
-            background: linear-gradient(90deg, #ffffff 0%, #8a9b9f 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .neon-text {
-            color: var(--brand-green);
-        }
-
-        .nav-link {
-            position: relative;
-            color: #ffffff;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--brand-green);
-        }
-
-        .nav-link.active {
-            color: var(--brand-green);
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--brand-green);
-        }
-
-        .btn-primary {
-            background-color: var(--brand-green);
-            color: #000000;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: #00cc7d;
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid var(--brand-border);
-            padding: 0.5rem 1.25rem;
-            border-radius: 9999px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover, .btn-outline.active {
-            border-color: var(--brand-green);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);
-        }
-
-        .btn-outline.active {
-            background-color: var(--brand-green);
-            color: #000000;
-        }
-
-        .article-card {
-            background-color: var(--brand-surface);
-            border: 1px solid var(--brand-border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .article-card:hover {
-            border-color: var(--brand-green);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .card-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .card-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .article-card:hover .card-image-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background-color: var(--brand-green);
-            color: #000;
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .card-date {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(3, 10, 13, 0.85);
-            backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background-color: var(--brand-surface);
-            border: 1px solid var(--brand-border);
-            border-radius: 16px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 85vh;
-            overflow-y: auto;
-            position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            color: var(--brand-gray);
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            z-index: 10;
-        }
-
-        .close-modal:hover {
-            color: var(--brand-green);
-        }
-
-        /* Custom Scrollbar for Modal */
-        .modal-content::-webkit-scrollbar { width: 6px; }
-        .modal-content::-webkit-scrollbar-track { background: var(--brand-surface); }
-        .modal-content::-webkit-scrollbar-thumb { background: var(--brand-border); border-radius: 3px; }
-        .modal-content::-webkit-scrollbar-thumb:hover { background: var(--brand-green); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remedy Tech Zone</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
-<body class="antialiased flex flex-col min-h-screen">
+<body>
 
-    <header class="border-b border-brand-border bg-brand-dark/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <svg width="45" height="45" viewBox="0 0 50 50" fill="none" class="text-brand-green">
-                    <!-- Heartbeat pulse SVG matching mockup -->
-                    <path d="M5 25H15L18 15L25 38L32 10L36 25H45" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="flex flex-col justify-center">
-                    <div class="flex items-baseline gap-1.5">
-                        <span class="text-2xl font-bold tracking-tight text-white">REMEDY</span>
-                        <span class="text-2xl font-bold tracking-tight text-brand-green">TECH ZONE</span>
-                    </div>
-                    <span class="text-[0.55rem] tracking-[0.25em] text-brand-gray uppercase font-semibold">The Field Guide for Better Tools</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#" class="nav-link">Privacy</a>
-                <a href="#" class="nav-link">Compliance</a>
-                <a href="#" class="nav-link">Terms</a>
-            </nav>
-
-            <!-- Social Icons & Hamburger -->
-            <div class="flex items-center gap-6">
-                <div class="hidden sm:flex items-center gap-4 text-brand-green">
-                    <!-- Facebook -->
-                    <a href="#" class="hover:text-white transition"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
-                    <!-- X -->
-                    <a href="#" class="hover:text-white transition"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                    <!-- LinkedIn -->
-                    <a href="#" class="hover:text-white transition"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
-                </div>
-                <button class="md:hidden text-brand-green">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <section class="relative overflow-hidden border-b border-brand-border bg-[#02090c]">
-        <!-- Ambient background image/glow -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1614729939124-03290b0409c6?auto=format&fit=crop&w=1920&q=80" alt="Space Ambient" class="w-full h-full object-cover opacity-10 mix-blend-lighten">
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            
-            <!-- Hero Text -->
-            <div class="space-y-6">
-                <p class="text-brand-green text-xs font-bold tracking-[0.2em] uppercase">
-                    Smarter Tech. Healthier You.
-                </p>
-                <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
-                    Welcome to <br />
-                    Remedy <span class="text-brand-green">Tech Zone</span>
-                </h1>
-                <p class="text-xl font-semibold text-white">
-                    The Field Guide for Better Tools.
-                </p>
-                <p class="text-brand-gray text-base max-w-lg leading-relaxed">
-                    Real-world insights, honest reviews, and practical guides for the latest wearables, smart devices, and tech that actually improves your life.
-                </p>
-                <div class="pt-4">
-                    <a href="#articles" class="btn-primary">
-                        <span>Explore Latest Articles</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Hero Image Composition -->
-            <div class="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center">
-                <!-- Decorative Elements -->
-                <div class="absolute right-0 top-10 flex flex-col items-end gap-3 text-[0.65rem] font-bold tracking-[0.2em] text-brand-green opacity-80 hidden lg:flex">
-                    <span>WEARABLES</span>
-                    <span>GLASSES</span>
-                    <span>SMARTWATCHES</span>
-                    <span>HEALTH</span>
-                    <span>TECH</span>
-                    <svg class="mt-4 w-8 h-8" viewBox="0 0 50 50" fill="none"><path d="M5 25H15L18 15L25 38L32 10L36 25H45" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <div class="mt-4 flex gap-1">
-                        <div class="w-4 h-1.5 bg-brand-green skew-x-[-30deg]"></div>
-                        <div class="w-4 h-1.5 bg-brand-green skew-x-[-30deg]"></div>
-                        <div class="w-4 h-1.5 bg-brand-green skew-x-[-30deg]"></div>
-                    </div>
-                </div>
-
-                <!-- Main Device Image (Mockup representation) -->
-                <div class="relative w-full max-w-md">
-                    <!-- Glowing backdrop -->
-                    <div class="absolute inset-0 bg-brand-green/20 blur-[100px] rounded-full"></div>
-                    <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80" alt="Smart Devices Mockup" class="relative z-10 w-full h-auto object-contain rounded-2xl drop-shadow-[0_0_30px_rgba(0,255,157,0.3)] border border-brand-border/50">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-8 border-b border-brand-border bg-brand-dark sticky top-20 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center justify-center gap-4">
-                <button class="filter-btn btn-outline active" data-filter="all">All</button>
-                <button class="filter-btn btn-outline" data-filter="rings">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="2"/></svg>
-                    Smart Rings
-                </button>
-                <button class="filter-btn btn-outline" data-filter="glasses">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h3a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V9zM14 9a2 2 0 012-2h3a2 2 0 012 2v2a2 2 0 01-2 2h-3a2 2 0 01-2-2V9zM10 11h4"/></svg>
-                    Meta Smart Glasses
-                </button>
-                <button class="filter-btn btn-outline" data-filter="watches">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16" rx="3" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 2h4M10 22h4"/></svg>
-                    Smartwatches
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full" id="articles">
-        
-        <div class="flex items-center justify-between mb-10">
-            <div class="flex items-center gap-4">
-                <div class="w-8 h-1.5 bg-brand-green"></div>
-                <h2 class="text-3xl font-bold text-white tracking-tight">Latest Articles</h2>
-            </div>
-            <span class="text-sm text-brand-gray hidden sm:block">Stay informed. Stay ahead.</span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Article 1: Smart Rings -->
-            <article class="article-card" data-category="rings">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1598970425026-6218f77d337a?auto=format&fit=crop&w=800&q=80" alt="Man wearing smart ring">
-                    <span class="card-badge">Smart Rings</span>
-                    <span class="card-date">Sep 7, 2026</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-white mb-3 leading-snug">Why Smart Rings Are Dominating Wearable Tech in 2026</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed mb-6 flex-grow">
-                        Discover why smart rings are the breakout wearable of 2026, from better sleep tracking to higher accuracy and longer battery life.
-                    </p>
-                    <div>
-                        <!-- Button triggers modal via data-target -->
-                        <button class="btn-outline !py-2 !px-4 !text-brand-green !border-brand-green hover:!bg-brand-green hover:!text-black" data-modal-target="#modal-article-1">
-                            <span>Read More</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 2: Smart Glasses -->
-            <article class="article-card" data-category="glasses">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80" alt="Smart Glasses">
-                    <span class="card-badge">Meta Smart Glasses</span>
-                    <span class="card-date">Aug 28, 2026</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-white mb-3 leading-snug">Meta Smart Glasses: The Next Frontier in Hands-Free Tech</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed mb-6 flex-grow">
-                        Explore how Meta's latest smart glasses are changing the way we work, learn, and stay connected — without a screen.
-                    </p>
-                    <div>
-                        <button class="btn-outline !py-2 !px-4 !text-brand-green !border-brand-green hover:!bg-brand-green hover:!text-black" data-modal-target="#modal-article-2">
-                            <span>Read More</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 3: Smartwatches -->
-            <article class="article-card" data-category="watches">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1434493789847-2f02b0c1682c?auto=format&fit=crop&w=800&q=80" alt="Smartwatch on wrist">
-                    <span class="card-badge">Smartwatches</span>
-                    <span class="card-date">Aug 15, 2026</span>
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-white mb-3 leading-snug">The Best Smartwatches for Health and Performance in 2026</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed mb-6 flex-grow">
-                        We break down the top smartwatches for fitness, sleep, and everyday life — and which ones are worth your money.
-                    </p>
-                    <div>
-                        <button class="btn-outline !py-2 !px-4 !text-brand-green !border-brand-green hover:!bg-brand-green hover:!text-black" data-modal-target="#modal-article-3">
-                            <span>Read More</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-
-        <div class="mt-12 flex justify-center">
-            <button class="btn-outline !px-8 !py-3 !border-brand-green !text-brand-green hover:!bg-brand-green hover:!text-black">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                More Articles
-            </button>
-        </div>
-    </main>
-
-    <section class="border-t border-brand-border bg-[#020709]" id="about">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch">
-            
-            <!-- Left Image -->
-            <div class="lg:w-1/3 relative min-h-[300px] lg:min-h-[400px]">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Tech Lab" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale">
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#020709]"></div>
-                <!-- Decorative Chevron -->
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
-                    <svg class="w-16 h-32 text-brand-green opacity-80" fill="none" viewBox="0 0 24 48" preserveAspectRatio="none">
-                        <path d="M2 2L20 24L2 46" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Middle Text -->
-            <div class="lg:w-1/3 p-8 lg:p-12 flex flex-col justify-center border-l lg:border-l-0 border-r border-brand-border/30 relative z-10">
-                <div class="w-8 h-1 bg-brand-green mb-6"></div>
-                <h2 class="text-3xl font-bold text-white mb-4">About Remedy Tech Zone</h2>
-                <p class="text-brand-gray text-sm leading-relaxed">
-                    Remedy Tech Zone is your field guide for better tools—curated insights, practical breakdowns, and tech workflows designed to help you choose, use, and improve the tools that power your day.
-                </p>
-            </div>
-
-            <!-- Right Features -->
-            <div class="lg:w-1/3 p-8 lg:p-12 flex flex-col justify-center gap-8 relative z-10">
-                <div class="flex items-start gap-4">
-                    <svg class="w-8 h-8 text-brand-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    <div>
-                        <h4 class="font-bold text-white text-sm mb-1">Trusted Insights</h4>
-                        <p class="text-xs text-brand-gray">Real research. No hype.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <svg class="w-8 h-8 text-brand-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                    <div>
-                        <h4 class="font-bold text-white text-sm mb-1">Practical Guides</h4>
-                        <p class="text-xs text-brand-gray">Simple. Clear. Actionable.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <svg class="w-8 h-8 text-brand-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    <div>
-                        <h4 class="font-bold text-white text-sm mb-1">Better Decisions</h4>
-                        <p class="text-xs text-brand-gray">The right tools for your life.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="bg-brand-dark pt-10 pb-6 border-t border-brand-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <svg width="40" height="40" viewBox="0 0 50 50" fill="none" class="text-brand-green">
-                    <path d="M5 25H15L18 15L25 38L32 10L36 25H45" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div>
-                    <div class="flex items-baseline gap-1">
-                        <span class="text-lg font-bold text-white">REMEDY</span>
-                        <span class="text-lg font-bold text-brand-green">TECH ZONE</span>
-                    </div>
-                    <span class="text-[0.5rem] tracking-[0.2em] text-brand-gray uppercase">The Field Guide for Better Tools</span>
-                </div>
-            </div>
-
-            <!-- Links -->
-            <div class="flex flex-wrap justify-center items-center gap-4 text-xs font-medium text-brand-gray">
-                <a href="#" class="hover:text-white">About</a> <span class="text-brand-border">|</span>
-                <a href="#" class="hover:text-white">Privacy</a> <span class="text-brand-border">|</span>
-                <a href="#" class="hover:text-white">Compliance</a> <span class="text-brand-border">|</span>
-                <a href="#" class="hover:text-white">Terms</a> <span class="text-brand-border">|</span>
-                <a href="#" class="hover:text-white">More Articles</a>
-            </div>
-
-            <!-- Socials -->
-            <div class="flex items-center gap-3 text-brand-green">
-                <a href="#" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:border-brand-green transition"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
-                <a href="#" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:border-brand-green transition"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                <a href="#" class="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center hover:border-brand-green transition"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
-            </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-brand-border/50 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-gray">
-            <p>&copy; 2026 Remedy Tech Zone. All rights reserved.</p>
-            <a href="#" class="text-brand-green flex items-center gap-1 hover:underline">
-                Back to top <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-            </a>
-        </div>
-    </footer>
-
-    
-    <!-- Modal 1: Rings -->
-    <div class="modal-overlay" id="modal-article-1" aria-hidden="true">
-        <div class="modal-content p-8" role="dialog" aria-modal="true">
-            <button class="close-modal" aria-label="Close modal">&times;</button>
-            <span class="inline-block px-3 py-1 bg-brand-green text-black text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Smart Rings</span>
-            <h2 class="text-3xl font-bold text-white mb-2">Why Smart Rings Are Dominating Wearable Tech in 2026</h2>
-            <p class="text-sm text-brand-gray mb-8">Published Sept 7, 2026 • 5 min read</p>
-            
-            <div class="space-y-4 text-gray-300 leading-relaxed text-sm">
-                <img src="https://images.unsplash.com/photo-1598970425026-6218f77d337a?auto=format&fit=crop&w=800&q=80" alt="Smart Ring Detailed View" class="w-full h-64 object-cover rounded-xl mb-6">
-                <p>Smart rings have officially crossed the threshold from niche gadget to mainstream necessity. As we move through 2026, the data is clear: consumers are trading bulky wristwear for sleek, finger-bound health trackers.</p>
-                <p>The primary driver? <strong>Fidelity of data.</strong> The capillaries in your finger provide a much stronger, clearer signal for heart rate and blood oxygen sensors compared to the top of the wrist. This means more accurate resting heart rate (RHR) and heart rate variability (HRV) metrics.</p>
-                <h3 class="text-xl font-semibold text-white mt-6 mb-2">Unobtrusive Sleep Tracking</h3>
-                <p>Perhaps the biggest selling point is comfort at night. Wearing a screen on your wrist to bed has always been a point of friction. Smart rings disappear into the background, providing medical-grade sleep staging without disrupting your circadian rhythm with unwanted light.</p>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="heartbeat-icon">〰️</span>
+      <h1>REMEDY <span>TECH ZONE</span></h1>
     </div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Compliance</a>
+      <a href="#">Terms</a>
+    </nav>
+  </header>
 
-    <!-- Modal 2: Glasses -->
-    <div class="modal-overlay" id="modal-article-2" aria-hidden="true">
-        <div class="modal-content p-8" role="dialog" aria-modal="true">
-            <button class="close-modal" aria-label="Close modal">&times;</button>
-            <span class="inline-block px-3 py-1 bg-brand-green text-black text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Meta Smart Glasses</span>
-            <h2 class="text-3xl font-bold text-white mb-2">Meta Smart Glasses: The Next Frontier in Hands-Free Tech</h2>
-            <p class="text-sm text-brand-gray mb-8">Published Aug 28, 2026 • 4 min read</p>
-            
-            <div class="space-y-4 text-gray-300 leading-relaxed text-sm">
-                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80" alt="Smart Glasses View" class="w-full h-64 object-cover rounded-xl mb-6">
-                <p>The smartphone era is slowly pivoting towards contextual computing, and Meta's 2026 iteration of their smart glasses is leading the charge. By integrating powerful multimodal AI directly into the frames, they have created a device that sees what you see and hears what you hear.</p>
-                <h3 class="text-xl font-semibold text-white mt-6 mb-2">Real-Time Translation and Overlay</h3>
-                <p>Imagine looking at a menu in Tokyo and seeing the English translation floating subtly above the text, or asking your AI assistant for instructions on fixing a leaky pipe while it analyzes the exact pipe you are looking at. This is no longer science fiction; it is the reality of current-gen smart glasses.</p>
-                <p>With battery life finally crossing the 12-hour threshold and frame designs that look identical to classic Ray-Bans, the friction of adoption is lower than ever.</p>
-            </div>
+  <!-- Articles Section -->
+  <section class="latest-articles">
+    <h2><span class="accent-line"></span> Latest Articles</h2>
+    <div class="card-grid">
+      
+      <!-- Article 1 -->
+      <article class="card">
+        <div class="card-image ring-bg">
+          <span class="badge">SMART RINGS</span>
+          <span class="date">Sep 7, 2026</span>
         </div>
-    </div>
-
-    <!-- Modal 3: Watches -->
-    <div class="modal-overlay" id="modal-article-3" aria-hidden="true">
-        <div class="modal-content p-8" role="dialog" aria-modal="true">
-            <button class="close-modal" aria-label="Close modal">&times;</button>
-            <span class="inline-block px-3 py-1 bg-brand-green text-black text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Smartwatches</span>
-            <h2 class="text-3xl font-bold text-white mb-2">The Best Smartwatches for Health and Performance in 2026</h2>
-            <p class="text-sm text-brand-gray mb-8">Published Aug 15, 2026 • 7 min read</p>
-            
-            <div class="space-y-4 text-gray-300 leading-relaxed text-sm">
-                <img src="https://images.unsplash.com/photo-1434493789847-2f02b0c1682c?auto=format&fit=crop&w=800&q=80" alt="Smartwatch Data" class="w-full h-64 object-cover rounded-xl mb-6">
-                <p>While smart rings are taking over sleep tracking, the smartwatch remains the undisputed king of real-time performance metrics and intense athletic tracking. If you are running, cycling, or swimming, you need a screen.</p>
-                <h3 class="text-xl font-semibold text-white mt-6 mb-2">Dual-Frequency GPS and MicroLED</h3>
-                <p>The standard for 2026 flagship watches now includes dual-frequency GPS, which eliminates pathing errors in dense urban environments or deep forests. Furthermore, the transition to MicroLED displays has resulted in screens that are blindingly bright outdoors yet draw 40% less power than OLEDs.</p>
-                <p>In our comprehensive field tests, we evaluated the Garmin Fenix 9, the Apple Watch Ultra 3, and the Suunto Ocean across varying terrains and climates. The results show a tightening gap in hardware, meaning your choice now largely depends on which software ecosystem you prefer.</p>
-            </div>
+        <div class="card-content">
+          <h3>Why Smart Rings Are Dominating Wearable Tech in 2026</h3>
+          <p>Discover why smart rings are the breakout wearable of 2026, from better sleep tracking to higher accuracy and longer battery life.</p>
+          <button class="read-more-btn" data-modal-target="#modal-1">Read More &rarr;</button>
         </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="card">
+        <div class="card-image glasses-bg">
+          <span class="badge">META SMART GLASSES</span>
+          <span class="date">Aug 28, 2026</span>
+        </div>
+        <div class="card-content">
+          <h3>Meta Smart Glasses: The Next Frontier in Hands-Free Tech</h3>
+          <p>Explore how Meta's latest smart glasses are changing the way we work, learn, and stay connected — without a screen.</p>
+          <button class="read-more-btn" data-modal-target="#modal-2">Read More &rarr;</button>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <!-- ========================================== -->
-    <!-- GitHub Export: Move this block to main.js  -->
-    <!-- ========================================== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // Category Filtering
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const articles = document.querySelectorAll('.article-card');
+  <!-- Modals -->
+  <div class="modal-overlay" id="modal-1" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn">&times;</button>
+      <h2>Why Smart Rings Are Dominating Wearable Tech in 2026</h2>
+      <p>Full article text about smart rings goes here...</p>
+    </div>
+  </div>
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active button state
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+  <div class="modal-overlay" id="modal-2" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn">&times;</button>
+      <h2>Meta Smart Glasses: The Next Frontier in Hands-Free Tech</h2>
+      <p>Full article text about Meta smart glasses goes here...</p>
+    </div>
+  </div>
 
-                    // Filter articles
-                    const filterValue = btn.getAttribute('data-filter');
-                    
-                    articles.forEach(article => {
-                        if (filterValue === 'all' || article.getAttribute('data-category') === filterValue) {
-                            article.style.display = 'flex';
-                            // Small animation effect
-                            article.style.opacity = '0';
-                            setTimeout(() => {
-                                article.style.transition = 'opacity 0.4s ease';
-                                article.style.opacity = '1';
-                            }, 50);
-                        } else {
-                            article.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            const modalOpenBtns = document.querySelectorAll('[data-modal-target]');
-            const closeBtns = document.querySelectorAll('.close-modal');
-            const overlays = document.querySelectorAll('.modal-overlay');
-
-            function openModal(modalId) {
-                const modal = document.querySelector(modalId);
-                if (modal) {
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                }
-            }
-
-            function closeModal(modal) {
-                if (modal) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = ''; // Restore scrolling
-                }
-            }
-
-            // Open modal on button click
-            modalOpenBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const target = btn.getAttribute('data-modal-target');
-                    openModal(target);
-                });
-            });
-
-            // Close modal on close button click
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const modal = btn.closest('.modal-overlay');
-                    closeModal(modal);
-                });
-            });
-
-            // Close modal when clicking outside the content box
-            overlays.forEach(overlay => {
-                overlay.addEventListener('click', (e) => {
-                    if (e.target === overlay) {
-                        closeModal(overlay);
-                    }
-                });
-            });
-            
-            // Close modal on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    const activeModal = document.querySelector('.modal-overlay.active');
-                    if (activeModal) {
-                        closeModal(activeModal);
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
