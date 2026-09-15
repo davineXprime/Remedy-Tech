@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedy Tech Zone - The Field Guide for Better Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Navigation Header -->
+    <header class="site-header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 36 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12h5l3-7 4 14 4-11 3 6h7"></path>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-title">REMEDY <span class="highlight">TECH ZONE</span></span>
+                    <span class="brand-tagline">THE FIELD GUIDE FOR BETTER TOOLS</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#privacy" class="nav-link">Privacy</a>
+                <a href="#compliance" class="nav-link">Compliance</a>
+                <a href="#terms" class="nav-link">Terms</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="https://x.com" target="_blank" aria-label="X" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main id="home">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge-subtitle">SMARTER TECH. HEALTHIER YOU.</span>
+                    <h1 class="hero-title">Welcome to <br><span class="gradient-text">Remedy Tech Zone</span></h1>
+                    <h2 class="hero-subheading">The Field Guide for Better Tools.</h2>
+                    <p class="hero-description">
+                        Real-world insights, honest reviews, and practical guides for the latest wearables, smart devices, and tech that actually improves your life.
+                    </p>
+                    <a href="#articles" class="btn btn-primary btn-glow">
+                        Explore Latest Articles
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-wrapper">
+                        <div class="glow-backdrop"></div>
+                        <!-- High tech wearable device illustration container -->
+                        <div class="hero-image-card">
+                            <svg class="cyber-device-svg" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="cyanGrad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#00f2fe"/>
+                                        <stop offset="100%" stop-color="#00ff88"/>
+                                    </linearGradient>
+                                    <linearGradient id="darkBg" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#0d1b2a"/>
+                                        <stop offset="100%" stop-color="#030712"/>
+                                    </linearGradient>
+                                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="8" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                    </filter>
+                                </defs>
+                                
+                                <!-- Background grid -->
+                                <path d="M0 50h500M0 100h500M0 150h500M0 200h500M0 250h500M0 300h500" stroke="rgba(0, 242, 254, 0.05)" stroke-width="1"/>
+                                <path d="M50 0v350M100 0v350M150 0v350M200 0v350M250 0v350M300 0v350M350 0v350M400 0v350M450 0v350" stroke="rgba(0, 242, 254, 0.05)" stroke-width="1"/>
+                                
+                                <!-- Smartwatch SVG graphics -->
+                                <g transform="translate(180, 50)">
+                                    <!-- Strap -->
+                                    <rect x="35" y="0" width="50" height="240" rx="12" fill="#0b1320" stroke="#1e293b" stroke-width="2"/>
+                                    <!-- Watch Body -->
+                                    <rect x="15" y="40" width="90" height="110" rx="24" fill="#0f172a" stroke="url(#cyanGrad)" stroke-width="3" filter="url(#glow)"/>
+                                    <!-- Watch Screen -->
+                                    <rect x="23" y="48" width="74" height="94" rx="18" fill="#020617"/>
+                                    <!-- Heart Icon -->
+                                    <path d="M60 82c-3-5-10-6-14-1a9.5 9.5 0 000 13l14 14 14-14a9.5 9.5 0 000-13c-4-5-11-4-14 1z" fill="none" stroke="#00ff88" stroke-width="2" filter="url(#glow)"/>
+                                    <path d="M52 92h5l2-4 3 8 3-5h3" fill="none" stroke="#00f2fe" stroke-width="1.5"/>
+                                    <text x="60" y="112" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Heart Rate</text>
+                                    <text x="60" y="125" fill="#00ff88" font-size="11" font-weight="bold" font-family="Orbitron, sans-serif" text-anchor="middle">72 BPM</text>
+                                </g>
+
+                                <!-- Meta Smart Glasses SVG graphics -->
+                                <g transform="translate(260, 140)">
+                                    <path d="M10 35 C 30 10, 80 10, 95 35 C 110 35, 125 10, 175 35 C 185 65, 160 85, 100 80 C 80 80, 20 85, 10 35 Z" fill="#090d16" stroke="url(#cyanGrad)" stroke-width="3.5" filter="url(#glow)"/>
+                                    <ellipse cx="55" cy="48" rx="32" ry="22" fill="rgba(0, 242, 254, 0.15)" stroke="#00f2fe" stroke-width="1.5"/>
+                                    <ellipse cx="135" cy="48" rx="32" ry="22" fill="rgba(0, 242, 254, 0.15)" stroke="#00f2fe" stroke-width="1.5"/>
+                                    <circle cx="20" cy="32" r="4" fill="#00ff88" filter="url(#glow)"/>
+                                    <circle cx="170" cy="32" r="4" fill="#00ff88" filter="url(#glow)"/>
+                                </g>
+
+                                <!-- Smart Ring Graphics -->
+                                <g transform="translate(100, 170)">
+                                    <ellipse cx="40" cy="50" rx="30" ry="38" fill="none" stroke="url(#cyanGrad)" stroke-width="10" filter="url(#glow)"/>
+                                    <ellipse cx="40" cy="50" rx="25" ry="33" fill="none" stroke="#020617" stroke-width="4"/>
+                                    <circle cx="58" cy="32" r="3" fill="#00ff88"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Right side high-tech badges rail -->
+                    <div class="tech-rail">
+                        <div class="rail-item">WEARABLES</div>
+                        <div class="rail-item">GLASSES</div>
+                        <div class="rail-item">SMARTWATCHES</div>
+                        <div class="rail-item">HEALTH</div>
+                        <div class="rail-item">TECH</div>
+                        <div class="rail-pulse">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <div class="rail-bars">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filters -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-bar" id="filterBar">
+                    <button class="filter-btn active" data-category="all">
+                        <span>All</span>
+                    </button>
+                    <button class="filter-btn" data-category="smart-rings">
+                        <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="5"/></svg>
+                        <span>Smart Rings</span>
+                    </button>
+                    <button class="filter-btn" data-category="smart-glasses">
+                        <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10C2 10 4 6 8 6C12 6 12 10 12 10C12 10 12 6 16 6C20 6 22 10 22 10V14C22 16.2 20.2 18 18 18C15.8 18 14 16.2 14 14V12H10V14C10 16.2 8.2 18 6 18C3.8 18 2 16.2 2 14V10Z"/></svg>
+                        <span>Meta Smart Glasses</span>
+                    </button>
+                    <button class="filter-btn" data-category="smartwatches">
+                        <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 1v5M15 1v5M9 18v5M15 18v5"/></svg>
+                        <span>Smartwatches</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Articles Section -->
+        <section class="articles-section" id="articles">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <span class="accent-bar"></span>
+                        <h2>Latest Articles</h2>
+                    </div>
+                    <span class="section-tagline">Stay informed. Stay ahead.</span>
+                </div>
+
+                <!-- 3 Column Article Grid -->
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Article 1 -->
+                    <article class="article-card" data-category="smart-rings">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Smart Ring on Hand" class="card-img" loading="lazy">
+                            <span class="badge badge-green">SMART RINGS</span>
+                            <span class="card-date">Sep 7, 2026</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Why Smart Rings Are Dominating Wearable Tech in 2026</h3>
+                            <p class="card-excerpt">
+                                Discover why smart rings are the breakout wearable of 2026, from better sleep tracking to higher accuracy and longer battery life.
+                            </p>
+                            <button class="btn btn-outline read-more-btn" data-id="1">
+                                Read More
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card" data-category="smart-glasses">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80" alt="Meta Smart Glasses" class="card-img" loading="lazy">
+                            <span class="badge badge-green">META SMART GLASSES</span>
+                            <span class="card-date">Aug 28, 2026</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Meta Smart Glasses: The Next Frontier in Hands-Free Tech</h3>
+                            <p class="card-excerpt">
+                                Explore how Meta's latest smart glasses are changing the way we work, learn, and stay connected — without a screen.
+                            </p>
+                            <button class="btn btn-outline read-more-btn" data-id="2">
+                                Read More
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card" data-category="smartwatches">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=800&q=80" alt="Smartwatch Fitness Tracker" class="card-img" loading="lazy">
+                            <span class="badge badge-green">SMARTWATCHES</span>
+                            <span class="card-date">Aug 15, 2026</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">The Best Smartwatches for Health and Performance in 2026</h3>
+                            <p class="card-excerpt">
+                                We break down the top smartwatches for fitness, sleep, and everyday life — and which ones are worth your money.
+                            </p>
+                            <button class="btn btn-outline read-more-btn" data-id="3">
+                                Read More
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="more-articles-wrap">
+                    <button class="btn btn-more" id="loadMoreBtn">
+                        <span class="btn-icon">+</span>
+                        <span>More Articles</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Remedy Tech Zone Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-card">
+                    <div class="about-image-col">
+                        <div class="about-img-frame">
+                            <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80" alt="Tech Innovation" class="about-img">
+                            <div class="tech-overlay-corner"></div>
+                        </div>
+                    </div>
+
+                    <div class="about-content-col">
+                        <span class="accent-bar"></span>
+                        <h2 class="about-title">About Remedy Tech Zone</h2>
+                        <p class="about-description">
+                            Remedy Tech Zone is your field guide for better tools—curated insights, practical breakdowns, and tech workflows designed to help you choose, use, and improve the tools that power your day.
+                        </p>
+                    </div>
+
+                    <div class="about-features-col">
+                        <div class="feature-item">
+                            <div class="feature-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Trusted Insights</h4>
+                                <p>Real research. No hype.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Practical Guides</h4>
+                                <p>Simple. Clear. Actionable.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Better Decisions</h4>
+                                <p>The right tools for your life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <a href="#" class="logo footer-logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 36 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h5l3-7 4 14 4-11 3 6h7"></path>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-title">REMEDY <span class="highlight">TECH ZONE</span></span>
+                        <span class="brand-tagline">THE FIELD GUIDE FOR BETTER TOOLS</span>
+                    </div>
+                </a>
+
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><span class="divider">|</span></li>
+                    <li><a href="#privacy">Privacy</a></li>
+                    <li><span class="divider">|</span></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><span class="divider">|</span></li>
+                    <li><a href="#terms">Terms</a></li>
+                    <li><span class="divider">|</span></li>
+                    <li><a href="#articles">More Articles</a></li>
+                </ul>
+
+                <div class="social-links circle-social">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-circle">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="https://x.com" target="_blank" aria-label="X" class="social-circle">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-circle">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Remedy Tech Zone. All rights reserved.</p>
+                <a href="#header" class="back-to-top">
+                    Back to top
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Article Modal / Pop-Out Feature -->
+    <div class="modal-overlay" id="articleModal" aria-hidden="true">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal Content Loaded Dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
