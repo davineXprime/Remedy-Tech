@@ -1,69 +1,58 @@
-/* -----------------------------------
-   Modal Backdrop / Overlay
------------------------------------ */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.65); /* Dark background overlay */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensures modal stays above all content */
-  
-  /* Smooth Fade Animations */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const openButtons = document.querySelectorAll('[data-modal-target]');
+  const closeButtons = document.querySelectorAll('.modal-close-btn');
+  const overlays = document.querySelectorAll('.modal-overlay');
 
-/* Active class applied via JS */
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
+  // 1. Open Modal when "Read More" button is clicked
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetSelector = button.getAttribute('data-modal-target');
+      const targetModal = document.querySelector(targetSelector);
+      if (targetModal) {
+        openModal(targetModal);
+      }
+    });
+  });
 
-/* -----------------------------------
-   Modal Box Container
------------------------------------ */
-.modal-container {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 650px;
-  width: 90%;
-  max-height: 80vh; /* Prevents modal from exceeding screen height */
-  overflow-y: auto; /* Enables scrolling for long article content */
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  
-  /* Slide-up transition */
-  transform: translateY(-20px);
-  transition: transform 0.3s ease;
-}
+  // 2. Close Modal when Close Button ('X') is clicked
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal-overlay');
+      if (modal) {
+        closeModal(modal);
+      }
+    });
+  });
 
-.modal-overlay.active .modal-container {
-  transform: translateY(0);
-}
+  // 3. Close Modal when clicking on the outside dark overlay backdrop
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeModal(overlay);
+      }
+    });
+  });
 
-/* -----------------------------------
-   Close Button Styling
------------------------------------ */
-.modal-close-btn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #666;
-  cursor: pointer;
-  line-height: 1;
-}
+  // 4. Close Modal when pressing the 'Escape' key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModal = document.querySelector('.modal-overlay.active');
+      if (activeModal) {
+        closeModal(activeModal);
+      }
+    }
+  });
 
-.modal-close-btn:hover {
-  color: #000;
-}
+  // Helper Functions
+  function openModal(modal) {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Disables background page scrolling
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restores background page scrolling
+  }
+});
