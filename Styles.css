@@ -83,4 +83,4 @@ h1,h2,h3,h4{font-family:'Space Mono',monospace}
 .overlay-head.centered{justify-content:center}
 .overlay-head h2{margin:0}
 @media(max-width:1100px){.video-grid{grid-template-columns:repeat(2,1fr)}.footer-links-grid{grid-template-columns:repeat(2,1fr)}.footer-main{grid-template-columns:1fr}}
-@media(max-width:640px){.nav-
+@media(max-width:640px){.nav-links{gap:1rem}.video-grid{grid-template-columns:1fr}.value-grid{grid-template-columns:1fr}.footer-links-grid{grid-template-columns:1fr}.hero-centered{min-height:40vh}}
