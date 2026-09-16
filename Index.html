@@ -1,13 +1,9 @@
-
-
-Ask Meta AI...
-Index
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Remedy Tech Zone - The Field Guide for Better Tools." />
+  <meta name="description" content="Remedy Tech Zone - The Field Guide for Better Tools. Video reviews for smart rings, smart glasses, wearables." />
   <title>Remedy Tech Zone - The Field Guide for Better Tools</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +15,7 @@ Index
   <div class="ambient-grid" aria-hidden="true"></div>
   <div class="ambient-glow" aria-hidden="true"></div>
 
+  <!-- Header: Tabs only, centered -->
   <header class="navbar">
     <nav class="nav-links" aria-label="Primary">
       <a href="#home" class="active">Home</a>
@@ -30,6 +27,7 @@ Index
     </nav>
   </header>
 
+  <!-- Hero: Logo centered (Remedy Tech Zone style) -->
   <section id="home" class="hero-centered">
     <div class="hero-logo-block">
       <div class="logo-mark large">
@@ -40,28 +38,60 @@ Index
     </div>
   </section>
 
+  <!-- Video Articles 9:16 Portrait -->
   <section id="articles" class="video-articles">
-    <div class="section-head centered">
-      <h2><span class="accent-line"></span> Latest Videos <span class="accent-line"></span></h2>
+    <div class="section-head">
+      <h2><span class="accent-line"></span> Latest Videos</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="smart-rings">Smart Rings</button>
+        <button class="filter-btn" data-filter="meta-smart-glasses">Meta Glasses</button>
+        <button class="filter-btn" data-filter="smartwatches">Smartwatches</button>
+      </div>
     </div>
 
     <div class="video-grid" id="main-video-grid">
-      <!-- Deleted placeholder articles - add your 9:16 video cards here -->
-      <!-- Example template:
-      <article class="video-card">
+      <article class="video-card" data-category="smart-rings">
         <div class="video-wrap portrait">
-          <video controls preload="metadata" playsinline>
-            <source src="YOUR_VIDEO.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline poster="">
+            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
           </video>
-          <span class="badge">CATEGORY</span>
+          <span class="badge">SMART RINGS</span>
         </div>
         <div class="video-info">
-          <span class="date">Sep 2026</span>
-          <h3>Your Title</h3>
-          <p>Your description underneath.</p>
+          <span class="date">Sep 7, 2026</span>
+          <h3>Why Smart Rings Are Dominating in 2026</h3>
+          <p>From sleep accuracy to 8-day battery — why rings beat watches this year.</p>
         </div>
       </article>
-      -->
+
+      <article class="video-card" data-category="meta-smart-glasses">
+        <div class="video-wrap portrait">
+          <video controls preload="metadata" playsinline>
+            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+          </video>
+          <span class="badge">META GLASSES</span>
+        </div>
+        <div class="video-info">
+          <span class="date">Aug 28, 2026</span>
+          <h3>Meta Smart Glasses: Hands-Free Test</h3>
+          <p>Live translation and POV capture that finally feels useful.</p>
+        </div>
+      </article>
+
+      <article class="video-card" data-category="smartwatches">
+        <div class="video-wrap portrait">
+          <video controls preload="metadata" playsinline>
+            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+          </video>
+          <span class="badge">SMARTWATCHES</span>
+        </div>
+        <div class="video-info">
+          <span class="date">Aug 19, 2026</span>
+          <h3>Battery Kings: 12 Days Tested</h3>
+          <p>9 watches worn non-stop. Only two survived the full work week.</p>
+        </div>
+      </article>
     </div>
 
     <div class="more-wrap">
@@ -69,11 +99,12 @@ Index
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="about-section">
     <div class="about-content centered">
       <span class="eyebrow">ABOUT REMEDY TECH ZONE</span>
       <h2>Tools that actually help you live better.</h2>
-      <p>Remedy Tech Zone started as a lab notebook for wearables. We buy, wear, and stress-test every device in real life — no press samples, no affiliate-first picks.</p>
+      <p>Remedy Tech Zone started as a lab notebook for wearables. We buy, wear, and stress-test every device in real life — no press samples, no affiliate-first picks. If a tool doesn't make your day more capable, we don't recommend it.</p>
       <div class="value-grid">
         <div class="value-item"><div class="value-icon">◈</div><h4>Trusted Insights</h4><p>Independent testing with published methods.</p></div>
         <div class="value-item"><div class="value-icon">⬙</div><h4>Practical Guides</h4><p>Setup, sizing, and settings that fix annoyances.</p></div>
@@ -82,31 +113,37 @@ Index
     </div>
   </section>
 
+  <!-- Footer with legal text in footer -->
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand">
         <div class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2.1-6.5L13 18l2.3-6H21"/></svg></span><h1>REMEDY <span>TECH ZONE</span></h1></div>
-        <p>Clear-eyed field notes on wearables and health hardware.</p>
+        <p>Clear-eyed field notes on wearables and health hardware. No hype, just tools that work.</p>
       </div>
       <div class="footer-links-grid">
         <div class="footer-block" id="about-footer"><h4>About</h4><p>Independent publication focused on smart rings, smart glasses, and smartwatches. We purchase all products ourselves.</p><p class="footer-meta">hello@remedytech.zone — New York, NY</p></div>
-        <div class="footer-block" id="privacy"><h4>Privacy</h4><p>Minimal analytics only. No ad trackers. Deletion: privacy@remedytech.zone</p><p class="footer-meta">Last updated: Aug 2026</p></div>
-        <div class="footer-block" id="compliance"><h4>Compliance</h4><p>Informational only, not medical advice. Affiliate links clearly marked per FTC.</p></div>
-        <div class="footer-block" id="terms"><h4>Terms</h4><p>© 2026 Remedy Tech Zone. Quote with attribution.</p><p class="footer-meta"><a href="#home">Back to top ↑</a></p></div>
+        <div class="footer-block" id="privacy"><h4>Privacy</h4><p>Minimal analytics only. No ad trackers. Email stored only if you subscribe. Deletion: privacy@remedytech.zone</p><p class="footer-meta">Last updated: Aug 2026</p></div>
+        <div class="footer-block" id="compliance"><h4>Compliance</h4><p>Informational only, not medical advice. Affiliate links clearly marked per FTC rules. Methodology published.</p></div>
+        <div class="footer-block" id="terms"><h4>Terms</h4><p>© 2026 Remedy Tech Zone. Quote with attribution. Do not republish full videos without permission.</p><p class="footer-meta"><a href="#home">Back to top ↑</a></p></div>
       </div>
     </div>
     <div class="footer-bottom"><span>© 2026 Remedy Tech Zone — The Field Guide for Better Tools</span><span class="footer-bottom-links"><a href="#privacy">Privacy</a> · <a href="#compliance">Compliance</a> · <a href="#terms">Terms</a> · <a href="#about">About</a></span></div>
   </footer>
 
+  <!-- More Articles Overlay -->
   <div class="modal-overlay large" id="more-articles-modal" aria-hidden="true">
     <div class="modal-container wide">
       <button class="modal-close-btn">&times;</button>
-      <div class="overlay-head centered">
-        <h2>More Videos</h2>
+      <div class="overlay-head">
+        <h2>More Field Notes</h2>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter-extra="all">All</button>
+          <button class="filter-btn" data-filter-extra="smart-rings">Rings</button>
+          <button class="filter-btn" data-filter-extra="meta-smart-glasses">Glasses</button>
+          <button class="filter-btn" data-filter-extra="smartwatches">Watches</button>
+        </div>
       </div>
-      <div class="video-grid" id="extra-video-grid">
-        <!-- Extra videos will be injected here - add your own -->
-      </div>
+      <div class="video-grid" id="extra-video-grid"></div>
     </div>
   </div>
 
