@@ -1,110 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Remedy Tech Zone - The Field Guide for Better Tools." />
-  <title>Remedy Tech Zone - The Field Guide for Better Tools</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remedy Tech Zone — The Field Guide for Better Tools</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="ambient-grid" aria-hidden="true"></div>
-  <div class="ambient-glow" aria-hidden="true"></div>
-
   <header class="navbar">
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#home" class="active">Home</a>
-      <a href="#articles">Articles</a>
-      <a href="#about">About</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#compliance">Compliance</a>
-      <a href="#terms">Terms</a>
+    <nav class="nav-inner">
+      <button data-scroll="home">HOME</button>
+      <button data-scroll="articles">ARTICLES</button>
+      <button data-scroll="about">ABOUT</button>
+      <button data-scroll="privacy">PRIVACY</button>
+      <button data-scroll="compliance">COMPLIANCE</button>
+      <button data-scroll="terms">TERMS</button>
     </nav>
   </header>
 
-  <section id="home" class="hero-centered">
-    <div class="hero-logo-block">
-      <div class="logo-mark large">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2.1-6.5L13 18l2.3-6H21"/></svg>
-      </div>
-      <h1>REMEDY <span>TECH ZONE</span></h1>
-      <p class="hero-tagline">The Field Guide for Better Tools</p>
+  <section id="home" class="hero">
+    <div class="logo-mark">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10251d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 12 L6 12 L8 4 L12 20 L14 8 L16 12 L22 12" />
+      </svg>
+    </div>
+    <h1 class="hero-title">REMEDY <span>TECH ZONE</span></h1>
+    <p class="hero-tagline">The Field Guide for Better Tools</p>
+  </section>
+
+  <section id="articles" class="articles-section">
+    <div class="reel-wrap">
+      <iframe src="article.html" class="article-frame" title="Article Reels" loading="lazy"></iframe>
+    </div>
+    <div class="center">
+      <button id="openModal" class="btn-yellow">Read More</button>
     </div>
   </section>
 
-  <section id="articles" class="video-articles">
-    <div class="section-head centered">
-      <h2><span class="accent-line"></span> Latest Videos <span class="accent-line"></span></h2>
-    </div>
+  <div class="divider"></div>
 
-    <div class="video-grid" id="main-video-grid">
-      <!-- Deleted placeholder articles - add your 9:16 video cards here -->
-      <!-- Example template:
-      <article class="video-card">
-        <div class="video-wrap portrait">
-          <video controls preload="metadata" playsinline>
-            <source src="YOUR_VIDEO.mp4" type="video/mp4">
-          </video>
-          <span class="badge">CATEGORY</span>
-        </div>
-        <div class="video-info">
-          <span class="date">Sep 2026</span>
-          <h3>Your Title</h3>
-          <p>Your description underneath.</p>
-        </div>
-      </article>
-      -->
+  <section class="footer-grid">
+    <div id="about">
+      <div class="footer-label">ABOUT</div>
+      <p>Remedy Tech Zone is a field guide for better tools. We test products in real life so you don't have to. Minimal hype, honest results.</p>
     </div>
-
-    <div class="more-wrap">
-      <button class="btn-primary" id="open-more-articles">Read More Articles</button>
+    <div id="privacy">
+      <div class="footer-label">PRIVACY</div>
+      <p>Minimal analytics only. No cookies being traced here. We don't sell your data.</p>
+    </div>
+    <div id="compliance">
+      <div class="footer-label">COMPLIANCE</div>
+      <p>Informational purposes only. Not medical advice. Always consult a qualified professional before making health decisions.</p>
+    </div>
+    <div id="terms">
+      <div class="footer-label">TERMS</div>
+      <p>This site contains affiliate links. As an Amazon Associate we earn from qualifying purchases.</p>
     </div>
   </section>
 
-  <section id="about" class="about-section">
-    <div class="about-content centered">
-      <span class="eyebrow">ABOUT REMEDY TECH ZONE</span>
-      <h2>Tools that actually help you live better.</h2>
-      <p>Remedy Tech Zone started as a lab notebook for wearables. We buy, wear, and stress-test every device in real life — no press samples, no affiliate-first picks.</p>
-      <div class="value-grid">
-        <div class="value-item"><div class="value-icon">◈</div><h4>Trusted Insights</h4><p>Independent testing with published methods.</p></div>
-        <div class="value-item"><div class="value-icon">⬙</div><h4>Practical Guides</h4><p>Setup, sizing, and settings that fix annoyances.</p></div>
-        <div class="value-item"><div class="value-icon">⬔</div><h4>Better Decisions</h4><p>Clear verdicts: Buy, Try, or Skip.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <div class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2.1-6.5L13 18l2.3-6H21"/></svg></span><h1>REMEDY <span>TECH ZONE</span></h1></div>
-        <p>Clear-eyed field notes on wearables and health hardware.</p>
-      </div>
-      <div class="footer-links-grid">
-        <div class="footer-block" id="about-footer"><h4>About</h4><p>Independent publication focused on smart rings, smart glasses, and smartwatches. We purchase all products ourselves.</p><p class="footer-meta">hello@remedytech.zone — New York, NY</p></div>
-        <div class="footer-block" id="privacy"><h4>Privacy</h4><p>Minimal analytics only. No ad trackers. Deletion: privacy@remedytech.zone</p><p class="footer-meta">Last updated: Aug 2026</p></div>
-        <div class="footer-block" id="compliance"><h4>Compliance</h4><p>Informational only, not medical advice. Affiliate links clearly marked per FTC.</p></div>
-        <div class="footer-block" id="terms"><h4>Terms</h4><p>© 2026 Remedy Tech Zone. Quote with attribution.</p><p class="footer-meta"><a href="#home">Back to top ↑</a></p></div>
-      </div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Remedy Tech Zone — The Field Guide for Better Tools</span><span class="footer-bottom-links"><a href="#privacy">Privacy</a> · <a href="#compliance">Compliance</a> · <a href="#terms">Terms</a> · <a href="#about">About</a></span></div>
+  <footer class="footer-bar">
+    <span>© 2026 Remedy Tech Zone — The Field Guide for Better Tools</span>
   </footer>
 
-  <div class="modal-overlay large" id="more-articles-modal" aria-hidden="true">
-    <div class="modal-container wide">
-      <button class="modal-close-btn">&times;</button>
-      <div class="overlay-head centered">
-        <h2>More Videos</h2>
-      </div>
-      <div class="video-grid" id="extra-video-grid">
-        <!-- Extra videos will be injected here - add your own -->
-      </div>
+  <div class="cookie-box">
+    <span>no cookies being traced here</span>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Zbl4aQHAZJY" title="Remedy Tech Zone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <button id="closeModal" class="modal-close">✕</button>
     </div>
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
