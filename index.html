@@ -1,145 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Remedy Tech Zone - The Field Guide for Better Tools. Video reviews for smart rings, smart glasses, wearables." />
-  <title>Remedy Tech Zone - The Field Guide for Better Tools</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <script src="assets/js/script.js" defer></script>
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Article Reels - Remedy Tech Zone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#000;--border:rgba(196,232,125,0.14);--accent:#c4e87d}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);font-family:"Space Mono",monospace;color:#e8f3ee}
+    .wrap{width:100%;height:100vh;display:flex;flex-direction:column}
+    /* Article Reel Upload Area - GitHub Ready */
+    /* Each article reel = one .reel-item - add new items here, index.html stays clean */
+    .reel-item{
+      width:100%;aspect-ratio:16/9;
+      background:#000;position:relative;
+      border-bottom:1px solid var(--border);
+    }
+    .reel-item iframe{
+      position:absolute;inset:0;width:100%;height:100%;border:0;
+    }
+    /* Example reel - replace src when uploading new reels */
+    /* To add new reel, duplicate .reel-item block below */
+    .placeholder{
+      width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+      color:#5d7a6f;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    }
+  </style>
 </head>
 <body>
-  <div class="ambient-grid" aria-hidden="true"></div>
-  <div class="ambient-glow" aria-hidden="true"></div>
-
-  <header class="navbar">
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#home" class="active">Home</a>
-      <a href="#articles">Articles</a>
-      <a href="#about">About</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#compliance">Compliance</a>
-      <a href="#terms">Terms</a>
-    </nav>
-  </header>
-
-  <section id="home" class="hero-centered">
-    <div class="hero-logo-block">
-      <div class="logo-mark large">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2.1-6.5L13 18l2.3-6H21"/></svg>
-      </div>
-      <h1>REMEDY <span>TECH ZONE</span></h1>
-      <p class="hero-tagline">The Field Guide for Better Tools</p>
-    </div>
-  </section>
-
-  <section id="articles" class="video-articles">
-    <div class="section-head">
-      <h2><span class="accent-line"></span> Latest Videos</h2>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="smart-rings">Smart Rings</button>
-        <button class="filter-btn" data-filter="meta-smart-glasses">Meta Glasses</button>
-        <button class="filter-btn" data-filter="smartwatches">Smartwatches</button>
-      </div>
+  <div class="wrap">
+    <!-- ARTICLE REEL 1 - Current main reel -->
+    <div class="reel-item">
+      <iframe src="https://www.youtube.com/embed/Zbl4aQHAZJY" title="Remedy Tech Zone Main Reel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <div class="video-grid" id="main-video-grid">
-      <article class="video-card" data-category="smart-rings">
-        <div class="video-wrap portrait">
-          <video controls preload="metadata" playsinline poster="">
-            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-          </video>
-          <span class="badge">SMART RINGS</span>
-        </div>
-        <div class="video-info">
-          <span class="date">Sep 7, 2026</span>
-          <h3>Why Smart Rings Are Dominating in 2026</h3>
-          <p>From sleep accuracy to 8-day battery — why rings beat watches this year.</p>
-        </div>
-      </article>
-
-      <article class="video-card" data-category="meta-smart-glasses">
-        <div class="video-wrap portrait">
-          <video controls preload="metadata" playsinline>
-            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
-          </video>
-          <span class="badge">META GLASSES</span>
-        </div>
-        <div class="video-info">
-          <span class="date">Aug 28, 2026</span>
-          <h3>Meta Smart Glasses: Hands-Free Test</h3>
-          <p>Live translation and POV capture that finally feels useful.</p>
-        </div>
-      </article>
-
-      <article class="video-card" data-category="smartwatches">
-        <div class="video-wrap portrait">
-          <video controls preload="metadata" playsinline>
-            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-          </video>
-          <span class="badge">SMARTWATCHES</span>
-        </div>
-        <div class="video-info">
-          <span class="date">Aug 19, 2026</span>
-          <h3>Battery Kings: 12 Days Tested</h3>
-          <p>9 watches worn non-stop. Only two survived the full work week.</p>
-        </div>
-      </article>
+    <!-- ADD NEW ARTICLE REELS BELOW - KEEP INDEX.HTML CLEAN -->
+    <!--
+    <div class="reel-item">
+      <iframe src="YOUR_NEW_REEL_URL_HERE" title="New Reel"></iframe>
     </div>
+    -->
 
-    <div class="more-wrap">
-      <button class="btn-primary" id="open-more-articles">Read More Articles</button>
-    </div>
-  </section>
-
-  <section id="about" class="about-section">
-    <div class="about-content centered">
-      <span class="eyebrow">ABOUT REMEDY TECH ZONE</span>
-      <h2>Tools that actually help you live better.</h2>
-      <p>Remedy Tech Zone started as a lab notebook for wearables. We buy, wear, and stress-test every device in real life — no press samples, no affiliate-first picks. If a tool doesn't make your life better, it doesn't make the cut.</p>
-      <div class="value-grid">
-        <div class="value-item"><div class="value-icon">◈</div><h4>Trusted Insights</h4><p>Independent testing with published methods.</p></div>
-        <div class="value-item"><div class="value-icon">⬙</div><h4>Practical Guides</h4><p>Setup, sizing, and settings that fix annoyances.</p></div>
-        <div class="value-item"><div class="value-icon">⬔</div><h4>Better Decisions</h4><p>Clear verdicts: Buy, Try, or Skip.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <div class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2.1-6.5L13 18l2.3-6H21"/></svg></span><h1>REMEDY <span>TECH ZONE</span></h1></div>
-        <p>Clear-eyed field notes on wearables and health hardware. No hype, just tools that work.</p>
-      </div>
-      <div class="footer-links-grid">
-        <div class="footer-block" id="about-footer"><h4>About</h4><p>Independent publication focused on smart rings, smart glasses, and smartwatches. We purchase all products ourselves.</p><p class="footer-meta">Field notes from real wear.</p></div>
-        <div class="footer-block" id="privacy"><h4>Privacy</h4><p>Minimal analytics only. No ad trackers. Email stored only if you subscribe. Deletion: privacy@remedytech.zone</p><p class="footer-meta">No hidden surveillance.</p></div>
-        <div class="footer-block" id="compliance"><h4>Compliance</h4><p>Informational only, not medical advice. Affiliate links clearly marked per FTC rules. Methodology published.</p></div>
-        <div class="footer-block" id="terms"><h4>Terms</h4><p>© 2026 Remedy Tech Zone. Quote with attribution. Do not republish full videos without permission.</p><p class="footer-meta"><a href="#privacy">Privacy</a> · <a href="#compliance">Compliance</a></p></div>
-      </div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Remedy Tech Zone — The Field Guide for Better Tools</span><span class="footer-bottom-links"><a href="#privacy">Privacy</a> · <a href="#compliance">Compliance</a> · <a href="#terms">Terms</a></span></div>
-  </footer>
-
-  <div class="modal-overlay large" id="more-articles-modal" aria-hidden="true">
-    <div class="modal-container wide">
-      <button class="modal-close-btn">&times;</button>
-      <div class="overlay-head">
-        <h2>More Field Notes</h2>
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter-extra="all">All</button>
-          <button class="filter-btn" data-filter-extra="smart-rings">Rings</button>
-          <button class="filter-btn" data-filter-extra="meta-smart-glasses">Glasses</button>
-          <button class="filter-btn" data-filter-extra="smartwatches">Watches</button>
-        </div>
-      </div>
-      <div class="video-grid" id="extra-video-grid"></div>
-    </div>
+    <!-- If no reel yet, show placeholder -->
+    <!-- <div class="reel-item"><div class="placeholder">Upload article reel here</div></div> -->
   </div>
-
-</body>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
 </html>
