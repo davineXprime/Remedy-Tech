@@ -1,21 +1,20 @@
-// Load article.html when button is clicked
-document.getElementById("loadArticleBtn").addEventListener("click", () => {
-  fetch("article.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("article-container").innerHTML = data;
-      console.log("Article loaded successfully ✨");
-    })
-    .catch(error => console.error("Error loading article:", error));
-});
+document.addEventListener("DOMContentLoaded", () => {
 
-// Button hover glow
-const buttons = document.querySelectorAll('.button');
-buttons.forEach(btn => {
-  btn.addEventListener('mouseenter', () => {
-    btn.style.boxShadow = '0 0 15px rgba(255, 138, 138, 0.6)';
+  const btn = document.getElementById("loadArticleBtn");
+
+  btn.addEventListener("click", () => {
+
+    fetch("./article.html")   // IMPORTANT: relative path for GitHub
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("article-container").innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("article-container").innerHTML =
+          "<p style='color:red;'>Could not load article.</p>";
+        console.error(err);
+      });
+
   });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-  });
+
 });
