@@ -1,16 +1,19 @@
-# Remedy Tech Zone
+# Remedy Tech Zone  
+The Field Guide for Better Tools.  
+We test products in real life so you don't have to — minimal hype, honest results.
 
-> The Field Guide for Better Tools. We test products in real life so you don't have to. Minimal hype, honest results.
+---
 
-## 📁 Repository Structure
+## 📌 Project Overview  
+This repository hosts the public website for **Remedy Tech Zone**, built as a lightweight, aesthetic, single‑page experience with a dynamically loaded article section.
 
-Your project files are organized at the root directory to ensure clean builds and seamless deployments without 404 errors:
+The site is optimized for:
+- GitHub Pages hosting  
+- Fast load times  
+- Clean, minimal UI  
+- Zero external dependencies  
+- Simple maintenance  
 
-```text
-├── 404.html       # Custom error page with fallback navigation
-├── CNAME          # Custom domain configuration mapping to remedytech.zone
-├── README.md      # Project documentation
-├── article.html     # Embedded media reels and content frame
-├── index.html     # Main homepage entry point
-├── script.js      # Frontend navigation and intersection observers
-└── styles.css     # Core stylesheet (dark theme and layout variables)
+---
+
+## 🧱 File Structure
