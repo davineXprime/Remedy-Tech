@@ -4,54 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remedy Tech Zone</title>
-
-  <!-- ALL CSS HERE -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #dfe9f3, #fcefe3);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #333;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-
-    #article-container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>Remedy Tech Zone</h1>
-    <p>The Field Guide for Better Tools</p>
-    <button class="button" id="loadArticleBtn">Load Article</button>
-  </header>
-  
   <!-- MP4 Background Video -->
   <div class="video-background">
     <video autoplay loop muted playsinline id="bg-video">
@@ -60,26 +16,39 @@
     </video>
     <div class="video-overlay"></div>
   </div>
-  
 
-  <!-- Article loads here -->
-  <div id="article-container"></div>
+  <!-- Main Layout Container -->
+  <div class="app-container">
+    
+    <!-- Left Navigation Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <h2>Remedy Tech</h2>
+        <span>zone</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="active" onclick="loadArticle('articles/latest-article.html')">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#privacy">Privacy &amp; Compliance</a></li>
+      </ul>
+    </nav>
 
-  <!-- ALL JAVASCRIPT HERE -->
-  <script>
-    document.getElementById("loadArticleBtn").addEventListener("click", () => {
-      fetch("./article.html")
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("article-container").innerHTML = html;
-        })
-        .catch(err => {
-          document.getElementById("article-container").innerHTML =
-            "<p style='color:red;'>Could not load article.</p>";
-          console.error(err);
-        });
-    });
-  </script>
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <h1 class="section-title">- Articles -</h1>
+      
+      <!-- Dynamic Article Container (Loaded via JS) -->
+      <div id="article-container" class="article-card-wrapper">
+        <p>Loading today's article...</p>
+      </div>
 
+      <div class="footer-link">
+        <a href="#all-articles">Read More Articles &rarr;</a>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
