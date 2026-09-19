@@ -4,51 +4,527 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remedy Tech Zone</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset & CSS Variables */
+    :root {
+      --primary-accent: #38ef7d;
+      --primary-btn: #0f766e;
+      --primary-btn-hover: #115e59;
+      --sidebar-bg: rgba(15, 23, 42, 0.85);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-dark: #1e293b;
+      --text-muted: #475569;
+      --text-light: #f8fafc;
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    body {
+      color: var(--text-light);
+      background-color: #000;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Video Background & Overlay */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -2;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+
+    #bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* Accessibility Video Controls */
+    .video-control-btn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-light);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      backdrop-filter: blur(8px);
+      transition: background var(--transition-speed);
+    }
+
+    .video-control-btn:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: var(--primary-accent);
+    }
+
+    /* App Container Layout */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Mobile Header Toggle */
+    .mobile-header {
+      display: none;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-speed) ease;
+      z-index: 90;
+    }
+
+    .logo h2 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      font-style: italic;
+      color: var(--primary-accent);
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      margin-top: 3rem;
+    }
+
+    .nav-links li {
+      margin-bottom: 1.25rem;
+    }
+
+    .nav-btn {
+      background: none;
+      border: none;
+      color: #e2e8f0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color var(--transition-speed);
+      width: 100%;
+      text-align: left;
+      padding: 0.4rem 0;
+    }
+
+    .nav-btn:hover, .nav-btn.active {
+      color: var(--primary-accent);
+      font-weight: 600;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      padding: 3rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .article-card-wrapper {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* Article Card */
+    .article-card {
+      background: var(--card-bg);
+      color: var(--text-dark);
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .article-media img, .article-media video {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .article-snippet {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-btn {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      background: var(--primary-btn);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition-speed);
+    }
+
+    .read-btn:hover {
+      background: var(--primary-btn-hover);
+    }
+
+    /* Modal for Full Article View */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-body {
+      background: #fff;
+      color: #1e293b;
+      max-width: 700px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .mobile-header {
+        display: flex;
+      }
+
+      .app-container {
+        padding-top: 60px;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: calc(100vh - 60px);
+        transform: translateX(-100%);
+        width: 250px;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        padding: 2rem 1rem;
+      }
+
+      .article-media img {
+        height: 200px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- MP4 Background Video -->
+  <!-- MP4 Background Video with Seamless Loop & Mobile Compatibility -->
   <div class="video-background">
-    <video autoplay loop muted playsinline id="bg-video">
+    <video autoplay loop muted playsinline preload="auto" id="bg-video">
       <source src="background.mp4" type="video/mp4">
-      Your browser does not support video.
+      Your browser does not support the video tag.
     </video>
     <div class="video-overlay"></div>
   </div>
 
+  <!-- Video Motion Toggle (WCAG 2.2 compliant) -->
+  <button id="video-toggle" class="video-control-btn" aria-label="Pause background video">⏸ Pause Video</button>
+
+  <!-- Mobile Top Header -->
+  <header class="mobile-header">
+    <div class="logo">
+      <h2>Remedy Tech <span>zone</span></h2>
+    </div>
+    <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+  </header>
+
   <!-- Main Layout Container -->
   <div class="app-container">
     
-    <!-- Left Navigation Sidebar -->
-    <nav class="sidebar">
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar" id="sidebar">
       <div class="logo">
         <h2>Remedy Tech</h2>
         <span>zone</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#" class="active" onclick="loadArticle('articles/latest-article.html')">Articles</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#privacy">Privacy &amp; Compliance</a></li>
+        <li><button class="nav-btn active" onclick="switchTab('articles')">Articles</button></li>
+        <li><button class="nav-btn" onclick="switchTab('about')">About</button></li>
+        <li><button class="nav-btn" onclick="switchTab('privacy')">Privacy & Compliance</button></li>
       </ul>
     </nav>
 
     <!-- Main Content Area -->
-    <main class="main-content">
-      <h1 class="section-title">- Articles -</h1>
+    <main class="main-content" id="main-content">
+      <h1 class="section-title" id="page-title">- Articles -</h1>
       
-      <!-- Dynamic Article Container (Loaded via JS) -->
+      <!-- Dynamic Article Container -->
       <div id="article-container" class="article-card-wrapper">
-        <p>Loading today's article...</p>
-      </div>
-
-      <div class="footer-link">
-        <a href="#all-articles">Read More Articles &rarr;</a>
+        <!-- Rendered by JS -->
       </div>
     </main>
 
   </div>
 
-  <script src="script.js"></script>
+  <!-- Article Detail Modal -->
+  <div class="modal-backdrop" id="article-modal">
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    // Embedded Store for Dynamic Articles (Prevents Local CORS Failures)
+    const articles = [
+      {
+        id: 'tech-insight-1',
+        tag: 'Tech Trends',
+        title: "Today's Tech Insight Header",
+        snippet: "Discover how real-time rendering, edge computing, and modular micro-frontends are changing website architecture in 2026.",
+        fullContent: "<p>Modern web architectures rely heavily on decoupled modular frontends. By utilizing edge functions and responsive background components, web applications achieve near-instant initial page loads while providing rich user interactions.</p><p>Key benefits include enhanced offline resilience, granular cache management, and cleaner code segregation.</p>",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        id: 'tech-insight-2',
+        tag: 'Cybersecurity',
+        title: "Securing Frontend Dynamic Content",
+        snippet: "Understanding DOM XSS vulnerabilities when inserting dynamically fetched external HTML fragments into live user documents.",
+        fullContent: "<p>Inserting raw external HTML strings via innerHTML poses significant security risks if user input isn't sanitized. Always use secure parser functions, DOMPurify, or native textNode assignments.</p>",
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+
+    let currentArticleIndex = 0;
+
+    // Render Active Article
+    function renderArticle(index) {
+      const item = articles[index];
+      const container = document.getElementById('article-container');
+      
+      container.innerHTML = `
+        <article class="article-card">
+          <div class="article-media">
+            <img src="${item.image}" alt="${item.title}">
+          </div>
+          <span class="article-tag">${item.tag}</span>
+          <h2 class="article-title">${item.title}</h2>
+          <p class="article-snippet">${item.snippet}</p>
+          <button onclick="openModal(${index})" class="read-btn" aria-label="Read full article: ${item.title}">Read Full Article</button>
+        </article>
+      `;
+    }
+
+    // Modal Control Functions
+    function openModal(index) {
+      const item = articles[index];
+      const modal = document.getElementById('article-modal');
+      const content = document.getElementById('modal-content');
+      
+      content.innerHTML = `
+        <span class="article-tag">${item.tag}</span>
+        <h2 style="font-size: 1.8rem; margin: 0.5rem 0 1rem;">${item.title}</h2>
+        <div>${item.fullContent}</div>
+      `;
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('article-modal').classList.remove('active');
+    }
+
+    // Tab Navigation Switcher
+    function switchTab(tab) {
+      const title = document.getElementById('page-title');
+      const container = document.getElementById('article-container');
+      const navBtns = document.querySelectorAll('.nav-btn');
+
+      navBtns.forEach(btn => btn.classList.remove('active'));
+      
+      // Close mobile menu on tab switch
+      document.getElementById('sidebar').classList.remove('open');
+
+      if (tab === 'articles') {
+        title.textContent = '- Articles -';
+        renderArticle(currentArticleIndex);
+      } else if (tab === 'about') {
+        title.textContent = '- About Remedy Tech -';
+        container.innerHTML = `
+          <div class="article-card">
+            <h2 class="article-title">Welcome to Remedy Tech Zone</h2>
+            <p class="article-snippet">We bring you daily updates on edge computing, modern web architecture, cybersecurity standards, and user experience design.</p>
+          </div>
+        `;
+      } else if (tab === 'privacy') {
+        title.textContent = '- Privacy & Compliance -';
+        container.innerHTML = `
+          <div class="article-card">
+            <h2 class="article-title">Compliance & User Safety</h2>
+            <p class="article-snippet">We adhere strictly to modern web accessibility (WCAG 2.2) standards and ensure user data stays protected with zero third-party telemetry tracking.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Video Control Handler (WCAG 2.2)
+    const video = document.getElementById('bg-video');
+    const videoBtn = document.getElementById('video-toggle');
+
+    // Ensure audio is muted & force playback loop for browser compatibility
+    if (video) {
+      video.muted = true;
+      
+      // Force play call to bypass modern browser autoplay restrictions
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.warn("Autoplay was prevented or video file 'background.mp4' was not found locally:", error);
+        });
+      }
+    }
+
+    videoBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        videoBtn.textContent = '⏸ Pause Video';
+        videoBtn.setAttribute('aria-label', 'Pause background video');
+      } else {
+        video.pause();
+        videoBtn.textContent = '▶ Play Video';
+        videoBtn.setAttribute('aria-label', 'Play background video');
+      }
+    });
+
+    // Mobile Sidebar Drawer Toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    // Respect User Reduced Motion Preferences
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.pause();
+      videoBtn.textContent = '▶ Play Video';
+    }
+
+    // Initial Load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderArticle(0);
+    });
+  </script>
 </body>
 </html>
