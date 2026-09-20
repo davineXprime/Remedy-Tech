@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Remedy Tech Zone",
+      "hasCanvas": false,
+      "bodyTextLen": 899,
+      "bodyTextHash": "1f8efca34c3cefe08d42414829a06229848fe72d8d5b2ee6e48a872ec79b1a9a",
+      "bodyTextPrefix": "Skip to content Remedy TECH ZONE Articles About Privacy and Comp",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Remedy Tech Zone",
+      "hasCanvas": false,
+      "bodyTextLen": 841,
+      "bodyTextHash": "5ae11dcd4f25752ff63253682c031dc18bfecdea7c40d447661555ca29b319e4",
+      "bodyTextPrefix": "Skip to content Remedy TECH ZONE FIELD NOTES Remedy Tech Zone PO",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

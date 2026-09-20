@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/articles",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Remedy Tech Zone",
+      "hasCanvas": false,
+      "bodyTextLen": 1505,
+      "bodyTextHash": "87660c7d63f28a7ccd11efbb237a6375b7c7159e301d20644aab6819c6f668f4",
+      "bodyTextPrefix": "Skip to content Remedy TECH ZONE Articles About Privacy and Comp",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/articles.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Remedy Tech Zone",
+      "hasCanvas": false,
+      "bodyTextLen": 1447,
+      "bodyTextHash": "216420089e59f55a412446343c54e2c4b00a55ea9c4dc8aec51ae5f250c17a12",
+      "bodyTextPrefix": "Skip to content Remedy TECH ZONE DESK Articles Practical notes o",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/articles-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/articles.json"
+}

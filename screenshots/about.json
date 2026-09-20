@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/about",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "About · Remedy Tech Zone",
+      "hasCanvas": false,
+      "bodyTextLen": 1007,
+      "bodyTextHash": "957502acdf179eb44791a05298a502f373305f1f321c0a64feb267129e117772",
+      "bodyTextPrefix": "Skip to content Remedy TECH ZONE Articles About Privacy and Comp",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "About · Remedy Tech Zone",
+      "hasCanvas": false,
+      "bodyTextLen": 949,
+      "bodyTextHash": "9c6fd35c2af52091fb34241f3005594f2490a61e2bca730f5165e10c32d02e05",
+      "bodyTextPrefix": "Skip to content Remedy TECH ZONE THE DESK About A small editoria",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/about-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/about.json"
+}
