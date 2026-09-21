@@ -1,9 +1,9 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime } from "../_libs/radix-ui__react-context+react.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
-import { i as articles, r as Button } from "./router-mGtvs1KV.mjs";
-import { t as ArticleCard } from "./article-card-CBGtH-FK.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-Ds1lbrcA.js
+import { a as Button, r as Route$1 } from "./router-CVsIDYYc.mjs";
+import { t as ArticleCard } from "./article-card-B1qVq-W_.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles.index-rGKoSEzz.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FILTERS = [
@@ -13,8 +13,9 @@ var FILTERS = [
 	"Tech"
 ];
 function ArticlesIndex() {
+	const { articles } = Route$1.useLoaderData();
 	const [filter, setFilter] = (0, import_react.useState)("All");
-	const list = (0, import_react.useMemo)(() => filter === "All" ? articles : articles.filter((a) => a.category === filter), [filter]);
+	const list = (0, import_react.useMemo)(() => filter === "All" ? articles : articles.filter((a) => a.category === filter), [articles, filter]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "flex flex-col gap-8",
 		children: [

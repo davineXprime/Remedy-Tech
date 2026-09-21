@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArticleCard } from "@/components/article-card";
 import { Button } from "@/components/ui/button";
-import { articles, type Category } from "@/data/articles";
+import { loadAllArticles, type Category } from "@/lib/articles";
 
 export const Route = createFileRoute("/articles/")({
+  loader: () => ({ articles: loadAllArticles() }),
   component: ArticlesIndex,
   head: () => ({
     meta: [
@@ -20,10 +21,11 @@ export const Route = createFileRoute("/articles/")({
 const FILTERS: Array<"All" | Category> = ["All", "Power", "Prep", "Tech"];
 
 function ArticlesIndex() {
+  const { articles } = Route.useLoaderData();
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
   const list = useMemo(
     () => (filter === "All" ? articles : articles.filter((a) => a.category === filter)),
-    [filter],
+    [articles, filter],
   );
 
   return (

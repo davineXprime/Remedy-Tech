@@ -2,11 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArticleCard } from "@/components/article-card";
 import { Button } from "@/components/ui/button";
-import { articles } from "@/data/articles";
+import { loadAllArticles } from "@/lib/articles";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  loader: () => ({ articles: loadAllArticles() }),
+  component: Home,
+});
 
 function Home() {
+  const { articles } = Route.useLoaderData();
   const [showAll, setShowAll] = useState(false);
   const featured = articles[0];
   const rest = articles.slice(1);
@@ -44,7 +48,7 @@ function Home() {
           </Link>
         </div>
 
-        <ArticleCard article={featured} featured />
+        {featured ? <ArticleCard article={featured} featured /> : null}
 
         <div className="grid gap-5 sm:grid-cols-2">
           {visible.map((article) => (
@@ -52,19 +56,19 @@ function Home() {
           ))}
         </div>
 
-        {!showAll ? (
+        {!showAll && rest.length > 2 ? (
           <div className="flex justify-center">
             <Button variant="outline" size="lg" onClick={() => setShowAll(true)}>
               More Articles
             </Button>
           </div>
-        ) : (
+        ) : rest.length > 2 ? (
           <div className="flex justify-center">
             <Button variant="ghost" asChild>
               <Link to="/articles">Open the full desk</Link>
             </Button>
           </div>
-        )}
+        ) : null}
       </section>
     </div>
   );

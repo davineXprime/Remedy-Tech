@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import type { Article } from "@/data/articles";
+import type { Article } from "@/lib/articles";
 import { Badge } from "@/components/ui/badge";
 import { MediaFrame } from "@/components/media-frame";
 import { cn } from "@/lib/utils";

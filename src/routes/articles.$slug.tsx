@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { ArticleCard } from "@/components/article-card";
 import { MediaFrame } from "@/components/media-frame";
 import { Badge } from "@/components/ui/badge";
-import { getArticle, relatedArticles } from "@/data/articles";
+import { getArticle, relatedArticles } from "@/lib/articles";
 
 export const Route = createFileRoute("/articles/$slug")({
   component: ArticlePage,
@@ -60,23 +60,24 @@ function ArticlePage() {
         className="rounded-xl"
       />
 
-      <div className="flex max-w-2xl flex-col gap-5 text-[1.05rem] leading-relaxed text-foreground">
-        {article.body.map((paragraph) => (
-          <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-        ))}
-      </div>
+      <div
+        className="flex max-w-2xl flex-col gap-5 text-[1.05rem] leading-relaxed text-foreground"
+        dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+      />
 
-      <aside className="max-w-2xl rounded-xl bg-secondary/70 p-5 sm:p-6">
-        <h2 className="text-xs font-medium tracking-[0.2em] text-emerald uppercase">Takeaways</h2>
-        <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed">
-          {article.takeaways.map((item) => (
-            <li key={item} className="flex gap-3">
-              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-jade" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </aside>
+      {article.takeaways.length > 0 ? (
+        <aside className="max-w-2xl rounded-xl bg-secondary/70 p-5 sm:p-6">
+          <h2 className="text-xs font-medium tracking-[0.2em] text-emerald uppercase">Takeaways</h2>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed">
+            {article.takeaways.map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-jade" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      ) : null}
 
       {related.length > 0 ? (
         <section className="flex flex-col gap-4 pt-4">

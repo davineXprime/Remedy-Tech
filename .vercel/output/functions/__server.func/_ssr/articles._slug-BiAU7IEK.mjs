@@ -1,9 +1,9 @@
 import { n as require_jsx_runtime } from "../_libs/radix-ui__react-context+react.mjs";
 import { v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { o as ArrowLeft } from "../_libs/lucide-react.mjs";
-import { n as Route } from "./router-mGtvs1KV.mjs";
-import { n as Badge, r as MediaFrame, t as ArticleCard } from "./article-card-CBGtH-FK.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-ClIJe8Nh.js
+import { n as Route } from "./router-CVsIDYYc.mjs";
+import { n as Badge, r as MediaFrame, t as ArticleCard } from "./article-card-B1qVq-W_.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/articles._slug-BiAU7IEK.js
 var import_jsx_runtime = require_jsx_runtime();
 function ArticlePage() {
 	const { article, related } = Route.useLoaderData();
@@ -55,9 +55,9 @@ function ArticlePage() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "flex max-w-2xl flex-col gap-5 text-[1.05rem] leading-relaxed text-foreground",
-				children: article.body.map((paragraph) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: paragraph }, paragraph.slice(0, 32)))
+				dangerouslySetInnerHTML: { __html: article.bodyHtml }
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
+			article.takeaways.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
 				className: "max-w-2xl rounded-xl bg-secondary/70 p-5 sm:p-6",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 					className: "text-xs font-medium tracking-[0.2em] text-emerald uppercase",
@@ -69,7 +69,7 @@ function ArticlePage() {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "mt-2 size-1.5 shrink-0 rounded-full bg-jade" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: item })]
 					}, item))
 				})]
-			}),
+			}) : null,
 			related.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "flex flex-col gap-4 pt-4",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {

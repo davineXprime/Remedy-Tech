@@ -2,12 +2,13 @@ import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime } from "../_libs/radix-ui__react-context+react.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { i as articles, r as Button } from "./router-mGtvs1KV.mjs";
-import { t as ArticleCard } from "./article-card-CBGtH-FK.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DQ-Uoytz.js
+import { a as Button, i as Route$4 } from "./router-CVsIDYYc.mjs";
+import { t as ArticleCard } from "./article-card-B1qVq-W_.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B2Ar0I5p.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function Home() {
+	const { articles } = Route$4.useLoaderData();
 	const [showAll, setShowAll] = (0, import_react.useState)(false);
 	const featured = articles[0];
 	const rest = articles.slice(1);
@@ -50,15 +51,15 @@ function Home() {
 						children: "Browse all"
 					})]
 				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArticleCard, {
+				featured ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArticleCard, {
 					article: featured,
 					featured: true
-				}),
+				}) : null,
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "grid gap-5 sm:grid-cols-2",
 					children: visible.map((article) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArticleCard, { article }, article.slug))
 				}),
-				!showAll ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				!showAll && rest.length > 2 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "flex justify-center",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 						variant: "outline",
@@ -66,7 +67,7 @@ function Home() {
 						onClick: () => setShowAll(true),
 						children: "More Articles"
 					})
-				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				}) : rest.length > 2 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "flex justify-center",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 						variant: "ghost",
@@ -76,7 +77,7 @@ function Home() {
 							children: "Open the full desk"
 						})
 					})
-				})
+				}) : null
 			]
 		})]
 	});
