@@ -1,826 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>RTZ — Remedy Tech Zone ($50–$150 Budget Pulse)</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              lime: '#a3e635',     
-              limedark: '#65a30d', 
-              bg: '#84cc16',       
-              dark: '#0f172a',     
-              card: '#1e293b',     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedy Tech Zone - Articles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #090d16;
+            --bg-secondary: #111827;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(16, 185, 129, 0.2);
+            --accent-emerald: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background ambient glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(9, 13, 22, 0) 70%);
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-emerald) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-left: 4px solid var(--accent-emerald);
+            padding-left: 1rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-emerald);
+            box-shadow: 0 12px 30px var(--accent-glow);
+        }
+
+        .article-img-wrapper {
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .article-card:hover .article-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .article-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(9, 13, 22, 0.85);
+            color: var(--accent-emerald);
+            padding: 0.35rem 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        .article-content {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        .article-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .metrics-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .metrics-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.3rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .metrics-list li strong {
+            color: var(--text-main);
+        }
+
+        .read-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-emerald);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .read-btn:hover {
+            background: var(--accent-emerald);
+            color: var(--bg-primary);
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.25rem;
             }
-          }
+            main {
+                padding: 1rem;
+            }
         }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      background-color: #84cc16; /* Retained Lime Green Background */
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(163, 230, 53, 0.4) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(101, 163, 13, 0.3) 0px, transparent 50%);
-      background-attachment: fixed;
-      font-family: 'Inter', sans-serif;
-      color: #0f172a;
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(15, 23, 42, 0.1);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(15, 23, 42, 0.3);
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(15, 23, 42, 0.5);
-    }
-
-    /* New Glassy Gradients for Article Cards */
-    .glass-emerald {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.7), rgba(4, 120, 87, 0.95));
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 8px 32px 0 rgba(0,0,0,0.3);
-    }
-    
-    .glass-jade {
-      background: linear-gradient(135deg, rgba(5, 150, 105, 0.7), rgba(6, 78, 59, 0.95));
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 8px 32px 0 rgba(0,0,0,0.3);
-    }
-    
-    .glass-turquoise {
-      background: linear-gradient(135deg, rgba(20, 184, 166, 0.7), rgba(15, 118, 110, 0.95));
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 8px 32px 0 rgba(0,0,0,0.3);
-    }
-  </style>
+    </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-slate-900 selection:text-lime-400">
+<body>
 
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-900/90 border-b border-slate-800 text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Brand Logo & Name -->
-        <div class="flex items-center space-x-3 cursor-pointer" onclick="filterCategory('All')">
-          <div class="w-10 h-10 rounded-xl bg-lime-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-md">
-            RTZ
-          </div>
-          <div>
-            <h1 class="font-bold text-lg tracking-wide leading-none text-white">RTZ Notebook</h1>
-            <p class="text-xs text-lime-400 font-medium">Budget Tech ($50–$150)</p>
-          </div>
+    <header>
+        <h1>Remedy Tech Zone</h1>
+        <p>Your daily pulse on wearable tech, smart rings, mobiles, and AI gadgets.</p>
+    </header>
+
+    <main>
+        <h2 class="section-title">Articles</h2>
+
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Sunday Spotlight</span>
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop" alt="Moto G Play">
+                </div>
+                <div class="article-content">
+                    <h3>Moto G Play Review: The Unbeatable $110 Battery Champion</h3>
+                    <p>Finding a dependable unlocked smartphone under $150 often requires compromises. The Moto G Play delivers multi-day battery endurance and clean software.</p>
+                    <ul class="metrics-list">
+                        <li><span>Price Range:</span> <strong>~$109 – $129</strong></li>
+                        <li><span>Display:</span> <strong>6.5" HD+ (90Hz)</strong></li>
+                        <li><span>Battery:</span> <strong>5,000 mAh</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Article 2 (Amazfit Bip 5 Update) -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Monday Spotlight</span>
+                    <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop" alt="Amazfit Bip 5">
+                </div>
+                <div class="article-content">
+                    <h3>Amazfit Bip 5 Review: Big Screen, Built-In GPS & Smart Features Under $90</h3>
+                    <p>Featuring an expansive 1.91-inch touchscreen display, Bluetooth calling, and 4-satellite GPS positioning for complete tracking under $90.</p>
+                    <ul class="metrics-list">
+                        <li><span>Price Range:</span> <strong>~$79 – $89</strong></li>
+                        <li><span>Display:</span> <strong>1.91" Large Touch Screen</strong></li>
+                        <li><span>Battery Life:</span> <strong>Up to 10 Days</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Tuesday Spotlight</span>
+                    <img src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?q=80&w=800&auto=format&fit=crop" alt="Samsung Galaxy Fit 3">
+                </div>
+                <div class="article-content">
+                    <h3>Samsung Galaxy Fit 3 Review: Sleek Health Tracking for Under $70</h3>
+                    <p>Blending a low-profile aluminum frame with a wide AMOLED display, offering continuous heart rate monitoring and vital fall-detection safety alerts.</p>
+                    <ul class="metrics-list">
+                        <li><span>Price Range:</span> <strong>~$59 – $69</strong></li>
+                        <li><span>Display:</span> <strong>1.6" AMOLED</strong></li>
+                        <li><span>Battery Life:</span> <strong>Up to 13 Days</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Wednesday Spotlight</span>
+                    <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=800&auto=format&fit=crop" alt="BLU G75 5G">
+                </div>
+                <div class="article-content">
+                    <h3>BLU G75 5G Review: 128GB Storage and 90Hz Display Under $130</h3>
+                    <p>Factory-unlocked 5G connectivity paired with generous built-in storage and smooth high-refresh-rate viewing for media enthusiasts on a budget.</p>
+                    <ul class="metrics-list">
+                        <li><span>Price Range:</span> <strong>~$119 – $129</strong></li>
+                        <li><span>Storage:</span> <strong>128GB ROM + Expandable</strong></li>
+                        <li><span>Display:</span> <strong>6.6" 90Hz HD+</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Thursday Spotlight</span>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop" alt="CMF Watch Pro 2">
+                </div>
+                <div class="article-content">
+                    <h3>CMF Watch Pro 2 Review: Dynamic Design Meets Built-In GPS</h3>
+                    <p>Featuring an interchangeable bezel system, bright AMOLED display, and standalone route tracking for stylish everyday wear.</p>
+                    <ul class="metrics-list">
+                        <li><span>Price Range:</span> <strong>~$69 – $79</strong></li>
+                        <li><span>Design:</span> <strong>Modular Aluminum Bezel</strong></li>
+                        <li><span>Battery Life:</span> <strong>Up to 11 Days</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Friday Bundle</span>
+                    <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?q=80&w=800&auto=format&fit=crop" alt="Power-Suite Bundle">
+                </div>
+                <div class="article-content">
+                    <h3>The $250 Amazon Power-Suite: Phone, Smartwatch & Earbuds</h3>
+                    <p>Build a complete connected ecosystem without breaking the bank by combining a high-value phone, smartwatch, and wireless audio.</p>
+                    <ul class="metrics-list">
+                        <li><span>Total Cost:</span> <strong>Under $250</strong></li>
+                        <li><span>Phone:</span> <strong>Samsung Galaxy A15</strong></li>
+                        <li><span>Wearable & Audio:</span> <strong>CMF Watch Pro & Soundcore</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="article-card">
+                <div class="article-img-wrapper">
+                    <span class="article-tag">Saturday Bundle</span>
+                    <img src="https://images.unsplash.com/photo-1510519138161-5364d8cd7bb5?q=80&w=800&auto=format&fit=crop" alt="Screenless Trio">
+                </div>
+                <div class="article-content">
+                    <h3>Ditch the Display: The Smart Ring, Glasses & App Combo</h3>
+                    <p>Experience screenless health tracking and voice-first AI productivity using ambient rings, smart glasses, and companion apps.</p>
+                    <ul class="metrics-list">
+                        <li><span>Category:</span> <strong>Ambient Health Trio</strong></li>
+                        <li><span>Focus:</span> <strong>Recovery & Voice AI</strong></li>
+                        <li><span>Style:</span> <strong>Screenless Wearables</strong></li>
+                    </ul>
+                    <a href="#" class="read-btn">Read Full Article</a>
+                </div>
+            </article>
         </div>
+    </main>
 
-        <!-- Search Bar -->
-        <div class="hidden md:flex flex-1 max-w-md mx-8">
-          <div class="relative w-full">
-            <input 
-              type="text" 
-              id="searchInput"
-              onkeyup="handleSearch()"
-              placeholder="Search budget phones, watches..." 
-              class="w-full bg-slate-800/80 border border-slate-700/80 rounded-xl py-2 pl-10 pr-4 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent transition"
-            />
-            <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-          </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Remedy Tech Zone. All rights reserved.</p>
+    </footer>
 
-        <!-- Navigation Tabs (Articles, About, Privacy) -->
-        <nav class="hidden lg:flex items-center space-x-6 mr-6 text-sm font-semibold text-slate-300">
-          <a href="#articles" class="hover:text-white transition">Articles</a>
-          <a href="#about" class="hover:text-white transition">About</a>
-          <a href="#privacy" class="hover:text-white transition">Privacy & Compliance</a>
-        </nav>
-
-        <!-- Template Modal Action Button -->
-        <div class="flex items-center space-x-3">
-          <button 
-            onclick="openTemplateModal()" 
-            class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-lime-400 text-slate-950 hover:bg-lime-300 transition shadow-sm flex items-center space-x-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-            <span>Article Spec</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Search Bar -->
-    <div class="md:hidden px-4 pb-3">
-      <div class="relative w-full">
-        <input 
-          type="text" 
-          id="mobileSearchInput"
-          onkeyup="handleMobileSearch()"
-          placeholder="Search RTZ articles..." 
-          class="w-full bg-slate-800 border border-slate-700 rounded-xl py-2 pl-10 pr-4 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lime-400"
-        />
-        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
-    
-    <!-- Category Filter Tabs -->
-    <div class="flex items-center justify-between border-b border-slate-900/10 pb-4 mb-8 flex-wrap gap-4">
-      <div class="flex items-center space-x-2 overflow-x-auto py-1 no-scrollbar">
-        <button 
-          onclick="filterCategory('All')" 
-          id="cat-btn-All"
-          class="cat-btn px-5 py-2 rounded-xl text-sm font-bold transition shadow-sm bg-slate-900 text-lime-400">
-          All RTZ Field Notes
-        </button>
-        <button 
-          onclick="filterCategory('Phones')" 
-          id="cat-btn-Phones"
-          class="cat-btn px-5 py-2 rounded-xl text-sm font-semibold transition bg-slate-900/10 hover:bg-slate-900/20 text-slate-900">
-          📱 Smartphones
-        </button>
-        <button 
-          onclick="filterCategory('Wearables')" 
-          id="cat-btn-Wearables"
-          class="cat-btn px-5 py-2 rounded-xl text-sm font-semibold transition bg-slate-900/10 hover:bg-slate-900/20 text-slate-900">
-          ⌚ Wearables
-        </button>
-      </div>
-
-      <div class="text-xs font-semibold text-slate-900 uppercase tracking-wider bg-slate-900/10 px-3 py-1.5 rounded-lg" id="articleCount">
-        Showing 3 Articles
-      </div>
-    </div>
-
-    <section id="articles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- Article Card 1: Emerald Gradient -->
-      <article 
-        data-category="Phones" 
-        data-title="moto g play review battery champion"
-        onclick="openArticle('moto-g-play')"
-        class="article-card cursor-pointer group glass-emerald text-white rounded-2xl p-5 hover:border-lime-400/80 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <!-- Bug fixed: Added closing div for the image container below -->
-          <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950 h-48">
-            <img 
-              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" 
-              alt="Moto G Play" 
-              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Moto+G+Play'"
-            />
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-lime-300 transition mb-2 leading-snug">
-            Moto G Play Review: The Unbeatable $110 Battery Champion
-          </h3>
-          <p class="text-slate-100 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-medium">
-            A dependable unlocked smartphone focusing on essentials: 5,000 mAh battery endurance, 90Hz display, and robust drop-resistant build.
-          </p>
-        </div>
-
-        <div class="pt-3 border-t border-white/20 flex items-center justify-between mt-2">
-          <button class="text-xs text-lime-300 font-bold flex items-center space-x-1 group-hover:text-lime-200 transition">
-            <span>Read Notebook Note</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </article>
-
-      <!-- Article Card 2: Jade Gradient -->
-      <article 
-        data-category="Wearables" 
-        data-title="amazfit gts 4 mini health metrics smartwatch"
-        onclick="openArticle('amazfit-gts-4-mini')"
-        class="article-card cursor-pointer group glass-jade text-white rounded-2xl p-5 hover:border-lime-400/80 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <!-- Bug fixed: Added closing div for the image container below -->
-          <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950 h-48">
-            <img 
-              src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80" 
-              alt="Amazfit GTS 4 Mini" 
-              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Amazfit+Watch'"
-            />
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-lime-300 transition mb-2 leading-snug">
-            Amazfit GTS 4 Mini Review: Premium Health Metrics Under $100
-          </h3>
-          <p class="text-slate-100 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-medium">
-            Delivers a genuine smartwatch experience with a vivid HD AMOLED display, standalone 5-satellite GPS, and 15-day battery life.
-          </p>
-        </div>
-
-        <div class="pt-3 border-t border-white/20 flex items-center justify-between mt-2">
-          <button class="text-xs text-lime-300 font-bold flex items-center space-x-1 group-hover:text-lime-200 transition">
-            <span>Read Notebook Note</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-    
-          </a>
-        </div>
-      </article>
-
-      <!-- Article Card 3: Turquoise Gradient -->
-      <article 
-        data-category="Wearables" 
-        data-title="samsung galaxy fit 3 fitness tracking"
-        onclick="openArticle('galaxy-fit-3')"
-        class="article-card cursor-pointer group glass-turquoise text-white rounded-2xl p-5 hover:border-lime-400/80 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <!-- Bug fixed: Added closing div for the image container below -->
-          <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950 h-48">
-            <img 
-              src="https://images.unsplash.com/photo-1575311373937-040b8e1fd6b0?auto=format&fit=crop&w=800&q=80" 
-              alt="Samsung Galaxy Fit 3" 
-              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Galaxy+Fit+3'"
-            />
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-lime-300 transition mb-2 leading-snug">
-            Samsung Galaxy Fit 3 Review: Sleek Health Tracking for Under $70
-          </h3>
-          <p class="text-slate-100 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-medium">
-            Lightweight aluminum frame featuring a 1.6-inch AMOLED touchscreen, fall detection, sleep coaching, and 13 days of charge.
-          </p>
-        </div>
-
-        <div class="pt-3 border-t border-white/20 flex items-center justify-between mt-2">
-          <button class="text-xs text-lime-300 font-bold flex items-center space-x-1 group-hover:text-lime-200 transition">
-            <span>Read Notebook Note</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </article>
-
-      <!-- Article Card 4: Emerald Gradient -->
-      <article 
-        data-category="Phones" 
-        data-title="google pixel 8a mid-range ai"
-        onclick="openArticle('pixel-8a')"
-        class="article-card hidden cursor-pointer group glass-emerald text-white rounded-2xl p-5 hover:border-lime-400/80 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950 h-48">
-            <img 
-              src="https://images.unsplash.com/photo-1598327105666-5b89351cb31b?auto=format&fit=crop&w=800&q=80" 
-              alt="Google Pixel 8a" 
-              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Pixel+8a'"
-            />
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-lime-300 transition mb-2 leading-snug">
-            Google Pixel 8a: Flagship AI Features Trickle Down
-          </h3>
-          <p class="text-slate-100 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-medium">
-            At under $500, the Pixel 8a brings the powerful Tensor G3 chip and industry-leading computational photography to the mid-range market.
-          </p>
-        </div>
-        <div class="pt-3 border-t border-white/20 flex items-center justify-between mt-2">
-          <button class="text-xs text-lime-300 font-bold flex items-center space-x-1 group-hover:text-lime-200 transition">
-            <span>Read Notebook Note</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </article>
-
-      <!-- Article Card 5: Jade Gradient -->
-      <article 
-        data-category="Wearables" 
-        data-title="nothing ear a review audio budget"
-        onclick="openArticle('nothing-ear-a')"
-        class="article-card hidden cursor-pointer group glass-jade text-white rounded-2xl p-5 hover:border-lime-400/80 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950 h-48">
-            <img 
-              src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=800&q=80" 
-              alt="Nothing Ear a" 
-              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Nothing+Ear+a'"
-            />
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-lime-300 transition mb-2 leading-snug">
-            Nothing Ear (a): Vibrant Audio and ANC Under $100
-          </h3>
-          <p class="text-slate-100 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-medium">
-            Striking translucent design meets surprisingly effective active noise cancellation and a punchy, energetic sound profile for budget audiophiles.
-          </p>
-        </div>
-        <div class="pt-3 border-t border-white/20 flex items-center justify-between mt-2">
-          <button class="text-xs text-lime-300 font-bold flex items-center space-x-1 group-hover:text-lime-200 transition">
-            <span>Read Notebook Note</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </article>
-
-      <!-- Article Card 6: Turquoise Gradient -->
-      <article 
-        data-category="Wearables" 
-        data-title="cmf watch pro review budget"
-        onclick="openArticle('cmf-watch-pro')"
-        class="article-card hidden cursor-pointer group glass-turquoise text-white rounded-2xl p-5 hover:border-lime-400/80 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-950 h-48">
-            <img 
-              src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80" 
-              alt="CMF Watch Pro" 
-              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=CMF+Watch'"
-            />
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-lime-300 transition mb-2 leading-snug">
-            CMF Watch Pro: Minimalist Design, Maximum Value
-          </h3>
-          <p class="text-slate-100 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-medium">
-            A bold, geometric smartwatch offering a massive 1.96-inch AMOLED display and built-in multi-system GPS for just $69.
-          </p>
-        </div>
-        <div class="pt-3 border-t border-white/20 flex items-center justify-between mt-2">
-          <button class="text-xs text-lime-300 font-bold flex items-center space-x-1 group-hover:text-lime-200 transition">
-            <span>Read Notebook Note</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-          <a href="#" onclick="event.preventDefault(); event.stopPropagation()" class="px-3 py-1.5 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-xs font-bold text-white transition backdrop-blur-sm shadow-sm">
-            Read More
-          </a>
-        </div>
-      </article>
-
-    </section>
-
-    <div id="expandBtnContainer" class="mt-12 flex justify-center w-full">
-      <button onclick="toggleMoreArticles()" id="expandBtn" class="px-8 py-3.5 rounded-xl bg-slate-900 text-lime-400 font-bold hover:bg-slate-800 transition shadow-xl border border-slate-700 flex items-center gap-3">
-        <span id="expandBtnText">Read More Articles</span>
-        <svg id="expandBtnIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Empty State Message -->
-    <div id="noResults" class="hidden text-center py-16 bg-slate-900/90 rounded-3xl border border-slate-800 text-white my-6">
-      <svg class="w-12 h-12 text-lime-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-      </svg>
-      <h3 class="text-lg font-bold">No articles found</h3>
-      <p class="text-sm text-slate-400 mt-1">Try switching categories or searching for different keywords.</p>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="mt-16 bg-slate-900/90 backdrop-blur-md rounded-3xl p-8 border border-slate-800 text-white shadow-xl">
-      <h2 class="text-2xl font-bold mb-4 text-lime-400">About Remedy Tech Zone</h2>
-      <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-        Remedy Tech Zone (RTZ) is your trusted publication for navigating budget tech, smart rings, mobile devices, and wearable gadgetry within the $50–$150 range. We focus on providing high-quality, comprehensive insights, separating the genuinely reliable hardware from the cheap knock-offs.
-      </p>
-    </section>
-
-    <!-- Privacy and Compliance Section -->
-    <section id="privacy" class="mt-8 bg-slate-900/90 backdrop-blur-md rounded-3xl p-8 border border-slate-800 text-white shadow-xl mb-8">
-      <h2 class="text-2xl font-bold mb-4 text-lime-400">Privacy & Compliance</h2>
-      <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-        At RTZ, we prioritize your digital safety. Our platform operates with strict compliance regarding data security and transparency. We actively enforce affiliate disclosures and maintain rigorous privacy standards to ensure your browsing experience is completely safeguarded.
-      </p>
-    </section>
-
-  </main>
-
-  <div id="articleModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/80 backdrop-blur-md p-4 sm:p-6 lg:p-8">
-    <div class="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl text-white overflow-hidden my-6">
-      
-      <!-- Modal Top Bar -->
-      <div class="sticky top-0 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 p-4 sm:px-6 flex items-center justify-between z-10">
-        <span id="modalCategory" class="px-3 py-1 rounded-lg text-xs font-bold bg-lime-400 text-slate-950">
-          Category
-        </span>
-        <button 
-          onclick="closeArticleModal()" 
-          class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Modal Body Content -->
-      <div class="p-6 sm:p-8 space-y-6">
-        <div>
-          <div id="modalMeta" class="text-xs text-slate-400 font-medium mb-2">Published • 5 min read</div>
-          <h1 id="modalTitle" class="text-2xl sm:text-4xl font-extrabold text-white leading-tight mb-3">
-            Title
-          </h1>
-          <p id="modalDek" class="text-base sm:text-lg text-lime-400 font-medium leading-relaxed">
-            Standfirst description...
-          </p>
-        </div>
-
-        <!-- Image Container -->
-        <div class="rounded-2xl overflow-hidden bg-slate-950 max-h-[350px]">
-          <img id="modalImage" src="" alt="Article cover" class="w-full h-full object-cover" />
-        </div>
-
-        <!-- Paragraphs -->
-        <div id="modalBody" class="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-4 border-t border-slate-800 pt-6">
-          <!-- Populated by JS -->
-        </div>
-
-        <!-- Key Takeaways -->
-        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 sm:p-6 mt-8">
-          <h4 class="text-sm font-bold text-lime-400 uppercase tracking-wider mb-3 flex items-center space-x-2">
-            <svg class="w-4 h-4 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Key Takeaways</span>
-          </h4>
-          <ul id="modalTakeaways" class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside">
-            <!-- Populated by JS -->
-          </ul>
-        </div>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="bg-slate-950/50 p-4 sm:px-6 border-t border-slate-800 flex justify-end">
-        <button 
-          onclick="closeArticleModal()" 
-          class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-lime-400 text-slate-950 hover:bg-lime-300 transition">
-          Close Notebook Note
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div id="templateModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/80 backdrop-blur-md p-4 sm:p-6">
-    <div class="max-w-2xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl text-white overflow-hidden my-8">
-      <div class="p-4 sm:px-6 border-b border-slate-800 flex items-center justify-between">
-        <h3 class="text-base font-bold text-white flex items-center space-x-2">
-          <span>RTZ Notebook Article Template</span>
-        </h3>
-        <button onclick="closeTemplateModal()" class="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div class="p-6 space-y-4">
-        <p class="text-xs text-slate-300">
-          Standard HTML specification format for budget tech reviews ($50–$150 Amazon focus) pulled into the RTZ platform.
-        </p>
-
-        <div class="relative bg-slate-950 rounded-xl p-4 border border-slate-800 overflow-x-auto text-xs font-mono text-lime-300">
-<pre id="templateCode">&lt;article  
-  data-title="Device Review Headline"  
-  data-dek="One-sentence standfirst for card previews."  
-  data-category="Phones"  
-  data-price-range="~$110"  
-  data-image="https://images.unsplash.com/..." 
-&gt;  
-  &lt;div data-body&gt;  
-    &lt;p&gt;Paragraphs outlining metrics, build, and daily use.&lt;/p&gt;  
-  &lt;/div&gt;  
-  &lt;ul data-takeaways&gt;  
-    &lt;li&gt;Key performance takeaway 1.&lt;/li&gt;  
-    &lt;li&gt;Key performance takeaway 2.&lt;/li&gt;  
-  &lt;/ul&gt;  
-&lt;/article&gt;</pre>
-        </div>
-      </div>
-
-      <div class="p-4 sm:px-6 bg-slate-950/50 border-t border-slate-800 flex justify-between items-center">
-        <span id="copyToast" class="text-xs text-lime-400 font-semibold opacity-0 transition">Copied to clipboard!</span>
-        <button 
-          onclick="copyTemplateCode()" 
-          class="px-4 py-2 rounded-xl text-xs font-bold bg-lime-400 text-slate-950 hover:bg-lime-300 transition">
-          Copy Template Spec
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-8 text-center text-xs">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center space-x-2">
-        <span class="font-bold text-white text-base">RTZ</span>
-        <span class="text-sm">— Remedy Tech Zone ($50–$150 Budget Hardware Pulse)</span>
-      </div>
-      
-      <!-- Footer Navigation Tabs -->
-      <div class="flex items-center space-x-6 text-sm font-medium">
-        <a href="#articles" class="hover:text-lime-400 transition">Articles</a>
-        <a href="#about" class="hover:text-lime-400 transition">About</a>
-        <a href="#privacy" class="hover:text-lime-400 transition">Privacy & Compliance</a>
-      </div>
-
-      <div>
-        <span class="text-sm">Published via RTZ Notebook Feed &copy; 2026</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // RTZ Notebook Article Database for the 3 Featured Articles
-    const articlesData = {
-      'moto-g-play': {
-        category: 'Smartphones',
-        title: "Moto G Play Review: The Unbeatable $110 Battery Champion",
-        dek: "A dependable unlocked smartphone focusing on essentials: 5,000 mAh battery endurance, 90Hz display, and robust drop-resistant build.",
-        published: 'Sunday Spotlight • Amazon Unlocked',
-        readMinutes: '6 min read',
-        image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80',
-        body: [
-          "Finding a dependable unlocked smartphone on Amazon for under $150 often means compromising on performance or build quality. The Moto G Play breaks that mold by focusing strictly on day-to-day essentials: outstanding multi-day battery endurance, clean software, and solid drop resistance.",
-          "The Moto G Play features a matte polycarbonate finish that resists fingerprints and minor drops better than fragile glass-backed alternatives. The 90Hz refresh rate makes scrolling through news feeds and social media feel significantly smoother than standard budget displays.",
-          "For users prioritizing raw uptime over high-end gaming, the 5,000 mAh battery easily lasts two full days of typical usage. It stands out as one of the most reliable entry-level Android devices available on Amazon in the ~$110 price bracket."
-        ],
-        takeaways: [
-          "Price Range: ~$109 – $129 (Amazon Unlocked)",
-          "Display: 6.5-inch HD+ with 90Hz smooth refresh rate",
-          "Battery: 5,000 mAh providing up to 48 hours per charge"
-        ]
-      },
-      'amazfit-gts-4-mini': {
-        category: 'Wearables',
-        title: "Amazfit GTS 4 Mini Review: Premium Health Metrics Under $100",
-        dek: "Delivers a genuine smartwatch experience with a vivid HD AMOLED display, standalone 5-satellite GPS, and 15-day battery life.",
-        published: 'Monday Spotlight • Amazon Prime',
-        readMinutes: '5 min read',
-        image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=80',
-        body: [
-          "When searching Amazon for a smartwatch under $100, buyers usually encounter cheap fitness bands disguised as smartwatches. The Amazfit GTS 4 Mini delivers a genuine smartwatch experience with a vivid HD AMOLED display and built-in standalone GPS.",
-          "Despite weighing under 20 grams, the GTS 4 Mini tracks over 120 sports modes with automatic exercise recognition. Its built-in GPS allows runners and cyclists to record routes accurately without carrying a smartphone.",
-          "With 24-hour continuous heart rate, blood oxygen saturation (SpO2), and sleep stage monitoring, it provides health metrics comparable to devices costing twice as much."
-        ],
-        takeaways: [
-          "Price Range: ~$89 – $99 on Amazon",
-          "Display: 1.65-inch HD AMOLED screen with always-on support",
-          "GPS: 5 satellite positioning systems for independent route tracking"
-        ]
-      },
-      'galaxy-fit-3': {
-        category: 'Wearables',
-        title: "Samsung Galaxy Fit 3 Review: Sleek Health Tracking for Under $70",
-        dek: "Lightweight aluminum frame featuring a 1.6-inch AMOLED touchscreen, fall detection, sleep coaching, and 13 days of charge.",
-        published: 'Tuesday Spotlight • Amazon Unlocked',
-        readMinutes: '5 min read',
-        image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd6b0?auto=format&fit=crop&w=1200&q=80',
-        body: [
-          "The Samsung Galaxy Fit 3 fills the sweet spot for users who want lightweight, non-intrusive health tracking without paying flagship prices. Sitting comfortably well under $100 on Amazon, it blends Samsung's signature display quality with a low-profile aluminum frame.",
-          "Weighing just 18.5 grams, the Galaxy Fit 3 disappears on the wrist during long runs or sleep. The 1.6-inch display is 45% wider than typical tracker bands, making notifications and heart rate zones easily readable on the move.",
-          "Integrated safety features like Fall Detection and Emergency SOS send immediate location alerts to pre-set contacts, providing peace of mind for night runners and outdoor athletes alike."
-        ],
-        takeaways: [
-          "Price Range: ~$59 – $69 on Amazon",
-          "Battery Life: Up to 13 days on a single charge",
-          "Safety: Built-in Fall Detection and Emergency SOS"
-        ]
-      },
-      'pixel-8a': {
-        category: 'Phones',
-        title: "Google Pixel 8a: Flagship AI Features Trickle Down",
-        dek: "At under $500, the Pixel 8a brings the powerful Tensor G3 chip and industry-leading computational photography to the mid-range market.",
-        published: 'Wednesday Spotlight • Amazon Unlocked',
-        readMinutes: '6 min read',
-        image: 'https://images.unsplash.com/photo-1598327105666-5b89351cb31b?auto=format&fit=crop&w=1200&q=80',
-        body: [
-          "The mid-range smartphone market just got significantly more competitive with the introduction of the Google Pixel 8a. Often found on sale for under $450 on Amazon, this device democratizes Google's best AI features.",
-          "Powered by the same Tensor G3 processor found in the flagship Pixel 8 Pro, the 8a handles features like Magic Eraser, Audio Magic Eraser, and on-device live translation with zero hesitation.",
-          "With a bright 120Hz OLED display and 7 years of guaranteed OS and security updates, the Pixel 8a represents arguably the best long-term value currently available for budget-conscious Android buyers."
-        ],
-        takeaways: [
-          "Price Range: ~$399 – $499 (Amazon Unlocked)",
-          "Processor: Google Tensor G3 with Titan M2 security coprocessor",
-          "Longevity: Unprecedented 7 years of OS and security updates"
-        ]
-      },
-      'nothing-ear-a': {
-        category: 'Wearables',
-        title: "Nothing Ear (a): Vibrant Audio and ANC Under $100",
-        dek: "Striking translucent design meets surprisingly effective active noise cancellation and a punchy, energetic sound profile for budget audiophiles.",
-        published: 'Thursday Spotlight • Amazon Audio',
-        readMinutes: '4 min read',
-        image: 'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=1200&q=80',
-        body: [
-          "Breaking away from the sea of matte black and glossy white earbuds on Amazon, the Nothing Ear (a) introduces a playful, transparent aesthetic, most notably in an eye-catching yellow colorway.",
-          "Despite the accessible sub-$100 price tag, they don't skimp on features. The 45dB active noise cancellation effectively mutes low-end engine drone during commutes, competing with earbuds twice their price.",
-          "The custom 11mm dynamic drivers deliver a lively, bass-forward sound signature that makes pop and electronic music shine, all customizable via the highly polished Nothing X companion app."
-        ],
-        takeaways: [
-          "Price Range: ~$99 on Amazon",
-          "Audio: 11mm dynamic driver with custom bass enhancement algorithm",
-          "Features: 45dB Active Noise Cancellation and Dual Connection support"
-        ]
-      },
-      'cmf-watch-pro': {
-        category: 'Wearables',
-        title: "CMF Watch Pro: Minimalist Design, Maximum Value",
-        dek: "A bold, geometric smartwatch offering a massive 1.96-inch AMOLED display and built-in multi-system GPS for just $69.",
-        published: 'Friday Spotlight • Amazon Prime',
-        readMinutes: '5 min read',
-        image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=1200&q=80',
-        body: [
-          "CMF, a sub-brand of Nothing, has launched the Watch Pro to target the ultra-budget wearable segment on Amazon. For just $69, you get an unapologetically brutalist aluminum alloy design that looks far more premium than its price suggests.",
-          "The centerpiece is a massive 1.96-inch AMOLED display peaking at 600 nits of brightness. Navigating the minimalist dot-matrix style UI is smooth, providing a distinct visual identity absent in generic budget watches.",
-          "Remarkably for this price tier, it includes built-in multi-system GPS for phone-free run tracking and Bluetooth calling with an integrated microphone and speaker."
-        ],
-        takeaways: [
-          "Price Range: ~$69 on Amazon",
-          "Display: 1.96-inch AMOLED with 600 nits peak brightness",
-          "Connectivity: Built-in multi-system GPS and Bluetooth calling capabilities"
-        ]
-      }
-    };
-
-    let activeCategory = 'All';
-    let isExpanded = false;
-
-    // Filter categories handler
-    function filterCategory(cat) {
-      activeCategory = cat;
-
-      document.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.classList.remove('bg-slate-900', 'text-lime-400');
-        btn.classList.add('bg-slate-900/10', 'text-slate-900');
-      });
-
-      const activeBtn = document.getElementById(`cat-btn-${cat}`);
-      if (activeBtn) {
-        activeBtn.classList.remove('bg-slate-900/10', 'text-slate-900');
-        activeBtn.classList.add('bg-slate-900', 'text-lime-400');
-      }
-
-      applyFilters();
-    }
-
-    function toggleMoreArticles() {
-      isExpanded = !isExpanded;
-      const btnText = document.getElementById('expandBtnText');
-      const btnIcon = document.getElementById('expandBtnIcon');
-      
-      if (isExpanded) {
-        btnText.innerText = "Show Less Articles";
-        // Arrow pointing up
-        btnIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>';
-      } else {
-        btnText.innerText = "Read More Articles";
-        // Arrow pointing down
-        btnIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>';
-        document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
-      }
-      applyFilters();
-    }
-
-    // Search & filter matching engine
-    function applyFilters() {
-      const query = (document.getElementById('searchInput').value || document.getElementById('mobileSearchInput').value || '').toLowerCase();
-      const cards = document.querySelectorAll('.article-card');
-      let visibleCount = 0;
-      let matchCount = 0;
-
-      cards.forEach(card => {
-        const catMatch = activeCategory === 'All' || card.getAttribute('data-category') === activeCategory;
-        const textMatch = !query || card.getAttribute('data-title').toLowerCase().includes(query);
-
-        if (catMatch && textMatch) {
-          matchCount++;
-          // If not expanded, hide items beyond the first 3 matches
-          if (!isExpanded && matchCount > 3) {
-             card.classList.add('hidden');
-          } else {
-             card.classList.remove('hidden');
-             visibleCount++;
-          }
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-
-      document.getElementById('articleCount').innerText = `Showing ${visibleCount} Article${visibleCount === 1 ? '' : 's'}`;
-
-      const noResults = document.getElementById('noResults');
-      if (visibleCount === 0) {
-        noResults.classList.remove('hidden');
-      } else {
-        noResults.classList.add('hidden');
-      }
-
-      // Handle Expand Button Visibility
-      const expandBtnContainer = document.getElementById('expandBtnContainer');
-      if (expandBtnContainer) {
-        if (matchCount > 3) {
-          expandBtnContainer.classList.remove('hidden');
-          expandBtnContainer.classList.add('flex');
-        } else {
-          expandBtnContainer.classList.add('hidden');
-          expandBtnContainer.classList.remove('flex');
-        }
-      }
-    }
-
-    function handleSearch() {
-      applyFilters();
-    }
-
-    function handleMobileSearch() {
-      applyFilters();
-    }
-
-    // Article modal viewer logic
-    function openArticle(key) {
-      const data = articlesData[key];
-      if (!data) return;
-
-      document.getElementById('modalCategory').innerText = data.category;
-      document.getElementById('modalMeta').innerText = `${data.published} • ${data.readMinutes}`;
-      document.getElementById('modalTitle').innerText = data.title;
-      document.getElementById('modalDek').innerText = data.dek;
-      document.getElementById('modalImage').src = data.image;
-
-      const bodyContainer = document.getElementById('modalBody');
-      bodyContainer.innerHTML = data.body.map(p => `<p>${p}</p>`).join('');
-
-      const takeawaysContainer = document.getElementById('modalTakeaways');
-      takeawaysContainer.innerHTML = data.takeaways.map(t => `<li>${t}</li>`).join('');
-
-      document.getElementById('articleModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeArticleModal() {
-      document.getElementById('articleModal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Template modal controls
-    function openTemplateModal() {
-      document.getElementById('templateModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeTemplateModal() {
-      document.getElementById('templateModal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    function copyTemplateCode() {
-      const text = document.getElementById('templateCode').innerText;
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        const toast = document.getElementById('copyToast');
-        toast.classList.remove('opacity-0');
-        setTimeout(() => toast.classList.add('opacity-0'), 2500);
-      } catch (err) {
-        console.error('Copy failed', err);
-      }
-      document.body.removeChild(textarea);
-    }
-    
-    // Initialize the grid on page load to hide extra articles
-    applyFilters();
-  </script>
 </body>
 </html>
