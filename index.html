@@ -4,44 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RTZ — Remedy Tech Zone</title>
-    <meta
-      name="description"
-      content="Remedy Tech Zone publishes budget-tech reviews and field notes across smartphones, wearables, and audio."
-    />
+    <meta name="description" content="Remedy Tech Zone publishes budget-tech reviews and field notes across smartphones, wearables, and audio." />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      :root {
+        --jade: #5bb39a;
+        --sage: #8ec7a4;
+        --emerald: #1d7a5f;
+        --ink: #071611;
+        --slate: #0b1f1a;
+        --slate-alt: #112d26;
+        --text: #eafaf4;
+        --muted: #cfe8dd;
+      }
+
       body {
         font-family: Inter, sans-serif;
-        background: #020617;
-        color: #f8fafc;
+        background: linear-gradient(180deg, var(--ink) 0%, var(--slate) 100%);
+        color: var(--text);
       }
+
       .glass-card {
-        background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.4));
-        border: 1px solid rgba(148, 163, 184, 0.12);
+        background: linear-gradient(145deg, rgba(14, 32, 28, 0.88), rgba(7, 22, 17, 0.8));
+        border: 1px solid rgba(142, 199, 164, 0.18);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       }
+
       .filter-btn.active {
-        background: #a3e635;
-        color: #0f172a;
+        background: linear-gradient(135deg, var(--jade), var(--emerald));
+        color: var(--ink);
       }
+
       .filter-btn {
-        background: #0f172a;
-        border: 1px solid #334155;
+        background: rgba(17, 45, 38, 0.75);
+        border: 1px solid rgba(142, 199, 164, 0.2);
+        color: var(--muted);
       }
+
       .article-card {
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
+
       .article-card:hover {
         transform: translateY(-2px);
+        border-color: rgba(91, 179, 154, 0.4);
       }
     </style>
   </head>
-  <body class="min-h-screen bg-slate-950 text-slate-200">
-    <header class="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+  <body class="min-h-screen text-slate-200">
+    <header class="sticky top-0 z-40 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="./index.html" class="flex items-center gap-3">
-          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-lime-400 to-emerald-600 font-bold text-slate-900">R</div>
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#5bb39a] to-[#1d7a5f] font-bold text-[#071611]">R</div>
           <div>
-            <div class="text-lg font-bold text-white">RemedyTech<span class="text-lime-400">.Zone</span></div>
+            <div class="text-lg font-bold text-white">RemedyTech<span class="text-[#5bb39a]">.Zone</span></div>
           </div>
         </a>
 
@@ -55,81 +71,81 @@
 
     <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <section class="mb-8 text-center md:text-left">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-lime-400">$50–$150 buys better</p>
+        <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#8ec7a4]">$50–$150 buys better</p>
         <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl">RTZ Notebook</h1>
-        <p class="mt-3 max-w-2xl text-lg text-slate-400">
+        <p class="mt-3 max-w-2xl text-lg text-[#cfe8dd]">
           Budget Tech • Deep dives into hardware, wearables, and daily drivers that punch above their weight.
         </p>
       </section>
 
-      <div class="mb-8 flex flex-col items-center justify-between gap-4 border-b border-slate-800 pb-6 sm:flex-row">
+      <div class="mb-8 flex flex-col items-center justify-between gap-4 border-b border-white/10 pb-6 sm:flex-row">
         <div id="filter-buttons" class="flex flex-wrap gap-2">
-          <button class="filter-btn active rounded-full px-4 py-2 text-sm font-medium transition hover:bg-lime-300">All RTZ Notes</button>
-          <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-700 hover:text-white">Smartphones</button>
-          <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-700 hover:text-white">Wearables</button>
-          <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-700 hover:text-white">Audio</button>
+          <button class="filter-btn active rounded-full px-4 py-2 text-sm font-medium transition hover:brightness-110">All RTZ Notes</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium transition hover:brightness-110">Smartphones</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium transition hover:brightness-110">Wearables</button>
+          <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium transition hover:brightness-110">Audio</button>
         </div>
-        <div id="article-count" class="text-sm font-medium text-slate-500">Showing 6 Articles</div>
+        <div id="article-count" class="text-sm font-medium text-[#cfe8dd]">Showing 6 Articles</div>
       </div>
 
       <section id="articles" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <article class="article-card glass-card overflow-hidden rounded-2xl p-4" data-category="Smartphones">
           <img src="article/moto-g-2026/images/cover.svg" alt="Moto G 2026" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-lime-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-lime-400">Smartphones</div>
+          <div class="mb-3 inline-flex rounded-full bg-[#5bb39a]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8ec7a4]">Smartphones</div>
           <h2 class="mb-2 text-xl font-bold text-white">Moto G (2026) Review</h2>
-          <p class="mb-4 text-sm text-slate-400">Solid battery and clean Android under $150.</p>
-          <a href="article/moto-g-2026/index.html" class="inline-flex rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:border-lime-400 hover:text-lime-300">Read Notebook Note →</a>
+          <p class="mb-4 text-sm text-[#cfe8dd]">Solid battery and clean Android under $150.</p>
+          <a href="article/moto-g-2026/index.html" class="inline-flex rounded-lg border border-[#8ec7a4]/20 bg-[#0b1f1a] px-3 py-2 text-sm font-medium text-white transition hover:border-[#5bb39a] hover:text-[#9be2c1]">Read Notebook Note →</a>
         </article>
 
         <article class="article-card glass-card overflow-hidden rounded-2xl p-4" data-category="Smartphones">
           <img src="article/moto-g-play/images/cover.svg" alt="Moto G Play" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-lime-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-lime-400">Smartphones</div>
+          <div class="mb-3 inline-flex rounded-full bg-[#5bb39a]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8ec7a4]">Smartphones</div>
           <h2 class="mb-2 text-xl font-bold text-white">Moto G Play Review</h2>
-          <p class="mb-4 text-sm text-slate-400">The unbeatable $110 battery champion.</p>
-          <a href="article/moto-g-play/index.html" class="inline-flex rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:border-lime-400 hover:text-lime-300">Read Notebook Note →</a>
+          <p class="mb-4 text-sm text-[#cfe8dd]">The unbeatable $110 battery champion.</p>
+          <a href="article/moto-g-play/index.html" class="inline-flex rounded-lg border border-[#8ec7a4]/20 bg-[#0b1f1a] px-3 py-2 text-sm font-medium text-white transition hover:border-[#5bb39a] hover:text-[#9be2c1]">Read Notebook Note →</a>
         </article>
 
         <article class="article-card glass-card overflow-hidden rounded-2xl p-4" data-category="Wearables">
           <img src="article/amazfit-gts/images/cover.svg" alt="Amazfit GTS 4 Mini" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-lime-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-lime-400">Wearables</div>
+          <div class="mb-3 inline-flex rounded-full bg-[#8ec7a4]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8ec7a4]">Wearables</div>
           <h2 class="mb-2 text-xl font-bold text-white">Amazfit GTS 4 Mini Review</h2>
-          <p class="mb-4 text-sm text-slate-400">Premium health metrics under $100.</p>
-          <a href="article/amazfit-gts/index.html" class="inline-flex rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:border-lime-400 hover:text-lime-300">Read Notebook Note →</a>
+          <p class="mb-4 text-sm text-[#cfe8dd]">Premium health metrics under $100.</p>
+          <a href="article/amazfit-gts/index.html" class="inline-flex rounded-lg border border-[#8ec7a4]/20 bg-[#0b1f1a] px-3 py-2 text-sm font-medium text-white transition hover:border-[#5bb39a] hover:text-[#9be2c1]">Read Notebook Note →</a>
         </article>
 
         <article class="article-card glass-card overflow-hidden rounded-2xl p-4" data-category="Wearables">
           <img src="article/samsung-fit/images/cover.svg" alt="Samsung Galaxy Fit 3" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-lime-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-lime-400">Wearables</div>
+          <div class="mb-3 inline-flex rounded-full bg-[#8ec7a4]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8ec7a4]">Wearables</div>
           <h2 class="mb-2 text-xl font-bold text-white">Samsung Galaxy Fit 3 Review</h2>
-          <p class="mb-4 text-sm text-slate-400">Sleek health tracking for under $70.</p>
-          <a href="article/samsung-fit/index.html" class="inline-flex rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:border-lime-400 hover:text-lime-300">Read Notebook Note →</a>
+          <p class="mb-4 text-sm text-[#cfe8dd]">Sleek health tracking for under $70.</p>
+          <a href="article/samsung-fit/index.html" class="inline-flex rounded-lg border border-[#8ec7a4]/20 bg-[#0b1f1a] px-3 py-2 text-sm font-medium text-white transition hover:border-[#5bb39a] hover:text-[#9be2c1]">Read Notebook Note →</a>
         </article>
 
         <article class="article-card glass-card overflow-hidden rounded-2xl p-4" data-category="Audio">
           <img src="article/nothing-ear/images/cover.svg" alt="Nothing Ear (a)" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-lime-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-lime-400">Audio</div>
+          <div class="mb-3 inline-flex rounded-full bg-[#1d7a5f]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8ec7a4]">Audio</div>
           <h2 class="mb-2 text-xl font-bold text-white">Nothing Ear (a) Review</h2>
-          <p class="mb-4 text-sm text-slate-400">Vibrant audio and ANC under $100.</p>
-          <a href="article/nothing-ear/index.html" class="inline-flex rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:border-lime-400 hover:text-lime-300">Read Notebook Note →</a>
+          <p class="mb-4 text-sm text-[#cfe8dd]">Vibrant audio and ANC under $100.</p>
+          <a href="article/nothing-ear/index.html" class="inline-flex rounded-lg border border-[#8ec7a4]/20 bg-[#0b1f1a] px-3 py-2 text-sm font-medium text-white transition hover:border-[#5bb39a] hover:text-[#9be2c1]">Read Notebook Note →</a>
         </article>
 
         <article class="article-card glass-card overflow-hidden rounded-2xl p-4" data-category="Wearables">
           <img src="article/cmf-watch/images/cover.svg" alt="CMF Watch Pro" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-lime-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-lime-400">Wearables</div>
+          <div class="mb-3 inline-flex rounded-full bg-[#8ec7a4]/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8ec7a4]">Wearables</div>
           <h2 class="mb-2 text-xl font-bold text-white">CMF Watch Pro Review</h2>
-          <p class="mb-4 text-sm text-slate-400">Minimalist design, maximum value.</p>
-          <a href="article/cmf-watch/index.html" class="inline-flex rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-white transition hover:border-lime-400 hover:text-lime-300">Read Notebook Note →</a>
+          <p class="mb-4 text-sm text-[#cfe8dd]">Minimalist design, maximum value.</p>
+          <a href="article/cmf-watch/index.html" class="inline-flex rounded-lg border border-[#8ec7a4]/20 bg-[#0b1f1a] px-3 py-2 text-sm font-medium text-white transition hover:border-[#5bb39a] hover:text-[#9be2c1]">Read Notebook Note →</a>
         </article>
       </section>
 
-      <div id="empty-state" class="hidden py-16 text-center text-slate-400">
+      <div id="empty-state" class="hidden py-16 text-center text-[#cfe8dd]">
         <p class="text-lg font-medium text-white">No articles found.</p>
         <p class="mt-2">Try another category filter.</p>
       </div>
     </main>
 
-    <footer id="about" class="mt-12 border-t border-slate-800 bg-slate-950">
-      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-sm text-slate-400 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <footer id="about" class="mt-12 border-t border-white/10 bg-[#071611]">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-sm text-[#cfe8dd] sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <h3 class="mb-3 text-lg font-bold text-white">About Remedy Tech Zone</h3>
           <p>
