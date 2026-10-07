@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Amazfit Bip 6</title>
+  <desc id="desc">Dark-theme product hero of the Amazfit Bip 6 square smartwatch.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#042f2e"/>
+    </linearGradient>
+    <linearGradient id="bezel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="45%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#134e4a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#a3e635" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#a3e635" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="430" cy="400" r="260" fill="url(#glow)"/>
+  <rect x="90" y="70" width="1020" height="660" rx="32" fill="#0b1220" stroke="#1e293b"/>
+  <rect x="250" y="145" width="280" height="420" rx="62" fill="url(#bezel)"/>
+  <rect x="268" y="163" width="244" height="384" rx="50" fill="#020617"/>
+  <rect x="286" y="188" width="208" height="320" rx="36" fill="url(#screen)"/>
+  <circle cx="390" cy="300" r="62" fill="none" stroke="#a3e635" stroke-width="10"/>
+  <circle cx="390" cy="300" r="40" fill="none" stroke="#34d399" stroke-width="6" stroke-dasharray="70 40"/>
+  <text x="390" y="308" text-anchor="middle" fill="#f8fafc" font-family="Arial, sans-serif" font-size="22" font-weight="700">14d</text>
+  <text x="390" y="430" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="16">GPS · 72 bpm</text>
+  <rect x="348" y="548" width="84" height="10" rx="5" fill="#334155"/>
+  <text x="620" y="250" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Amazfit Bip 6</text>
+  <text x="620" y="318" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">AMOLED · GPS · 14-day battery</text>
+  <text x="620" y="378" fill="#94a3b8" font-family="Arial, sans-serif" font-size="22">46mm aluminum · Bluetooth calling</text>
+  <rect x="620" y="430" width="230" height="54" rx="27" fill="#a3e635"/>
+  <text x="735" y="465" text-anchor="middle" fill="#0f172a" font-family="Arial, sans-serif" font-size="22" font-weight="700">Under $150</text>
+</svg>
