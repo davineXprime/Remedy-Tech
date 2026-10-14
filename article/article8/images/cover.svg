@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Amazfit Active 2</title>
+  <desc id="desc">A dark product showcase card with a lime accent for the Amazfit Active 2 smartwatch.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="640" rx="28" fill="url(#card)" stroke="#334155"/>
+  <circle cx="905" cy="200" r="110" fill="#a3e635" opacity="0.12"/>
+  <!-- Watch body -->
+  <circle cx="360" cy="380" r="140" fill="#0f172a" stroke="#475569" stroke-width="8"/>
+  <circle cx="360" cy="380" r="115" fill="#111827"/>
+  <circle cx="360" cy="380" r="90" fill="#1e293b"/>
+  <!-- Display content -->
+  <circle cx="360" cy="360" r="40" fill="#a3e635" opacity="0.3"/>
+  <path d="M360 320 L390 360 L360 400 L330 360 Z" fill="#a3e635" opacity="0.8"/>
+  <text x="360" y="430" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="600">Active 2</text>
+  <!-- Text side -->
+  <text x="540" y="280" fill="#f8fafc" font-family="Arial, sans-serif" font-size="52" font-weight="700">Amazfit Active 2</text>
+  <text x="540" y="350" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="30">Bright AMOLED Smartwatch</text>
+  <text x="540" y="410" fill="#94a3b8" font-family="Arial, sans-serif" font-size="24">10-Day Battery • GPS • Offline Maps</text>
+  <rect x="540" y="460" width="220" height="48" rx="24" fill="#a3e635"/>
+  <text x="650" y="492" fill="#0f172a" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Under $150</text>
+</svg>
