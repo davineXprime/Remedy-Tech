@@ -1,215 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RTZ — Remedy Tech Zone | Med Tech & Smartwatches</title>
-    <meta name="description" content="Remedy Tech Zone covers budget med tech and smartwatches — blood pressure monitors, pulse oximeters, OTC glucose sensors, and practical wearables." />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      :root {
-        --emerald: #059669;
-        --jade: #0d9488;
-        --mint: #6ee7b7;
-        --mint-light: #a7f3d0;
-        --white: #ffffff;
-        --off-white: #f8fafc;
-        --text: #0f172a;
-        --muted: #475569;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RTZ — Remedy Tech Zone | Med Tech &amp; Smartwatches</title>
+  <meta name="description" content="Remedy Tech Zone covers budget med tech and smartwatches — blood pressure monitors, pulse oximeters, OTC glucose sensors, and practical wearables." />
+  <meta name="theme-color" content="#064e3b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/poster.css" />
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
 
-      body {
-        font-family: Inter, sans-serif;
-        background: #ffffff;
-        color: var(--text);
-      }
-
-      .glass-card {
-        background: #ffffff;
-        border: 1px solid rgba(13, 148, 136, 0.18);
-        box-shadow: 0 8px 24px rgba(5, 150, 105, 0.07);
-      }
-
-      .article-card {
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .article-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(5, 150, 105, 0.35);
-        box-shadow: 0 12px 28px rgba(5, 150, 105, 0.12);
-      }
-
-      .hidden-articles {
-        display: none;
-      }
-
-      .hidden-articles.show {
-        display: contents;
-      }
-    </style>
-  </head>
-  <body class="min-h-screen">
-    <header class="sticky top-0 z-40 border-b border-emerald-100 bg-white/90 backdrop-blur-md">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="./index.html" class="flex items-center gap-3">
-          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#6ee7b7] to-[#059669] font-bold text-white">R</div>
-          <div>
-            <div class="text-lg font-bold text-slate-900">RemedyTech<span class="text-[#059669]">.Zone</span></div>
-          </div>
+  <main>
+    <section class="sheet" id="top">
+      <svg class="star" style="top:14px;left:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.1 9.2 L24 12 L14.1 14.8 L12 24 L9.9 14.8 L0 12 L9.9 9.2 Z"/></svg><svg class="star" style="top:18px;right:16px;left:auto;width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.1 9.2 L24 12 L14.1 14.8 L12 24 L9.9 14.8 L0 12 L9.9 9.2 Z"/></svg><svg class="star" style="bottom:18px;left:22px;width:12px;height:12px;color:#17875d" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.1 9.2 L24 12 L14.1 14.8 L12 24 L9.9 14.8 L0 12 L9.9 9.2 Z"/></svg>
+      <header class="mast">
+        <a class="brand" href="#top">
+          <span class="mark">R</span>
+          <span class="brand-name">REMEDY <span>ZONE</span></span>
         </a>
-
-        <nav class="hidden gap-6 text-sm text-slate-600 md:flex">
-          <a href="#articles" class="hover:text-[#059669]">Articles</a>
-          <a href="#about" class="hover:text-[#059669]">About</a>
-          <a href="#privacy" class="hover:text-[#059669]">Privacy</a>
+        <nav>
+          <a href="#notes">Notes</a>
+          <a href="#about">About</a>
+          <a href="#privacy">Privacy</a>
         </nav>
+      </header>
+      <h1 class="wordmark">REMEDY</h1>
+      <p class="zone-line">TECH ZONE</p>
+      <div class="kicker">
+        <p>Practical health tech, set like a print.</p>
+        <span class="stamp">The health desk</span>
+        <p class="right">Far from hype. Close to daily use.</p>
       </div>
-    </header>
-
-    <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <section class="mb-8 text-center md:text-left">
-        <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#0d9488]">Med Tech & Smartwatches</p>
-        <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">Practical Health Tech</h1>
-        <p class="mt-3 max-w-2xl text-lg text-slate-600">
-          Blood pressure monitors, pulse oximeters, OTC glucose sensors, and budget wearables that actually deliver.
-        </p>
-      </section>
-
-      <div class="mb-8 flex items-center justify-between border-b border-emerald-100 pb-6">
-        <div class="text-sm font-medium text-slate-500">Latest Articles</div>
-      </div>
-
-      <section id="articles" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <!-- 1. Blood Pressure Monitor (newest) -->
-        <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Home blood pressure monitor" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Med Tech</div>
-          <h2 class="mb-2 text-xl font-bold text-slate-900">Home Blood Pressure Monitor</h2>
-          <p class="mb-4 text-sm text-slate-600">Still the gold standard over most cuffless wearables.</p>
-          <a href="article/blood-pressure-monitor-home-use/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-        </article>
-
-        <!-- 2. Pulse Oximeter -->
-        <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80" alt="Pulse oximeter" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Med Tech</div>
-          <h2 class="mb-2 text-xl font-bold text-slate-900">Pulse Oximeter Comeback</h2>
-          <p class="mb-4 text-sm text-slate-600">Smarter sensors and better accuracy across skin tones.</p>
-          <a href="article/pulse-oximeter-home-monitoring/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-        </article>
-
-        <!-- 3. OTC CGM -->
-        <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80" alt="OTC continuous glucose monitor" class="mb-4 h-48 w-full rounded-xl object-cover" />
-          <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Med Tech</div>
-          <h2 class="mb-2 text-xl font-bold text-slate-900">OTC Glucose Monitoring</h2>
-          <p class="mb-4 text-sm text-slate-600">The next mass-market med-tech wave.</p>
-          <a href="article/otc-continuous-glucose-monitor/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-        </article>
-
-        <!-- Hidden older articles -->
-        <div id="more-articles" class="hidden-articles contents">
-          <!-- Fitbit Edge Launch -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&q=80" alt="Fitbit Edge fitness tracker" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">Fitbit Edge Launches at $180</h2>
-            <p class="mb-4 text-sm text-slate-600">7-day battery, replaceable cell, real screen.</p>
-            <a href="article/fitbit-edge-launch-2026/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
-
-          <!-- Fitbit Edge Tease -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&q=80" alt="Fitness tracker concept" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">Fitbit Edge Teased for Oct 12</h2>
-            <p class="mb-4 text-sm text-slate-600">Battery-first trackers are still winning in 2026.</p>
-            <a href="article/fitbit-edge-tease-2026/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
-
-          <!-- Amazfit Bip Max -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="https://us.amazfit.com/cdn/shop/files/bip_max.jpg?v=1779253552&width=800" alt="Amazfit Bip Max on wrist during workout" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">Amazfit Bip Max Review</h2>
-            <p class="mb-4 text-sm text-slate-600">Huge screen + long GPS battery under $150.</p>
-            <a href="article/article3/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
-
-          <!-- Amazfit Bip 6 -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="article/article1/images/cover.svg" alt="Amazfit Bip 6" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">Amazfit Bip 6 Review</h2>
-            <p class="mb-4 text-sm text-slate-600">Two-week battery and real GPS under $150.</p>
-            <a href="article/article1/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
-
-          <!-- Amazfit GTS 4 Mini -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="article/amazfit-gts/images/cover.svg" alt="Amazfit GTS 4 Mini" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">Amazfit GTS 4 Mini Review</h2>
-            <p class="mb-4 text-sm text-slate-600">Premium health metrics under $100.</p>
-            <a href="article/amazfit-gts/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
-
-          <!-- Samsung Galaxy Fit 3 -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="article/samsung-fit/images/cover.svg" alt="Samsung Galaxy Fit 3" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">Samsung Galaxy Fit 3 Review</h2>
-            <p class="mb-4 text-sm text-slate-600">Sleek health tracking for under $70.</p>
-            <a href="article/samsung-fit/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
-
-          <!-- CMF Watch Pro -->
-          <article class="article-card glass-card overflow-hidden rounded-2xl p-4">
-            <img src="article/cmf-watch/images/cover.svg" alt="CMF Watch Pro" class="mb-4 h-48 w-full rounded-xl object-cover" />
-            <div class="mb-3 inline-flex rounded-full bg-[#6ee7b7]/30 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#047857]">Smartwatches</div>
-            <h2 class="mb-2 text-xl font-bold text-slate-900">CMF Watch Pro Review</h2>
-            <p class="mb-4 text-sm text-slate-600">Minimalist design, maximum value.</p>
-            <a href="article/cmf-watch/index.html" class="inline-flex rounded-lg border border-[#0d9488]/30 bg-[#f0fdf4] px-3 py-2 text-sm font-medium text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">Read Note →</a>
-          </article>
+      <div class="stage">
+        <p class="vtext">Blood pressure, oxygen, glucose, and the watches that actually last.</p>
+        <div class="plate">
+          <svg class="art" viewBox="0 0 480 460" role="img" aria-label="Remedy Tech Zone">
+      <rect width="480" height="460" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="220" rx="168" ry="48" fill="none" stroke="#d4f8e8" stroke-width="10" transform="rotate(-18 268 220)"/>
+      <ellipse cx="268" cy="220" rx="150" ry="36" fill="none" stroke="#17875d" stroke-width="6" transform="rotate(-18 268 220)"/>
+      <circle cx="230" cy="214" r="108" fill="#17875d"/>
+      <ellipse cx="230" cy="192" rx="77" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="228" rx="84" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="254" rx="71" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="128" r="18" fill="#17875d"/>
+      <circle cx="408" cy="340" r="12" fill="#d4f8e8"/>
+    </svg>
+          <div class="float-copy">
+            <small>Med tech & smartwatches</small>
+            <strong>PRACTICAL HEALTH TECH</strong>
+          </div>
         </div>
-      </section>
-
-      <div class="mt-10 text-center">
-        <button id="read-more-btn" onclick="toggleMore()" class="inline-flex items-center rounded-xl border border-[#0d9488]/40 bg-[#f0fdf4] px-6 py-3 text-sm font-semibold text-[#047857] transition hover:border-[#059669] hover:bg-[#ecfdf5]">
-          Read more articles
-        </button>
+        <aside class="facts">
+          <h2>ZONE FACTS</h2>
+          <ul>
+            <li>Desk: home monitors and budget wearables</li>
+            <li>Promise: devices that deliver, not decks that dazzle</li>
+            <li>Range: most notes live under $150</li>
+            <li>Count: 19 field notes on the wall</li>
+          </ul>
+        </aside>
       </div>
-    </main>
+      <p class="closer">
+        <strong>Clarity expands in the quiet.</strong>
+        <span>Power, prep, tech.</span>
+      </p>
+      <div class="phases" aria-hidden="true">
+      <span class="phase"></span><span class="phase q1"></span><span class="phase half"></span>
+      <span class="phase full"></span><span class="phase q2"></span><span class="phase"></span>
+    </div>
+    </section>
 
-    <footer id="about" class="mt-12 border-t border-emerald-100 bg-[#f0fdf4]">
-      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-sm text-slate-600 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div>
-          <h3 class="mb-3 text-lg font-bold text-slate-900">About Remedy Tech Zone</h3>
-          <p>
-            Remedy Tech Zone covers practical med tech and budget smartwatches. We look for devices that deliver real everyday value without the hype.
-          </p>
-        </div>
-        <div id="privacy">
-          <h3 class="mb-3 text-lg font-bold text-slate-900">Privacy & Compliance</h3>
-          <p>
-            We prioritize transparency, disclosure, and trustworthy recommendations. The goal is practical advice that helps buyers get more value.
-          </p>
+    <section class="archive" id="notes">
+      <div class="archive-head">
+        <h2>LATEST<br>NOTES</h2>
+        <div class="tools">
+          <button class="chip is-on" type="button" data-filter="All">All</button>
+<button class="chip" type="button" data-filter="Med Tech">Med Tech</button>
+<button class="chip" type="button" data-filter="Smartwatches">Smartwatches</button>
+<button class="chip" type="button" data-filter="Wearables">Wearables</button>
+<button class="chip" type="button" data-filter="Smartphones">Smartphones</button>
+<button class="chip" type="button" data-filter="Audio">Audio</button>
+          <input class="search" id="search" type="search" placeholder="Search notes" aria-label="Search notes" />
         </div>
       </div>
+      <div class="grid">
+        <a class="note" data-cat="Med Tech" data-title="Home Blood Pressure Why a Home Blood Pressure Monitor Still Beats Most Wearables in 2026 Cuffless rings and watches are racing ahead, but a good upper-arm blood pressure monitor remains the reading doctors actually trust." href="article/blood-pressure-monitor-home-use/index.html">
+      <div class="note-top"><span>Med Tech</span><span>No. 01</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Home Blood Pressure">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Home Blood Pressure</h3>
+      <p>Cuffless rings and watches are racing ahead, but a good upper-arm blood pressure monitor remains the reading doctors actually trust.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note" data-cat="Med Tech" data-title="Pulse Oximeter The Quiet Comeback of the Pulse Oximeter in Everyday Health Tracking From pandemic essential to forgotten drawer item — and now back as a smarter, more accurate home sensor." href="article/pulse-oximeter-home-monitoring/index.html">
+      <div class="note-top"><span>Med Tech</span><span>No. 02</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Pulse Oximeter">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Pulse Oximeter</h3>
+      <p>From pandemic essential to forgotten drawer item — and now back as a smarter, more accurate home sensor.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note" data-cat="Med Tech" data-title="OTC Glucose OTC Glucose Monitoring Is the Next Mass-Market Med-Tech Wave Prescription barriers dropped. Now anyone curious about food, sleep, and stress can see how their glucose actually moves." href="article/otc-continuous-glucose-monitor/index.html">
+      <div class="note-top"><span>Med Tech</span><span>No. 03</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="OTC Glucose">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>OTC Glucose</h3>
+      <p>Prescription barriers dropped. Now anyone curious about food, sleep, and stress can see how their glucose actually moves.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note" data-cat="Smartwatches" data-title="Fitbit Edge Launch Fitbit Edge Is Official: $180, 7-Day Battery, and a Screen That Actually Matters Google launched the Fitbit Edge on October 12. It sits between the screenless Fitbit Air and the full Pixel Watch — exactly the middle ground many people have been asking for." href="article/fitbit-edge-launch-2026/index.html">
+      <div class="note-top"><span>Smartwatches</span><span>No. 04</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Fitbit Edge Launch">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Fitbit Edge Launch</h3>
+      <p>Google launched the Fitbit Edge on October 12. It sits between the screenless Fitbit Air and the full Pixel Watch — exactly the middle ground many people have been asking for.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note" data-cat="Wearables" data-title="Fitbit Edge Tease Fitbit Edge Teased for October 12 — Battery Life Is Still Winning in 2026 Google just confirmed the Fitbit Edge is coming on October 12. The bigger story is what people actually want from a tracker right now: multi-day battery over another app-heavy smartwatch." href="article/fitbit-edge-tease-2026/index.html">
+      <div class="note-top"><span>Wearables</span><span>No. 05</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Fitbit Edge Tease">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Fitbit Edge Tease</h3>
+      <p>Google just confirmed the Fitbit Edge is coming on October 12. The bigger story is what people actually want from a tracker right now: multi-day battery over another app-heavy smartwatch.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note" data-cat="Smartwatches" data-title="Amazfit Bip Max Amazfit Bip Max Review: Huge Screen and Long GPS Battery Under $150 At about $100, the Bip Max adds a brighter 2.07-inch AMOLED, offline maps, and multi-week battery to the budget watch formula." href="article/article3/index.html">
+      <div class="note-top"><span>Smartwatches</span><span>No. 06</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Amazfit Bip Max">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Amazfit Bip Max</h3>
+      <p>At about $100, the Bip Max adds a brighter 2.07-inch AMOLED, offline maps, and multi-week battery to the budget watch formula.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartwatches" data-title="Amazfit Bip 6 Amazfit Bip 6 Review: Two-Week Battery and Real GPS Under $150 For about the price of a casual dinner out, the Bip 6 brings a bright AMOLED screen, onboard GPS, and health tracking that used to cost much more." href="article/article1/index.html">
+      <div class="note-top"><span>Smartwatches</span><span>No. 07</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Amazfit Bip 6">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Amazfit Bip 6</h3>
+      <p>For about the price of a casual dinner out, the Bip 6 brings a bright AMOLED screen, onboard GPS, and health tracking that used to cost much more.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Wearables" data-title="Amazfit GTS 4 Mini Amazfit GTS 4 Mini Review: Premium Health Metrics Under $100 Delivers a genuine smartwatch experience with a vivid HD AMOLED display, standalone 5-satellite GPS, and 15-day battery life." href="article/amazfit-gts/index.html">
+      <div class="note-top"><span>Wearables</span><span>No. 08</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Amazfit GTS 4 Mini">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Amazfit GTS 4 Mini</h3>
+      <p>Delivers a genuine smartwatch experience with a vivid HD AMOLED display, standalone 5-satellite GPS, and 15-day battery life.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Wearables" data-title="Galaxy Fit 3 Samsung Galaxy Fit 3 Review: Sleek Health Tracking for Under $70 Lightweight aluminum frame featuring a 1.6-inch AMOLED touchscreen, fall detection, sleep coaching, and 13 days of charge." href="article/samsung-fit/index.html">
+      <div class="note-top"><span>Wearables</span><span>No. 09</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Galaxy Fit 3">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Galaxy Fit 3</h3>
+      <p>Lightweight aluminum frame featuring a 1.6-inch AMOLED touchscreen, fall detection, sleep coaching, and 13 days of charge.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Wearables" data-title="CMF Watch Pro CMF Watch Pro: Minimalist Design, Maximum Value A bold, geometric smartwatch offering a massive 1.96-inch AMOLED display and built-in multi-system GPS for just $69." href="article/cmf-watch/index.html">
+      <div class="note-top"><span>Wearables</span><span>No. 10</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="CMF Watch Pro">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>CMF Watch Pro</h3>
+      <p>A bold, geometric smartwatch offering a massive 1.96-inch AMOLED display and built-in multi-system GPS for just $69.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartwatches" data-title="Fitbit Charge 6 Fitbit Charge 6 Review: Slim Tracker with GPS and Google Features Under $150 The Charge 6 packs AMOLED clarity, built-in GPS, ECG, and Google Wallet into a lightweight band that often sells well under $150." href="article/article6/index.html">
+      <div class="note-top"><span>Smartwatches</span><span>No. 11</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Fitbit Charge 6">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Fitbit Charge 6</h3>
+      <p>The Charge 6 packs AMOLED clarity, built-in GPS, ECG, and Google Wallet into a lightweight band that often sells well under $150.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartwatches" data-title="Amazfit Active 2 Amazfit Active 2 Review: Bright Display and GPS Maps Under $150 At around $80 to $130, the Active 2 delivers a stainless-steel look, 2,000-nit AMOLED, offline maps, and real multi-day battery that undercuts far pricier watches." href="article/article5/index.html">
+      <div class="note-top"><span>Smartwatches</span><span>No. 12</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Amazfit Active 2">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Amazfit Active 2</h3>
+      <p>At around $80 to $130, the Active 2 delivers a stainless-steel look, 2,000-nit AMOLED, offline maps, and real multi-day battery that undercuts far pricier watches.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartwatches" data-title="Active 2, Long Battery Amazfit Active 2 Review: Bright AMOLED and Long Battery Under $150 The Amazfit Active 2 packs a premium-looking design, accurate health sensors, offline maps, and up to 10 days of battery life into an affordable package." href="article/article8/index.html">
+      <div class="note-top"><span>Smartwatches</span><span>No. 13</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Active 2, Long Battery">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Active 2, Long Battery</h3>
+      <p>The Amazfit Active 2 packs a premium-looking design, accurate health sensors, offline maps, and up to 10 days of battery life into an affordable package.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartphones" data-title="Galaxy A16 5G Samsung Galaxy A16 5G Review: AMOLED and Long Support Under $150 The unlocked 128GB Galaxy A16 5G brings a bright Super AMOLED screen, real 5G, and years of updates to a price most budget phones still miss." href="article/article2/index.html">
+      <div class="note-top"><span>Smartphones</span><span>No. 14</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Galaxy A16 5G">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Galaxy A16 5G</h3>
+      <p>The unlocked 128GB Galaxy A16 5G brings a bright Super AMOLED screen, real 5G, and years of updates to a price most budget phones still miss.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartphones" data-title="Galaxy A15 5G Samsung Galaxy A15 5G Review: Bright AMOLED and Real 5G Under $150 The unlocked Galaxy A15 5G brings a vibrant 90Hz Super AMOLED screen, dependable battery life, and Samsung software support to a price that stays under $150." href="article/article4/index.html">
+      <div class="note-top"><span>Smartphones</span><span>No. 15</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Galaxy A15 5G">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Galaxy A15 5G</h3>
+      <p>The unlocked Galaxy A15 5G brings a vibrant 90Hz Super AMOLED screen, dependable battery life, and Samsung software support to a price that stays under $150.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartphones" data-title="Galaxy A16 4G Samsung Galaxy A16 4G Review: Vibrant AMOLED Display Under $150 The Galaxy A16 4G delivers a bright Super AMOLED screen, dependable battery life, and the familiar Samsung experience at a budget-friendly price." href="article/article7/index.html">
+      <div class="note-top"><span>Smartphones</span><span>No. 16</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Galaxy A16 4G">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Galaxy A16 4G</h3>
+      <p>The Galaxy A16 4G delivers a bright Super AMOLED screen, dependable battery life, and the familiar Samsung experience at a budget-friendly price.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartphones" data-title="Moto G 2026 Moto G (2026) Review: Solid Battery and Clean Android Under $150 In an entry-level market flooded with trade-offs, the Moto G (2026) delivers a massive battery, smooth 120Hz display, and clean software." href="article/moto-g-2026/index.html">
+      <div class="note-top"><span>Smartphones</span><span>No. 17</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Moto G 2026">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Moto G 2026</h3>
+      <p>In an entry-level market flooded with trade-offs, the Moto G (2026) delivers a massive battery, smooth 120Hz display, and clean software.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Smartphones" data-title="Moto G Play Moto G Play Review: The Unbeatable $110 Battery Champion A dependable unlocked smartphone focusing on essentials: 5,000mAh battery endurance, 90Hz display, and robust drop-resistant build." href="article/moto-g-play/index.html">
+      <div class="note-top"><span>Smartphones</span><span>No. 18</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Moto G Play">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Moto G Play</h3>
+      <p>A dependable unlocked smartphone focusing on essentials: 5,000mAh battery endurance, 90Hz display, and robust drop-resistant build.</p>
+      <div class="go">Read the note →</div>
+    </a>
+<a class="note is-extra" data-cat="Audio" data-title="Nothing Ear (a) Nothing Ear (a): Vibrant Audio and ANC Under $100 Striking translucent design meets surprisingly effective active noise cancellation and a punchy, energetic sound profile for budget audiophiles." href="article/nothing-ear/index.html">
+      <div class="note-top"><span>Audio</span><span>No. 19</span></div>
+      <div class="mini"><svg class="art" viewBox="0 0 480 180" role="img" aria-label="Nothing Ear (a)">
+      <rect width="480" height="180" fill="#064e3b"/>
+      <g fill="#d4f8e8">
+        <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
+        <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
+        <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
+        <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
+      </g>
+      <ellipse cx="268" cy="86" rx="92" ry="26" fill="none" stroke="#d4f8e8" stroke-width="6" transform="rotate(-18 268 86)"/>
+      <ellipse cx="268" cy="86" rx="82" ry="18" fill="none" stroke="#17875d" stroke-width="4" transform="rotate(-18 268 86)"/>
+      <circle cx="230" cy="80" r="52" fill="#17875d"/>
+      <ellipse cx="230" cy="58" rx="37" ry="11" fill="#d4f8e8" opacity="0.45"/>
+      <ellipse cx="230" cy="94" rx="40" ry="9" fill="#064e3b" opacity="0.28"/>
+      <ellipse cx="230" cy="120" rx="34" ry="7" fill="#d4f8e8" opacity="0.28"/>
+      <circle cx="78" cy="50" r="10" fill="#17875d"/>
+      <circle cx="408" cy="133" r="7" fill="#d4f8e8"/>
+    </svg></div>
+      <h3>Nothing Ear (a)</h3>
+      <p>Striking translucent design meets surprisingly effective active noise cancellation and a punchy, energetic sound profile for budget audiophiles.</p>
+      <div class="go">Read the note →</div>
+    </a>
+      </div>
+      <p class="empty">No notes match that search.</p>
+      <div class="more-wrap">
+        <button class="more" id="more-btn" type="button">Read more notes</button>
+      </div>
+    </section>
+
+    <section class="about">
+      <article id="about">
+        <h2>ABOUT THE ZONE</h2>
+        <p>Remedy Tech Zone covers practical med tech and budget smartwatches. We look for devices that deliver real everyday value without the hype. Power, prep, tech — printed like a poster, written like a field note.</p>
+      </article>
+      <article id="privacy">
+        <h2>PRIVACY</h2>
+        <p>We prioritize transparency, disclosure, and trustworthy recommendations. These notes are not medical advice. A home monitor is a tool for trends, not a diagnosis. The goal is practical advice that helps buyers get more value.</p>
+      </article>
+    </section>
+    <footer class="foot">
+      <span>Remedy Tech Zone</span>
+      <span>Emerald · Jade · Mint · White</span>
     </footer>
-
-    <script>
-      function toggleMore() {
-        const more = document.getElementById('more-articles');
-        const btn = document.getElementById('read-more-btn');
-        more.classList.toggle('show');
-        if (more.classList.contains('show')) {
-          btn.textContent = 'Show fewer articles';
-        } else {
-          btn.textContent = 'Read more articles';
-        }
-      }
-    </script>
-  </body>
+  </main>
+  <script src="js/site.js"></script>
+</body>
 </html>
