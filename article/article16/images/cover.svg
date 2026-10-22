@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="120" cy="80" r="40" fill="#17875d" opacity="0.3"/>
+  <circle cx="680" cy="420" r="60" fill="#059669" opacity="0.2"/>
+  <!-- Round smartwatch -->
+  <g transform="translate(300, 120)">
+    <!-- Strap top -->
+    <rect x="60" y="-30" width="80" height="30" rx="15" fill="#334155"/>
+    <!-- Strap bottom -->
+    <rect x="60" y="220" width="80" height="30" rx="15" fill="#334155"/>
+    <!-- Case -->
+    <circle cx="100" cy="100" r="100" fill="#1e293b" stroke="#6ee7b7" stroke-width="4"/>
+    <!-- Screen -->
+    <circle cx="100" cy="100" r="80" fill="url(#screen)"/>
+    <!-- Watch face -->
+    <text x="100" y="85" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="28" font-weight="bold">10:09</text>
+    <text x="100" y="110" text-anchor="middle" fill="#d4f8e8" font-family="Arial, sans-serif" font-size="12">WED</text>
+    <!-- Indicators -->
+    <circle cx="60" cy="140" r="18" fill="none" stroke="#059669" stroke-width="4"/>
+    <text x="60" y="145" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="10">72</text>
+    <circle cx="140" cy="140" r="18" fill="none" stroke="#0d9488" stroke-width="4"/>
+    <text x="140" y="145" text-anchor="middle" fill="#d4f8e8" font-family="Arial, sans-serif" font-size="9">8k</text>
+    <!-- Button -->
+    <rect x="195" y="80" width="10" height="30" rx="5" fill="#475569"/>
+  </g>
+  <text x="400" y="460" text-anchor="middle" fill="#d4f8e8" font-family="Arial, sans-serif" font-size="18" opacity="0.8">Amazfit Active 2</text>
+</svg>
