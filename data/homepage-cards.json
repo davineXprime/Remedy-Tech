@@ -1,5 +1,15 @@
 [
   {
+    "slug": "portable-ecg-home-monitor",
+    "title": "Portable ECG",
+    "category": "Med Tech",
+    "dek": "FDA-cleared pocket ECG devices capture a medical-grade rhythm strip in 30 seconds — ready to share with your doctor.",
+    "href": "article/portable-ecg-home-monitor/index.html",
+    "extra": false,
+    "icon": "watch_round",
+    "num": "01"
+  },
+  {
     "slug": "blood-pressure-monitor-home-use",
     "title": "Home Blood Pressure",
     "category": "Med Tech",
@@ -7,7 +17,7 @@
     "href": "article/blood-pressure-monitor-home-use/index.html",
     "extra": false,
     "icon": "bp",
-    "num": "01"
+    "num": "02"
   },
   {
     "slug": "pulse-oximeter-home-monitoring",
@@ -17,7 +27,7 @@
     "href": "article/pulse-oximeter-home-monitoring/index.html",
     "extra": false,
     "icon": "oxi",
-    "num": "02"
+    "num": "03"
   },
   {
     "slug": "otc-continuous-glucose-monitor",
@@ -27,7 +37,7 @@
     "href": "article/otc-continuous-glucose-monitor/index.html",
     "extra": false,
     "icon": "cgm",
-    "num": "03"
+    "num": "04"
   },
   {
     "slug": "fitbit-edge-launch-2026",
@@ -37,7 +47,7 @@
     "href": "article/fitbit-edge-launch-2026/index.html",
     "extra": false,
     "icon": "watch_round",
-    "num": "04"
+    "num": "05"
   },
   {
     "slug": "fitbit-edge-tease-2026",
@@ -47,7 +57,7 @@
     "href": "article/fitbit-edge-tease-2026/index.html",
     "extra": false,
     "icon": "watch_round",
-    "num": "05"
+    "num": "06"
   },
   {
     "slug": "article3",
@@ -57,7 +67,7 @@
     "href": "article/article3/index.html",
     "extra": false,
     "icon": "watch_rect",
-    "num": "06"
+    "num": "07"
   },
   {
     "slug": "article1",
@@ -67,7 +77,7 @@
     "href": "article/article1/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "07"
+    "num": "08"
   },
   {
     "slug": "amazfit-gts",
@@ -77,7 +87,7 @@
     "href": "article/amazfit-gts/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "08"
+    "num": "09"
   },
   {
     "slug": "samsung-fit",
@@ -87,7 +97,7 @@
     "href": "article/samsung-fit/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "09"
+    "num": "10"
   },
   {
     "slug": "cmf-watch",
@@ -97,7 +107,7 @@
     "href": "article/cmf-watch/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "10"
+    "num": "11"
   },
   {
     "slug": "article6",
@@ -107,7 +117,7 @@
     "href": "article/article6/index.html",
     "extra": true,
     "icon": "watch_round",
-    "num": "11"
+    "num": "12"
   },
   {
     "slug": "article5",
@@ -117,7 +127,7 @@
     "href": "article/article5/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "12"
+    "num": "13"
   },
   {
     "slug": "article8",
@@ -127,7 +137,7 @@
     "href": "article/article8/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "13"
+    "num": "14"
   },
   {
     "slug": "article2",
@@ -137,7 +147,7 @@
     "href": "article/article2/index.html",
     "extra": true,
     "icon": "phone",
-    "num": "14"
+    "num": "15"
   },
   {
     "slug": "article4",
@@ -147,7 +157,7 @@
     "href": "article/article4/index.html",
     "extra": true,
     "icon": "phone",
-    "num": "15"
+    "num": "16"
   },
   {
     "slug": "article7",
@@ -157,7 +167,7 @@
     "href": "article/article7/index.html",
     "extra": true,
     "icon": "phone",
-    "num": "16"
+    "num": "17"
   },
   {
     "slug": "moto-g-2026",
@@ -167,7 +177,7 @@
     "href": "article/moto-g-2026/index.html",
     "extra": true,
     "icon": "phone",
-    "num": "17"
+    "num": "18"
   },
   {
     "slug": "moto-g-play",
@@ -177,7 +187,7 @@
     "href": "article/moto-g-play/index.html",
     "extra": true,
     "icon": "phone",
-    "num": "18"
+    "num": "19"
   },
   {
     "slug": "nothing-ear",
@@ -187,6 +197,6 @@
     "href": "article/nothing-ear/index.html",
     "extra": true,
     "icon": "audio",
-    "num": "19"
+    "num": "20"
   }
 ]
