@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="100" cy="70" r="35" fill="#17875d" opacity="0.3"/>
+  <circle cx="700" cy="430" r="55" fill="#059669" opacity="0.2"/>
+  <!-- Square smartwatch -->
+  <g transform="translate(280, 100)">
+    <!-- Strap top -->
+    <rect x="70" y="-20" width="60" height="25" rx="12" fill="#334155"/>
+    <!-- Strap bottom -->
+    <rect x="70" y="215" width="60" height="25" rx="12" fill="#334155"/>
+    <!-- Case -->
+    <rect x="20" y="20" width="160" height="180" rx="28" fill="#1e293b" stroke="#6ee7b7" stroke-width="4"/>
+    <!-- Screen -->
+    <rect x="35" y="35" width="130" height="150" rx="20" fill="url(#screen)"/>
+    <!-- Watch face -->
+    <text x="100" y="95" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="32" font-weight="bold">10:09</text>
+    <text x="100" y="120" text-anchor="middle" fill="#d4f8e8" font-family="Arial, sans-serif" font-size="12">STEPS</text>
+    <!-- Metrics -->
+    <text x="55" y="155" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11">72</text>
+    <text x="100" y="155" text-anchor="middle" fill="#d4f8e8" font-family="Arial, sans-serif" font-size="11">8.2k</text>
+    <text x="145" y="155" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="11">98%</text>
+    <!-- Button -->
+    <rect x="175" y="80" width="12" height="28" rx="6" fill="#475569"/>
+  </g>
+  <text x="400" y="460" text-anchor="middle" fill="#d4f8e8" font-family="Arial, sans-serif" font-size="18" opacity="0.8">Amazfit Bip 6</text>
+</svg>
