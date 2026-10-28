@@ -588,3 +588,110 @@ nav a:hover { color: var(--jade); }
   html { scroll-behavior: auto; }
   .note, .chip, .more { transition: none; }
 }
+
+/* ===== Thanksgiving theme (body.tg) ===== */
+body.tg {
+  --amber: #c45c26;
+  --gold: #d4a017;
+  --cream: #fbf6eb;
+  --cran: #8b3a2a;
+  --harvest: #5c3d1e;
+  background:
+    radial-gradient(circle at 10% 6%, rgba(212, 160, 23, 0.22), transparent 34%),
+    radial-gradient(circle at 92% 4%, rgba(196, 92, 38, 0.14), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(6, 78, 59, 0.06), transparent 40%),
+    var(--cream);
+}
+
+body.tg::before {
+  opacity: 0.28;
+  background-image: radial-gradient(rgba(92, 61, 30, 0.2) 0.6px, transparent 0.6px);
+}
+
+body.tg .progress {
+  background: linear-gradient(90deg, var(--jade), var(--gold), var(--amber));
+}
+
+body.tg .sheet {
+  background: #fffef9;
+  border-color: var(--harvest);
+  box-shadow: 10px 12px 0 rgba(92, 61, 30, 0.12);
+}
+
+body.tg .star.leaf {
+  color: var(--amber);
+}
+body.tg .star.leaf path {
+  fill: currentColor;
+}
+
+body.tg .tg-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0.65rem;
+  padding: 0.45rem 0.75rem;
+  background: linear-gradient(90deg, rgba(196, 92, 38, 0.12), rgba(212, 160, 23, 0.18), rgba(196, 92, 38, 0.12));
+  border: 1.5px dashed var(--amber);
+  color: var(--harvest);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+body.tg .tg-leaf {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+body.tg .mark {
+  background: var(--harvest);
+}
+body.tg .brand-name span {
+  color: var(--amber);
+}
+body.tg .zone-line {
+  color: var(--amber);
+}
+body.tg .stamp {
+  background: linear-gradient(135deg, #f5e6c8, #fbf6eb);
+  border-color: var(--amber);
+  color: var(--harvest);
+}
+body.tg .plate {
+  background: linear-gradient(160deg, #064e3b 0%, #0a5c3a 55%, #5c3d1e 100%);
+}
+body.tg .chip.is-on,
+body.tg .chip:hover,
+body.tg .more:hover {
+  background: var(--harvest);
+  border-color: var(--harvest);
+}
+body.tg .chip,
+body.tg .more {
+  border-color: var(--harvest);
+  color: var(--harvest);
+}
+body.tg .note {
+  border-color: var(--harvest);
+}
+body.tg .note:hover {
+  background: #f5e6c8;
+}
+body.tg .note .mini {
+  background: linear-gradient(160deg, #064e3b, #5c3d1e);
+}
+body.tg .about article {
+  background: #f5e6c8;
+  border-color: var(--harvest);
+}
+body.tg .foot {
+  color: var(--harvest);
+}
+body.tg .closer span {
+  color: var(--amber);
+}
+body.tg nav a:hover {
+  color: var(--amber);
+}
