@@ -35,7 +35,7 @@
     "category": "Med Tech",
     "dek": "Prescription barriers dropped. Now anyone curious about food, sleep, and stress can see how their glucose actually moves.",
     "href": "article/otc-continuous-glucose-monitor/index.html",
-    "extra": false,
+    "extra": true,
     "icon": "cgm",
     "num": "04"
   },
@@ -45,7 +45,7 @@
     "category": "Smartwatches",
     "dek": "Google launched the Fitbit Edge on October 12. It sits between the screenless Fitbit Air and the full Pixel Watch — exactly the middle ground many people have been asking for.",
     "href": "article/fitbit-edge-launch-2026/index.html",
-    "extra": false,
+    "extra": true,
     "icon": "watch_round",
     "num": "05"
   },
@@ -55,7 +55,7 @@
     "category": "Wearables",
     "dek": "Google just confirmed the Fitbit Edge is coming on October 12. The bigger story is what people actually want from a tracker right now: multi-day battery over another app-heavy smartwatch.",
     "href": "article/fitbit-edge-tease-2026/index.html",
-    "extra": false,
+    "extra": true,
     "icon": "watch_round",
     "num": "06"
   },
@@ -65,7 +65,7 @@
     "category": "Smartwatches",
     "dek": "At about $100, the Bip Max adds a brighter 2.07-inch AMOLED, offline maps, and multi-week battery to the budget watch formula.",
     "href": "article/article3/index.html",
-    "extra": false,
+    "extra": true,
     "icon": "watch_rect",
     "num": "07"
   },
