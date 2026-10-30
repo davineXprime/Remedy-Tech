@@ -1,5 +1,15 @@
 [
   {
+    "slug": "fitbit-air-screenless-tracker",
+    "title": "Fitbit Air",
+    "category": "Wearables",
+    "dek": "Screenless sleep, steps, and heart-rate tracking — multi-day battery without another glowing rectangle on your wrist.",
+    "href": "article/fitbit-air-screenless-tracker/index.html",
+    "extra": false,
+    "icon": "watch_round",
+    "num": "01"
+  },
+  {
     "slug": "portable-ecg-home-monitor",
     "title": "Portable ECG",
     "category": "Med Tech",
@@ -7,7 +17,7 @@
     "href": "article/portable-ecg-home-monitor/index.html",
     "extra": false,
     "icon": "watch_round",
-    "num": "01"
+    "num": "02"
   },
   {
     "slug": "blood-pressure-monitor-home-use",
@@ -17,7 +27,7 @@
     "href": "article/blood-pressure-monitor-home-use/index.html",
     "extra": false,
     "icon": "bp",
-    "num": "02"
+    "num": "03"
   },
   {
     "slug": "pulse-oximeter-home-monitoring",
@@ -25,9 +35,9 @@
     "category": "Med Tech",
     "dek": "From pandemic essential to forgotten drawer item — and now back as a smarter, more accurate home sensor.",
     "href": "article/pulse-oximeter-home-monitoring/index.html",
-    "extra": false,
+    "extra": true,
     "icon": "oxi",
-    "num": "03"
+    "num": "04"
   },
   {
     "slug": "otc-continuous-glucose-monitor",
@@ -37,7 +47,7 @@
     "href": "article/otc-continuous-glucose-monitor/index.html",
     "extra": true,
     "icon": "cgm",
-    "num": "04"
+    "num": "05"
   },
   {
     "slug": "article3",
@@ -47,6 +57,6 @@
     "href": "article/article3/index.html",
     "extra": true,
     "icon": "watch_rect",
-    "num": "05"
+    "num": "06"
   }
 ]
