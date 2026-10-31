@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Samsung Galaxy A16 5G</title>
+  <desc id="desc">A clean modern smartphone hero illustration for the Galaxy A16 5G.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="100" y="90" width="1000" height="620" rx="28" fill="#0f172a" stroke="#334155"/>
+  <circle cx="850" cy="220" r="120" fill="#22d3ee" opacity="0.12"/>
+  <rect x="180" y="160" width="220" height="480" rx="36" fill="#0b1120" stroke="#475569"/>
+  <rect x="195" y="180" width="190" height="440" rx="28" fill="url(#screen)"/>
+  <rect x="255" y="200" width="70" height="10" rx="5" fill="#f8fafc" opacity="0.9"/>
+  <circle cx="290" cy="280" r="40" fill="#ffffff" opacity="0.2"/>
+  <text x="480" y="280" fill="#f8fafc" font-family="Arial, sans-serif" font-size="58" font-weight="700">Galaxy A16 5G</text>
+  <text x="480" y="345" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">AMOLED Value Pick</text>
+  <text x="480" y="400" fill="#94a3b8" font-family="Arial, sans-serif" font-size="24">6.7" 90Hz • 5,000mAh • 6-Year Updates</text>
+  <rect x="480" y="460" width="240" height="52" rx="26" fill="#22d3ee"/>
+  <text x="545" y="494" fill="#0f172a" font-family="Arial, sans-serif" font-size="22" font-weight="700">Around $140</text>
+</svg>
