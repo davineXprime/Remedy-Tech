@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RTZ Coin — Remedy Tech Zone Meme Coin</title>
+  <meta name="description" content="RTZ Coin — the official meme coin of Remedy Tech Zone. Buy on pump.fun." />
+  <meta name="theme-color" content="#0a0a12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --bg: #07070c;
+  --panel: #0e0e18;
+  --ink: #e8e6f5;
+  --muted: #9b97b0;
+  --accent: #7b6cff;
+  --cyan: #5ce1ff;
+  --pink: #ff6bcb;
+  --display: "Bebas Neue", "Arial Narrow", Impact, sans-serif;
+  --body: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+  --sheet: min(720px, calc(100% - 1.5rem));
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--body);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(123,108,255,0.25), transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(255,107,203,0.12), transparent 40%),
+    var(--bg);
+  line-height: 1.5;
+}
+a { color: inherit; }
+.wrap {
+  width: var(--sheet);
+  margin: 0 auto;
+  padding: 1.25rem 0 3rem;
+}
+.mast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  font-family: var(--display);
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+}
+.mark {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  color: #fff;
+  font-size: 1.15rem;
+  border-radius: 0.35rem;
+}
+.back {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+}
+.back:hover { color: var(--cyan); border-color: var(--cyan); }
+.hero {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+.coin {
+  width: min(280px, 70vw);
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  filter: drop-shadow(0 0 40px rgba(123,108,255,0.45));
+  border-radius: 50%;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin: 0 0 0.5rem;
+}
+h1 {
+  margin: 0 0 0.4rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  background: linear-gradient(90deg, var(--cyan), var(--accent), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline {
+  margin: 0 auto 1.5rem;
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.8rem;
+  background: linear-gradient(135deg, var(--accent), var(--pink));
+  color: #fff;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(123,108,255,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255,107,203,0.35);
+}
+.panel {
+  margin-top: 2.5rem;
+  padding: 1.35rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid rgba(123,108,255,0.25);
+  border-radius: 1rem;
+}
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+}
+.panel p { margin: 0 0 0.85rem; color: var(--muted); }
+.panel p:last-child { margin-bottom: 0; }
+.panel a.link {
+  color: var(--cyan);
+  font-weight: 700;
+  word-break: break-all;
+}
+.disclaimer {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed rgba(155,151,176,0.4);
+  border-radius: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.foot {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <a class="brand" href="../index.html">
+        <span class="mark">R</span>
+        <span>REMEDY ZONE</span>
+      </a>
+      <a class="back" href="../index.html">← Back to desk</a>
+    </header>
+
+    <section class="hero">
+      <img class="coin" src="PLACEHOLDER_IMG" alt="RTZ Coin — Remedy Tech Zone" width="320" height="320" />
+      <p class="eyebrow">Official meme coin</p>
+      <h1>RTZ COIN</h1>
+      <p class="tagline">Remedy Tech Zone on-chain. Same desk energy — practical health tech community, now with a coin.</p>
+      <a class="cta" href="https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech" target="_blank" rel="noopener noreferrer">
+        Buy on pump.fun →
+      </a>
+    </section>
+
+    <section class="panel">
+      <h2>WHERE TO BUY</h2>
+      <p>Trade RTZ on pump.fun:</p>
+      <p><a class="link" href="https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech" target="_blank" rel="noopener noreferrer">https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech</a></p>
+      <p>Contract / coin page is hosted on pump.fun. Always verify the link before connecting a wallet.</p>
+    </section>
+
+    <section class="panel">
+      <h2>WHAT IS RTZ</h2>
+      <p>Remedy Tech Zone covers budget med tech and wearables — blood pressure monitors, oximeters, glucose sensors, and trackers that earn a place in daily life.</p>
+      <p>RTZ Coin is the community meme coin for that desk. Not a product review. Not financial advice. Just the brand on-chain.</p>
+    </section>
+
+    <div class="disclaimer">
+      <strong style="color:var(--ink)">Disclaimer.</strong>
+      RTZ Coin is a meme coin. It has no intrinsic value, no formal utility promise, and is not an investment product from Remedy Tech Zone’s review desk. Crypto is volatile. Only risk what you can afford to lose. This page is promotional, not advice.
+    </div>
+
+    <footer class="foot">
+      Remedy Tech Zone · RTZ Coin
+    </footer>
+  </div>
+</body>
+</html>
