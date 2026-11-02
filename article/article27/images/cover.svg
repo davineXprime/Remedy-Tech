@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0c4a6e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Watch band -->
+  <rect x="280" y="50" width="240" height="400" rx="30" fill="#1f2937"/>
+  <rect x="300" y="70" width="200" height="360" rx="20" fill="#111827"/>
+  <!-- Watch case -->
+  <rect x="320" y="120" width="160" height="180" rx="25" fill="#374151" stroke="#6b7280" stroke-width="4"/>
+  <!-- Screen -->
+  <rect x="335" y="135" width="130" height="150" rx="18" fill="url(#screen)" filter="url(#glow)"/>
+  <!-- Time display -->
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">10:09</text>
+  <text x="400" y="230" font-family="Arial, sans-serif" font-size="14" fill="#93c5fd" text-anchor="middle">Steps 8,420</text>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="12" fill="#6ee7b7" text-anchor="middle">HR 72</text>
+  <!-- Crown -->
+  <circle cx="495" cy="210" r="12" fill="#4b5563" stroke="#9ca3af" stroke-width="2"/>
+  <!-- Highlights -->
+  <rect x="340" y="140" width="20" height="140" rx="5" fill="rgba(255,255,255,0.1)"/>
+</svg>
