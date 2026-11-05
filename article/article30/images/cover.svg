@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Phone body -->
+  <rect x="280" y="60" width="240" height="340" rx="28" ry="28" fill="#1e293b" stroke="#059669" stroke-width="3"/>
+  <!-- Screen -->
+  <rect x="292" y="78" width="216" height="300" rx="16" ry="16" fill="url(#screen)"/>
+  <!-- Camera notch -->
+  <circle cx="400" cy="92" r="6" fill="#0f172a"/>
+  <!-- Simple UI elements -->
+  <rect x="310" y="120" width="180" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="340" cy="200" r="20" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="400" cy="200" r="20" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="460" cy="200" r="20" fill="rgba(255,255,255,0.3)"/>
+  <text x="400" y="380" text-anchor="middle" fill="#6ee7b7" font-family="Inter, sans-serif" font-size="16" font-weight="bold">Galaxy A16 5G</text>
+</svg>
