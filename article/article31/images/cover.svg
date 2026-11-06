@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Watch body -->
+  <rect x="300" y="100" width="200" height="240" rx="32" ry="32" fill="#1e293b" stroke="#059669" stroke-width="3"/>
+  <!-- Screen -->
+  <rect x="315" y="115" width="170" height="190" rx="20" ry="20" fill="url(#screen)"/>
+  <!-- Simple watch face elements -->
+  <circle cx="400" cy="210" r="40" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+  <line x1="400" y1="210" x2="420" y2="180" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="400" y1="210" x2="380" y2="240" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="400" cy="210" r="4" fill="#ffffff"/>
+  <!-- Band suggestion -->
+  <rect x="370" y="340" width="60" height="20" rx="10" fill="#334155"/>
+  <text x="400" y="400" text-anchor="middle" fill="#6ee7b7" font-family="Inter, sans-serif" font-size="16" font-weight="bold">Amazfit Bip 6</text>
+</svg>
