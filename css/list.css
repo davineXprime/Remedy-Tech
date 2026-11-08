@@ -1,0 +1,58 @@
+/* Email list */
+.list-up {
+  width: var(--sheet, min(1120px, calc(100% - 1.25rem)));
+  margin: 1.2rem auto;
+}
+.list-card {
+  padding: 1.25rem 1.2rem;
+  border: 2px solid var(--emerald, #064e3b);
+  background: var(--mint, #d4f8e8);
+  box-shadow: 8px 10px 0 rgba(6,78,59,.1);
+}
+.list-card h2 {
+  margin: 0 0 .35rem;
+  font-family: var(--display, "Bebas Neue", sans-serif);
+  font-weight: 400;
+  letter-spacing: .1em;
+  font-size: 1.7rem;
+  color: var(--emerald, #064e3b);
+}
+.list-card p { margin: 0 0 .85rem; color: var(--emerald, #064e3b); }
+.list-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+.list-form input[type="email"] {
+  flex: 1 1 200px;
+  padding: .7rem .85rem;
+  border: 2px solid var(--emerald, #064e3b);
+  font-family: inherit;
+  font-size: .95rem;
+  background: #fff;
+}
+.list-form button {
+  padding: .7rem 1.1rem;
+  border: 2px solid var(--emerald, #064e3b);
+  background: var(--emerald, #064e3b);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.list-form button:hover { background: var(--jade, #17875d); }
+.list-note { font-size: .75rem; opacity: .75; margin: 0 !important; }
+body.tg .list-card {
+  border-color: #5c3d1e;
+  background: #f5e6c8;
+  box-shadow: 8px 10px 0 rgba(92,61,30,.12);
+}
+body.tg .list-card h2,
+body.tg .list-card p { color: #5c3d1e; }
+body.tg .list-form input[type="email"],
+body.tg .list-form button { border-color: #5c3d1e; }
+body.tg .list-form button { background: #5c3d1e; }
