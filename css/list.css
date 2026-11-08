@@ -56,3 +56,10 @@ body.tg .list-card p { color: #5c3d1e; }
 body.tg .list-form input[type="email"],
 body.tg .list-form button { border-color: #5c3d1e; }
 body.tg .list-form button { background: #5c3d1e; }
+
+/* Hide minimized notes — .note { display:flex } was overriding [hidden] */
+.note.is-folded,
+.note.folded,
+.note[hidden] {
+  display: none !important;
+}
