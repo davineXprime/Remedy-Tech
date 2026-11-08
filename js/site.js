@@ -26,7 +26,7 @@
   var expanded = false;
   var filter = "All";
   var allCards = [];
-  var notes = [];
+  var moreLoaded = false;
 
   function renderCard(c) {
     var icon = ICONS[c.icon] || ICONS.watch_round;
@@ -44,7 +44,9 @@
 
   function visibleCards() {
     if (expanded) return allCards.slice();
-    return allCards.filter(function (c) { return !c.extra; });
+    var primary = allCards.filter(function (c) { return !c.extra; });
+    if (primary.length) return primary.slice(0, 3);
+    return allCards.slice(0, 3);
   }
 
   function apply() {
@@ -60,24 +62,16 @@
     }
     if (!grid) return;
     grid.innerHTML = list.map(renderCard).join("");
-    notes = document.querySelectorAll(".note");
     if (empty) empty.classList.toggle("show", list.length === 0);
     if (moreBtn) {
-      var hasExtras = allCards.some(function (c) { return c.extra; });
       var browsing = filter === "All" && !q;
-      moreBtn.hidden = !browsing || !hasExtras;
+      moreBtn.hidden = !browsing;
       moreBtn.textContent = expanded ? "Show fewer notes" : "Read more notes";
     }
   }
 
   function boot(cards) {
     allCards = cards || [];
-    if (moreBtn) {
-      moreBtn.addEventListener("click", function () {
-        expanded = !expanded;
-        apply();
-      });
-    }
     chips.forEach(function (chip) {
       chip.addEventListener("click", function () {
         filter = chip.getAttribute("data-filter");
@@ -89,9 +83,39 @@
     apply();
   }
 
-  fetch("data/homepage-cards.json")
+  if (moreBtn) {
+    moreBtn.addEventListener("click", function () {
+      if (expanded) {
+        expanded = false;
+        apply();
+        return;
+      }
+      if (moreLoaded) {
+        expanded = true;
+        apply();
+        return;
+      }
+      fetch("data/homepage-cards-more.json?v=3")
+        .then(function (r) { return r.json(); })
+        .then(function (extra) {
+          (extra || []).forEach(function (c) { c.extra = true; allCards.push(c); });
+          moreLoaded = true;
+          expanded = true;
+          apply();
+        });
+    });
+  }
+
+  fetch("data/homepage-cards.json?v=3")
     .then(function (r) { return r.json(); })
-    .then(boot)
+    .then(function (cards) {
+      (cards || []).forEach(function (c) { c.extra = false; });
+      boot(cards);
+      if (moreBtn) {
+        moreBtn.hidden = false;
+        moreBtn.textContent = "Read more notes";
+      }
+    })
     .catch(function () {
       if (grid) grid.innerHTML = '<p style="padding:1rem">Unable to load notes.</p>';
     });
