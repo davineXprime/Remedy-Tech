@@ -52,6 +52,7 @@
       var folded = note.classList.contains("is-extra") && !expanded && filter === "All" && !q;
       var hide = !catOk || !qOk || folded;
       note.hidden = hide;
+      note.classList.toggle("is-folded", folded);
       if (!hide) shown += 1;
     });
     if (empty) empty.classList.toggle("show", shown === 0);
