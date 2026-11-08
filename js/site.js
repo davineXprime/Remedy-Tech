@@ -25,14 +25,14 @@
   var empty = document.querySelector(".empty");
   var expanded = false;
   var filter = "All";
+  var allCards = [];
   var notes = [];
 
   function renderCard(c) {
     var icon = ICONS[c.icon] || ICONS.watch_round;
-    var extra = c.extra ? " is-extra" : "";
     var titleAttr = (c.title + " " + c.dek).split('"').join("'");
     return (
-      '<a class="note' + extra + '" data-cat="' + c.category + '" data-title="' + titleAttr + '" href="' + c.href + '">' +
+      '<a class="note" data-cat="' + c.category + '" data-title="' + titleAttr + '" href="' + c.href + '">' +
       '<div class="note-top"><span>' + c.category + '</span><span>No. ' + c.num + '</span></div>' +
       '<div class="mini">' + icon + '</div>' +
       '<h3>' + c.title + '</h3>' +
@@ -42,32 +42,42 @@
     );
   }
 
+  function visibleCards() {
+    if (expanded) return allCards.slice();
+    return allCards.filter(function (c) { return !c.extra; });
+  }
+
   function apply() {
     var q = search ? search.value.trim().toLowerCase() : "";
-    var shown = 0;
-    notes.forEach(function (note) {
-      var catOk = filter === "All" || note.getAttribute("data-cat") === filter;
-      var text = (note.getAttribute("data-title") || "").toLowerCase();
-      var qOk = !q || text.indexOf(q) !== -1;
-      var folded = note.classList.contains("is-extra") && !expanded && filter === "All" && !q;
-      var hide = !catOk || !qOk || folded;
-      note.hidden = hide;
-      note.classList.toggle("is-folded", folded);
-      if (!hide) shown += 1;
-    });
-    if (empty) empty.classList.toggle("show", shown === 0);
+    var list = visibleCards();
+    if (q || filter !== "All") {
+      list = allCards.filter(function (c) {
+        var catOk = filter === "All" || c.category === filter;
+        var text = (c.title + " " + c.dek).toLowerCase();
+        var qOk = !q || text.indexOf(q) !== -1;
+        return catOk && qOk;
+      });
+    }
+    if (!grid) return;
+    grid.innerHTML = list.map(renderCard).join("");
+    notes = document.querySelectorAll(".note");
+    if (empty) empty.classList.toggle("show", list.length === 0);
     if (moreBtn) {
-      var extras = document.querySelectorAll(".note.is-extra").length;
+      var hasExtras = allCards.some(function (c) { return c.extra; });
       var browsing = filter === "All" && !q;
-      moreBtn.hidden = !browsing || extras === 0;
+      moreBtn.hidden = !browsing || !hasExtras;
       moreBtn.textContent = expanded ? "Show fewer notes" : "Read more notes";
     }
   }
 
   function boot(cards) {
-    if (!grid) return;
-    grid.innerHTML = cards.map(renderCard).join("");
-    notes = document.querySelectorAll(".note");
+    allCards = cards || [];
+    if (moreBtn) {
+      moreBtn.addEventListener("click", function () {
+        expanded = !expanded;
+        apply();
+      });
+    }
     chips.forEach(function (chip) {
       chip.addEventListener("click", function () {
         filter = chip.getAttribute("data-filter");
@@ -75,12 +85,6 @@
         apply();
       });
     });
-    if (moreBtn) {
-      moreBtn.addEventListener("click", function () {
-        expanded = !expanded;
-        apply();
-      });
-    }
     if (search) search.addEventListener("input", apply);
     apply();
   }
