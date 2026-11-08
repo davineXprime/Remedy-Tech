@@ -28,35 +28,5 @@
     "extra": false,
     "icon": "bp",
     "num": "03"
-  },
-  {
-    "slug": "pulse-oximeter-home-monitoring",
-    "title": "Pulse Oximeter",
-    "category": "Med Tech",
-    "dek": "From pandemic essential to forgotten drawer item — and now back as a smarter, more accurate home sensor.",
-    "href": "article/pulse-oximeter-home-monitoring/index.html",
-    "extra": true,
-    "icon": "oxi",
-    "num": "04"
-  },
-  {
-    "slug": "otc-continuous-glucose-monitor",
-    "title": "OTC Glucose",
-    "category": "Med Tech",
-    "dek": "Prescription barriers dropped. Now anyone curious about food, sleep, and stress can see how their glucose actually moves.",
-    "href": "article/otc-continuous-glucose-monitor/index.html",
-    "extra": true,
-    "icon": "cgm",
-    "num": "05"
-  },
-  {
-    "slug": "article3",
-    "title": "Amazfit Bip Max",
-    "category": "Smartwatches",
-    "dek": "At about $100, the Bip Max adds a brighter 2.07-inch AMOLED, offline maps, and multi-week battery to the budget watch formula.",
-    "href": "article/article3/index.html",
-    "extra": true,
-    "icon": "watch_rect",
-    "num": "06"
   }
 ]
