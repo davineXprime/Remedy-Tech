@@ -3,142 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RTZ — Remedy Tech Zone | Thanksgiving Health Tech Desk</title>
-  <meta name="description" content="Remedy Tech Zone covers budget med tech and smartwatches — blood pressure monitors, pulse oximeters, OTC glucose sensors, and practical wearables." />
-  <meta name="theme-color" content="#5c3d1e" />
+  <meta name="theme-color" content="#07110c" />
+  <meta name="description" content="Meet RTZ — the Remedy Tech Zone meme coin. Explore the community, find the official listing, and learn what RTZ is (and isn't)." />
+  <meta property="og:title" content="RTZ — Remedy Tech Zone" />
+  <meta property="og:description" content="Power. Prep. Tech. Meet the RTZ community meme coin." />
+  <title>RTZ — Remedy Tech Zone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/poster.css" />
-  <link rel="stylesheet" href="css/list.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{color-scheme:dark;--bg:#07110c;--panel:#0d1a12;--panel-2:#112319;--ink:#f2f5ee;--muted:#a2b1a3;--green:#a6f36a;--mint:#c9ff9d;--line:rgba(201,255,157,.16);--mono:"DM Mono",monospace;--sans:"Space Grotesk",sans-serif;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(201,255,157,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(201,255,157,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,black,transparent 70%)}a{color:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.mono,.eyebrow,.ticker,.nav a,.label{font-family:var(--mono)}
+    .topline{border-bottom:1px solid var(--line);font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:10px 0}.topline .wrap{display:flex;justify-content:space-between;gap:12px}.live{color:var(--green)}
+    header{position:sticky;top:0;z-index:5;background:rgba(7,17,12,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:700;letter-spacing:.04em}.brand-mark{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:var(--green);color:#07110c;font-size:19px;font-weight:700;box-shadow:0 0 30px rgba(166,243,106,.2)}.brand small{display:block;color:var(--muted);font:10px var(--mono);letter-spacing:.16em}.nav-links{display:flex;align-items:center;gap:28px}.nav-links a{text-decoration:none;color:var(--muted);font:12px var(--mono);transition:color .2s}.nav-links a:hover{color:var(--green)}.nav .buy{padding:11px 16px;border:1px solid var(--green);border-radius:8px;color:var(--green)}
+    .hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding:92px 0 90px;min-height:620px}.hero:after{content:"";position:absolute;z-index:-1;width:550px;height:550px;right:4%;top:30px;border-radius:50%;background:radial-gradient(circle,rgba(98,180,69,.19),transparent 68%)}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--green);text-transform:uppercase}.hero h1{font-size:clamp(72px,12vw,150px);line-height:.78;letter-spacing:-.08em;margin:22px 0 20px;font-weight:700}.hero h1 span{display:block;color:var(--green)}.hero-copy{max-width:535px;color:var(--muted);font-size:18px}.hero-copy strong{color:var(--ink);font-weight:600}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 20px;text-decoration:none;border:1px solid var(--line);border-radius:8px;font-weight:700;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--green);color:#09110b;border-color:var(--green)}.button-secondary{color:var(--ink);background:rgba(255,255,255,.025)}.button .arrow{font-size:18px}.fineprint{font:11px var(--mono);color:var(--muted);margin-top:16px}
+    .coin-art{position:relative;width:min(100%,440px);aspect-ratio:1;margin:auto;display:grid;place-items:center}.coin-art:before,.coin-art:after{content:"";position:absolute;inset:5%;border:1px solid rgba(166,243,106,.22);border-radius:50%;animation:orbit 30s linear infinite}.coin-art:after{inset:13%;border-style:dashed;opacity:.55;animation-direction:reverse}.coin{position:relative;width:72%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#315536,#152c1c 48%,#0a150e 70%);border:9px solid #a6f36a;box-shadow:inset 0 0 0 7px #122418,inset 0 0 50px rgba(166,243,106,.16),0 0 80px rgba(166,243,106,.17);transform:rotate(-9deg)}.coin:before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,255,157,.4);border-radius:50%}.coin-text{text-align:center;transform:rotate(9deg)}.coin-text strong{display:block;color:var(--green);font-size:clamp(52px,8vw,82px);letter-spacing:-.08em;line-height:1}.coin-text span{font:10px var(--mono);letter-spacing:.18em;color:#d5e8ce}.orbit-tag{position:absolute;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:9px 12px;font:10px var(--mono);letter-spacing:.1em;color:var(--mint)}.tag-one{top:12%;right:0}.tag-two{bottom:15%;left:0}@keyframes orbit{to{transform:rotate(360deg)}}
+    .ticker-wrap{overflow:hidden;border-block:1px solid var(--line);background:#0b1710}.ticker{display:flex;gap:36px;width:max-content;padding:14px 0;color:var(--green);font-size:11px;letter-spacing:.16em;text-transform:uppercase;animation:marquee 35s linear infinite}.ticker span:after{content:"✳";margin-left:36px;color:#527b42}@keyframes marquee{to{transform:translateX(-50%)}}
+    section.content{padding:96px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px}.section-head h2{font-size:clamp(38px,6vw,64px);letter-spacing:-.06em;line-height:.95;margin:12px 0 0}.section-head p{max-width:385px;color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:26px;background:linear-gradient(145deg,rgba(17,35,25,.94),rgba(10,22,14,.9));border:1px solid var(--line);border-radius:12px;min-height:210px}.card .number{font:11px var(--mono);color:var(--green)}.card h3{margin:26px 0 9px;font-size:22px}.card p{margin:0;color:var(--muted);font-size:14px}.token-panel{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:36px;background:var(--panel);border:1px solid var(--line);border-radius:14px}.token-panel h2{font-size:clamp(38px,5vw,58px);letter-spacing:-.06em;line-height:.95;margin:12px 0}.token-panel p{color:var(--muted)}.token-note{padding:22px;border-radius:10px;background:#08130c;border:1px solid var(--line)}.token-note .label{font-size:10px;color:var(--green);letter-spacing:.14em;text-transform:uppercase}.token-note p{font-size:14px;margin:10px 0 0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{border-top:1px solid var(--line);padding:20px 4px}.step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#07110c;font:13px var(--mono)}.step h3{margin:18px 0 6px}.step p{margin:0;color:var(--muted);font-size:14px}.community{padding:48px!important;text-align:center;background:radial-gradient(ellipse at top,rgba(166,243,106,.13),transparent 60%),var(--panel)!important}.community h2{font-size:clamp(40px,7vw,72px);line-height:.9;letter-spacing:-.07em;margin:14px 0}.community p{max-width:520px;margin:0 auto 24px;color:var(--muted)}.disclaimer{border-top:1px solid var(--line);padding:24px 0 38px;color:var(--muted);font-size:12px}.disclaimer strong{color:var(--ink)}footer{display:flex;justify-content:space-between;gap:18px;padding:20px 0 32px;border-top:1px solid var(--line);font:10px var(--mono);color:var(--muted);letter-spacing:.1em;text-transform:uppercase}.backtop{text-decoration:none}
+    @media(max-width:760px){.topline .wrap span:last-child{display:none}.nav{min-height:66px}.nav-links{gap:14px}.nav-links a:not(.buy){display:none}.hero{grid-template-columns:1fr;text-align:center;padding:68px 0 55px;gap:12px;min-height:auto}.hero-copy{margin:auto}.actions{justify-content:center}.coin-art{width:min(82vw,370px);margin-top:22px}.section-head{display:block}.section-head p{margin-top:16px}.cards,.steps{grid-template-columns:1fr}.card{min-height:0}.card h3{margin-top:16px}.token-panel{grid-template-columns:1fr;padding:25px}.content{padding:72px 0!important}.community{padding:34px 20px!important}footer{flex-direction:column}.hero h1{font-size:clamp(76px,20vw,120px)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
 </head>
-<body class="tg">
-  <div class="progress" aria-hidden="true"></div>
-
-  <main>
-    <section class="sheet" id="top">
-      <svg class="star leaf" style="top:14px;left:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 C8 6 4 10 6 16 C8 20 11 22 12 22 C13 22 16 20 18 16 C20 10 16 6 12 2 Z M12 8 L12 20"/></svg>
-      <svg class="star leaf" style="top:18px;right:16px;left:auto;width:16px;height:16px;color:#c45c26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 C8 6 4 10 6 16 C8 20 11 22 12 22 C13 22 16 20 18 16 C20 10 16 6 12 2 Z M12 8 L12 20"/></svg>
-      <svg class="star leaf" style="bottom:18px;left:22px;width:12px;height:12px;color:#d4a017" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 C8 6 4 10 6 16 C8 20 11 22 12 22 C13 22 16 20 18 16 C20 10 16 6 12 2 Z M12 8 L12 20"/></svg>
-      <header class="mast">
-        <a class="brand" href="#top">
-          <span class="mark">R</span>
-          <span class="brand-name">REMEDY <span>ZONE</span></span>
-        </a>
-        <nav>
-          <a href="#notes">Notes</a>
-          <a href="coin/">Coin</a>
-          <a href="#list">List</a>
-          <a href="#about">About</a>
-          <a href="#privacy">Privacy</a>
-        </nav>
-      </header>
-      <div class="tg-banner" role="status">
-        <span class="tg-leaf" aria-hidden="true">🍂</span>
-        <span>Thanksgiving week — health tech that earns a seat at the table</span>
-        <span class="tg-leaf" aria-hidden="true">🍁</span>
-      </div>
-      <h1 class="wordmark">REMEDY</h1>
-      <p class="zone-line">TECH ZONE</p>
-      <div class="kicker">
-        <p>Practical health tech for the long weekend.</p>
-        <span class="stamp">Harvest desk</span>
-        <p class="right">Clarity over clutter. Always.</p>
-      </div>
-      <div class="stage">
-        <p class="vtext">Blood pressure, oxygen, glucose, and the watches that actually last.</p>
-        <div class="plate">
-          <svg class="art" viewBox="0 0 480 460" role="img" aria-label="Remedy Tech Zone">
-            <rect width="480" height="460" fill="#064e3b"/>
-            <g fill="#d4f8e8">
-              <path d="M46 40 L52 58 L72 64 L52 70 L46 88 L40 70 L20 64 L40 58 Z"/>
-              <path d="M430 54 L435 68 L450 73 L435 78 L430 92 L425 78 L410 73 L425 68 Z"/>
-              <path d="M392 280 L397 294 L412 299 L397 304 L392 318 L387 304 L372 299 L387 294 Z"/>
-              <path d="M70 300 L74 310 L86 314 L74 318 L70 328 L66 318 L54 314 L66 310 Z"/>
-            </g>
-            <ellipse cx="268" cy="220" rx="168" ry="48" fill="none" stroke="#d4f8e8" stroke-width="10" transform="rotate(-18 268 220)"/>
-            <ellipse cx="268" cy="220" rx="150" ry="36" fill="none" stroke="#17875d" stroke-width="6" transform="rotate(-18 268 220)"/>
-            <circle cx="230" cy="214" r="108" fill="#17875d"/>
-            <ellipse cx="230" cy="192" rx="77" ry="11" fill="#d4f8e8" opacity="0.45"/>
-            <ellipse cx="230" cy="228" rx="84" ry="9" fill="#064e3b" opacity="0.28"/>
-            <ellipse cx="230" cy="254" rx="71" ry="7" fill="#d4f8e8" opacity="0.28"/>
-            <circle cx="78" cy="128" r="18" fill="#17875d"/>
-            <circle cx="408" cy="340" r="12" fill="#d4f8e8"/>
-          </svg>
-          <div class="float-copy">
-            <small>Med tech & smartwatches</small>
-            <strong>PRACTICAL HEALTH TECH</strong>
-          </div>
-        </div>
-        <aside class="facts">
-          <h2>ZONE FACTS</h2>
-          <ul>
-            <li>Desk: home monitors and budget wearables</li>
-            <li>Promise: devices that deliver, not decks that dazzle</li>
-            <li>Range: most notes live under $150</li>
-            <li>Count: 6 curated notes on the wall</li>
-          </ul>
-        </aside>
-      </div>
-      <p class="closer">
-        <strong>Clarity expands in the quiet.</strong>
-        <span>Power, prep, tech.</span>
-      </p>
-      <div class="phases" aria-hidden="true">
-        <span class="phase"></span><span class="phase q1"></span><span class="phase half"></span>
-        <span class="phase full"></span><span class="phase q2"></span><span class="phase"></span>
-      </div>
-    </section>
-
-    <section class="archive" id="notes">
-      <div class="archive-head">
-        <h2>LATEST<br>NOTES</h2>
-        <div class="tools">
-          <button class="chip is-on" type="button" data-filter="All">All</button>
-          <button class="chip" type="button" data-filter="Med Tech">Med Tech</button>
-          <button class="chip" type="button" data-filter="Smartwatches">Smartwatches</button>
-          <button class="chip" type="button" data-filter="Wearables">Wearables</button>
-          <button class="chip" type="button" data-filter="Smartphones">Smartphones</button>
-          <button class="chip" type="button" data-filter="Audio">Audio</button>
-          <input class="search" id="search" type="search" placeholder="Search notes" aria-label="Search notes" />
-        </div>
-      </div>
-      <div class="grid" id="notes-grid"></div>
-      <div class="empty">No notes match that filter.</div>
-      <div class="more-wrap">
-        <button class="more" id="more-btn" type="button">Read more notes</button>
-      </div>
-    </section>
-
-    <section class="list-up" id="list">
-      <div class="list-card">
-        <h2>GET THE DESK NOTES</h2>
-        <p>One practical med-tech note a week — no spam, unsubscribe anytime.</p>
-        <form class="list-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address" />
-          <input type="hidden" name="_subject" value="RTZ desk list signup" />
-          <button type="submit">Join the list</button>
-        </form>
-        <p class="list-note">Plug in your free Formspree form ID to activate signups (50/month free).</p>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <article>
-        <h2>ABOUT</h2>
-        <p>Remedy Tech Zone covers practical health tech and budget wearables — devices that earn a place in daily life, not just a place in a product deck.</p>
-      </article>
-      <article id="privacy">
-        <h2>PRIVACY</h2>
-        <p>We keep things simple. No tracking walls, no account required to read. Affiliate links may appear when a product is mentioned; they never change the recommendation.</p>
-      </article>
-    </section>
-
-    <footer class="foot">
-      <span>Remedy Tech Zone</span>
-      <span>Emerald · Harvest gold · Amber · Cream</span>
-    </footer>
+<body>
+  <div class="topline"><div class="wrap"><span><span class="live">●</span> RTZ / COMMUNITY MEME COIN</span><span>POWER · PREP · TECH</span></div></div>
+  <header><div class="wrap nav">
+    <a class="brand" href="#top" aria-label="RTZ home"><span class="brand-mark">R</span><span>REMEDY TECH ZONE<small>RTZ COMMUNITY</small></span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#token">Token</a><a href="#how-to">How to start</a><a class="buy" href="https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech" target="_blank" rel="noopener noreferrer">View RTZ ↗</a></nav>
+  </div></header>
+  <main id="top">
+    <div class="wrap hero">
+      <div><p class="eyebrow">The zone is on-chain</p><h1>POWER.<span>PREP.</span>TECH.</h1><p class="hero-copy"><strong>Meet RTZ.</strong> Remedy Tech Zone’s community meme coin brings the brand’s power-prep-tech spirit to crypto. No grand promises. Just a community, a ticker, and a little internet energy.</p><div class="actions"><a class="button button-primary" href="https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech" target="_blank" rel="noopener noreferrer">Explore RTZ on pump.fun <span class="arrow">↗</span></a><a class="button button-secondary" href="#about">Get to know RTZ <span class="arrow">↓</span></a></div><p class="fineprint">Always verify the listing and token details before you trade.</p></div>
+      <div class="coin-art" aria-label="RTZ coin illustration"><span class="orbit-tag tag-one">REMEDY TECH ZONE</span><div class="coin"><div class="coin-text"><strong>RTZ</strong><span>POWER · PREP · TECH</span></div></div><span class="orbit-tag tag-two">COMMUNITY MEME COIN</span></div>
+    </div>
+    <div class="ticker-wrap" aria-hidden="true"><div class="ticker"><span>POWER</span><span>PREP</span><span>TECH</span><span>RTZ ZONE</span><span>COMMUNITY ENERGY</span><span>POWER</span><span>PREP</span><span>TECH</span><span>RTZ ZONE</span><span>COMMUNITY ENERGY</span></div></div>
+    <section class="wrap content" id="about"><div class="section-head"><div><p class="eyebrow">01 / The idea</p><h2>Same zone.<br>New format.</h2></div><p>RTZ is the meme-coin corner of Remedy Tech Zone: a playful community expression of the brand, not a medical product or a promise of returns.</p></div><div class="cards"><article class="card"><span class="number">[ 01 ]</span><h3>Power</h3><p>Independent energy, bold ideas, and the confidence to explore a new corner of the internet.</p></article><article class="card"><span class="number">[ 02 ]</span><h3>Prep</h3><p>Do your own research. Verify links, understand the risks, and never rush a wallet decision.</p></article><article class="card"><span class="number">[ 03 ]</span><h3>Tech</h3><p>RTZ lives in the world of crypto culture—community-first, transparent about what it is, and what it isn't.</p></article></div></section>
+    <section class="wrap content" id="token"><div class="token-panel"><div><p class="eyebrow">02 / Token info</p><h2>Know what<br>you’re clicking.</h2><p>Use the project’s listing to review the current token details. Confirm the network and token address directly on the listing before making any transaction.</p><a class="button button-primary" href="https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech" target="_blank" rel="noopener noreferrer">Open RTZ listing ↗</a></div><div class="token-note"><span class="label">A quick reality check</span><p>This page does not publish token supply, allocation, contract-address, or price claims. Check current on-chain information and independent sources yourself. Never trust unsolicited DMs or lookalike links.</p></div></div></section>
+    <section class="wrap content" id="how-to"><div class="section-head"><div><p class="eyebrow">03 / Start safe</p><h2>Three steps.<br>Take your time.</h2></div><p>If you choose to explore RTZ, protect your wallet and make decisions only after understanding the risks.</p></div><div class="steps"><article class="step"><b>01</b><h3>Verify</h3><p>Use the listing linked on this page and check its details carefully before connecting a wallet.</p></article><article class="step"><b>02</b><h3>Research</h3><p>Review the network, token information, and transaction conditions. Ignore promises of guaranteed gains.</p></article><article class="step"><b>03</b><h3>Choose</h3><p>Crypto assets are risky and can lose all value. Only make your own informed decision.</p></article></div></section>
+    <section class="wrap content" id="community"><div class="token-panel community"><p class="eyebrow">Join the zone</p><h2>Curiosity looks good on you.</h2><p>Start with the RTZ listing and keep your research close. This site only links to the current project listing; no unofficial social accounts are endorsed here.</p><a class="button button-primary" href="https://pump.fun/c/5bcf3650-a1ce-4e62-8272-3b028f869367/RemedyTech" target="_blank" rel="noopener noreferrer">Explore RTZ ↗</a></div></section>
+    <div class="wrap disclaimer"><strong>Disclaimer:</strong> RTZ is a meme coin and highly speculative crypto asset. It has no guaranteed value, returns, or formal utility promise. Nothing on this website is financial, investment, or medical advice. Only risk what you can afford to lose. Verify all links and token details independently.</div>
   </main>
-  <script src="js/site.js?v=3"></script>
+  <footer class="wrap"><span>© Remedy Tech Zone · RTZ</span><a class="backtop" href="#top">Back to top ↑</a><span>Power · Prep · Tech</span></footer>
 </body>
 </html>
