@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="case" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <radialGradient id="screen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Watch body -->
+  <circle cx="400" cy="225" r="140" fill="url(#case)" stroke="#64748b" stroke-width="4"/>
+  <circle cx="400" cy="225" r="125" fill="url(#screen)"/>
+  <!-- Strap top -->
+  <rect x="370" y="60" width="60" height="50" rx="8" fill="#ef4444"/>
+  <!-- Strap bottom -->
+  <rect x="370" y="340" width="60" height="50" rx="8" fill="#ef4444"/>
+  <!-- Crown -->
+  <rect x="540" y="210" width="20" height="30" rx="4" fill="#94a3b8"/>
+  <!-- Screen elements -->
+  <circle cx="400" cy="225" r="90" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.6"/>
+  <circle cx="400" cy="225" r="60" fill="none" stroke="#f97316" stroke-width="2" opacity="0.5"/>
+  <text x="400" y="200" font-family="Inter, sans-serif" font-size="36" fill="#f1f5f9" text-anchor="middle" font-weight="600">10:10</text>
+  <text x="400" y="230" font-family="Inter, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">TUE</text>
+  <path d="M380 250 L400 270 L420 250" fill="none" stroke="#22d3ee" stroke-width="2"/>
+  <text x="400" y="400" font-family="Inter, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">CMF Watch 3 Pro</text>
+</svg>
